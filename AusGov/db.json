@@ -1,0 +1,25 @@
+{
+	"users":
+		[	
+			{
+				"id": 1,
+				"first_name": "John",
+				"last_name": "White",
+				"address": "1 Good St",
+				"email": "john@mail.com",
+				"phone": "0712345678",
+				"password": "password",
+				"dob": "01/01/1970"
+			},
+			{
+				"id": 2,
+				"first_name": "Mary",
+				"last_name": "White",
+				"address": "1 Good St",
+				"email": "mary@mail.com",
+				"phone": "0712345678",
+				"password": "password",
+				"dob": "01/01/1971"
+			}
+		]
+}
