@@ -8,8 +8,12 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
+  getUsers() {
+    return this.http.get('http://localhost:3000/users')
+  }
+
   //TODO create dummy users
   getUser(userId) {
-    return this.http.get('https://jsonplaceholder.typicode.com/users/'+userId)
+    return this.http.get('http://localhost:3000/users/'+userId)
   }
 }
