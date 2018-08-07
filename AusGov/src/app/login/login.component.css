@@ -1,3 +1,79 @@
+hr {
+    margin-bottom: 15px;
+    margin-top: 5px;
+    width: 100%;
+    border: 1.5px solid #4d9895; /* Line break colour and size */
+ }
+
+
+ #servicesLineBreak {
+    border: 1.5px solid #e8e8ea; /* Line break colour and size */
+ }
+ .col-md-5 {
+    width: 100%;
+    padding: 0 5% 0 5%;
+ }
+
+ .col-md-7 {
+    width: 100%;
+    padding: 0 5% 0 5%;
+
+ }
+
 .container {
     margin-block-start: 20px;
+    background-color: #60beba; /* Login container colour */
+    background-image: none;
+    background-repeat: no-repeat;
+    color: #f5fbfb; /* Login text colour */
+    min-height:450px;
 }
+
+
+.services {
+    background-color: #f0f0f0; /* Services container colour */
+    color: #909090; /* Services container text colour */
+
+}
+
+.signin {
+    color: white; /* Sign in button text colour */
+    background-color:#17252a; /* Sign in button colour */
+    padding: 10px 25px 10px 25px;
+    width: 100%;
+    text-align:center;
+    margin:auto;
+}
+
+.createAcc {
+    color: white; /* Create Account button text colour */
+    background-color:#2b7a78; /* Create Account button colour */
+    padding: 10px 25px 10px 25px;
+    width: 100%;
+    text-align:center;
+    margin:auto;
+}
+
+#pwdmessage {
+    margin: 0px;
+    padding: 0px;
+}
+
+#pwdmessage2 {
+    margin: 0px;
+    padding: 5px;
+    color: #bce4e3; /* do not show password to anyone text colour */
+}
+
+#forgotpwd {
+    color: grey; /* Forgot Password colour */
+    margin: 5px;
+    text-align: center;
+}
+
+li {
+    padding-top: 10px;
+}
+
+
+

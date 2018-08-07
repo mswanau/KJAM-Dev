@@ -1,9 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+.navbar {
+    background-color: #2b7a78;
+    background-image: none;
+    background-repeat: no-repeat;
+}
 
-#header {
 
+.allContainer {
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 #footer {
-	
 }

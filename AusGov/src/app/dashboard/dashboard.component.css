@@ -1,0 +1,32 @@
+p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.buttonDash {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 100%;
+    height: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #f5fbfb;
+}
+
+.colour1 {
+    background-color: #5f6366;
+}
+
+.colour2 {
+    background-color: #4d6d9a;
+}
+
+.logoutButton {
+    width: 150px;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    background-color: #17252a;
+    color: #f5fbfb;   
+}
