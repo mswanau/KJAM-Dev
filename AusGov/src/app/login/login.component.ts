@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { User } from '../user'
-import { UsersService } from '../users.service';
+import { AuthenticationService } from '../authentication.service';
 import { Observable } from 'rxjs';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
@@ -11,15 +13,31 @@ import { Observable } from 'rxjs';
 })
 export class LoginComponent implements OnInit {
 
-  users$: Object;
+  loginForm: FormGroup;
   
-  constructor(private data: UsersService) { }
+  constructor(
+    private auth: AuthenticationService,
+    private formBuilder: FormBuilder,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
-    this.data.getUsers().subscribe(
-      data => this.users$ = data
-    )
+    this.loginForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+    this.auth.logoutUser();
   }
 
+
+  get form() { return this.loginForm.controls; }
+
+  // To be called when form is submitted
+  onSubmit() {
+    this.auth.loginUser(this.form.email.value, this.form.password.value);
+    if (localStorage.getItem('currentUser') != null) {
+      this.router.navigate(['https://www.google.com'])
+    }
+  }
 }
 

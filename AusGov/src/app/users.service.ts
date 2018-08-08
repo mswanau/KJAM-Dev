@@ -8,11 +8,12 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
+  // Return list of all users and their details
   getUsers() {
     return this.http.get('http://localhost:3000/users')
   }
 
-  //TODO create dummy users
+  // Return a specific user denoted by the userId
   getUser(userId) {
     return this.http.get('http://localhost:3000/users/'+userId)
   }
