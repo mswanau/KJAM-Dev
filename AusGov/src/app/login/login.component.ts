@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { User } from '../user'
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -9,9 +8,14 @@ import { User } from '../user'
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  model: any = {};
+  
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+  onSubmit() {
+    this.router.navigate(['/dashboard']);
   }
 
 }

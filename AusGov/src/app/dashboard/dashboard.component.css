@@ -1,13 +1,16 @@
+.welcome-text {
+    margin-top: 80px;
+}
+
 p {
     text-align: center;
     margin-top: 15px;
 }
 
 .buttonDash {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    height: 100%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
     height: 80px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -28,5 +31,6 @@ p {
     margin: auto;
     margin-top: 10px;
     background-color: #17252a;
-    color: #f5fbfb;   
+    color: #f5fbfb;  
+    margin-bottom: 60px; 
 }

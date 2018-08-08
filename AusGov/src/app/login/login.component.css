@@ -16,7 +16,7 @@ hr {
 
  .col-md-7 {
     width: 100%;
-    padding: 0 5% 0 5%;
+    padding: 0 5% 60px 5%;
 
  }
 
@@ -26,14 +26,14 @@ hr {
     background-image: none;
     background-repeat: no-repeat;
     color: #f5fbfb; /* Login text colour */
-    min-height:450px;
+    padding-bottom: 20px;
 }
 
 
 .services {
     background-color: #f0f0f0; /* Services container colour */
     color: #909090; /* Services container text colour */
-
+    padding-bottom: 60px;
 }
 
 .signin {
@@ -75,5 +75,16 @@ li {
     padding-top: 10px;
 }
 
+.container-fluid {
+    padding-top: 60px;
+}
+
+
+@media screen and (min-width: 1000px) {
+.row-first {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}}
 
 

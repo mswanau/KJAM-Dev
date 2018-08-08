@@ -1,23 +1,46 @@
-<span class="sr-only">Australian Government login page. Please enter email address followed
-    by your password. If you are registering please press tab 5 times and enter</span>
-<div class="allContainer">
-<div class="row">
+
+<div class="container-fluid h-100 d-inline-block">
+
+        <span class="sr-only">Australian Government login page. Please enter email address followed
+                by your password. If you are registering please press tab 5 times and enter</span>
+            
+
+<div class="row row-first">
     <div class="col-md-5">
 
 <div class="container p-3">
-<form>
+<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" nonvalidate>
+
     <div class="form-group email">
         <label for="email">&nbsp;<h5>Email</h5></label>
-        <input type="email" class="form-control" id="email">
+        <input type="email" class="form-control" id="email" name="you@email.com" [(ngModel)]="model.email" #email="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email />
+
+        <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+            <div *ngIf="email.errors.required">Email is required</div>
+            <div *ngIf="email.errors.email">Email must be a valid email address</div>
+        </div>
     </div>
+
     <div class="form-group">
         <label for="pwd" id="pwdmessage">&nbsp;<h5>Password</h5></label>
         <p id="pwdmessage2">Do not show your password to anyone</p>
-        <input type="password" class="form-control" id="pwd">
+        <input type="password" class="form-control" id="pwd" name="password" [(ngModel)]="model.password" #password="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6" />
+
+        <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+        
     </div>
-    <a routerLink="/dashboard"><button type="submit" class="btn signin">Sign in</button></a>
+    <button type="submit" class="btn signin">Sign In<a routerLink="/dashboard"></a></button> 
+    </form>
+
     <p id="forgotpwd"><u>Forgot password? Click here</u></p>
     <hr>
+    
+    <form>
     <button type="submit" class="btn createAcc">Create an Account</button>
 </form>
 </div> 
@@ -41,5 +64,6 @@
     </ul>
 </div>
 </div>
+
 </div>
 </div>

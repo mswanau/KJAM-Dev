@@ -6,10 +6,9 @@
 }
 
 
-.allContainer {
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
-
-#footer {
-}
+@media screen and (min-width: 1000px) {
+.row-first {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}}
