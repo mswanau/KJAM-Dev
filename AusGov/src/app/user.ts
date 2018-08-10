@@ -6,7 +6,9 @@ export class User {
         public last_name: string,
         public email: string,
         public password: string,
-        public dob: string,
+        public phone: string,
+        public address: string,
+        public birth_date: string
     ) {}
 
 }
