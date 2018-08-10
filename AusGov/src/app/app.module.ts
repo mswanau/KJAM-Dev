@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { ReactiveFormsModule }   from '@angular/forms';
+import { ReactiveFormsModule, FormsModule }   from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,10 +9,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './login/login.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpInterceptor } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 import { AuthenticationService } from './authentication.service';
 import { UsersService } from './users.service';
+import { User } from './user';
 
 @NgModule({
   declarations: [
@@ -23,13 +25,16 @@ import { UsersService } from './users.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+    HttpModule
   ],
   providers: [
     AuthenticationService,
-    UsersService
+    UsersService,
+    HttpInterceptor,
   ],
   bootstrap: [AppComponent]
 })
