@@ -7,7 +7,7 @@
 
 
 @media screen and (min-width: 1000px) {
-.row-first {
+.row-width {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
@@ -38,3 +38,14 @@ hr {
     padding: 5%;
     max-width: 800px;
  }
+
+ .footer-button {
+    background-color: #4d6d9a; /* Set footer button colours */
+    border: 0px;
+    padding: 5px 20px 5px 20px;
+    color: white; /* Set text colour for buttons */
+}
+
+.footer-button:hover {
+    background-color: #4d9895;  /* Set footer button hovered colours */ 
+}

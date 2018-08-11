@@ -2,14 +2,6 @@
     border: 1.5px solid #e8e8ea; /* Line break colour and size */
  }
 
- .col-md-5 {
-    width: 100%;
- }
-
- .col-md-7 {
-    width: 100%;
- }
-
 .services {
     background-color: #f0f0f0; /* Services container colour */
     color: #909090; /* Services container text colour */

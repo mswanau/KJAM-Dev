@@ -1,12 +1,14 @@
 <div class="container-fluid h-100 d-inline-block">
 
+  <!-- Form for the first page of registration, will perform function from the registratio.ts file -->
   <form name="form" class="registerForm" (ngSubmit)="onSubmitBasicInformation()">
 
-    <div class="form-row row-first">
+    <div class="form-row row-width">
 
       <div class="container container-register">
         <h1>Basic Information</h1>
         <hr>
+        <!-- Created rows for form inputs on same line, here is first and last name -->
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputFirstName">First Name</label>
@@ -18,40 +20,43 @@
           </div>
         </div>
 
+        <!-- Email Address input -->
         <div class="form-group">
           <label for="emailAddress">Email Address</label>
           <input type="email" class="form-control" id="emailAddress" placeholder="Email Address">
         </div>
 
+        <!-- Contact number and date of birth on same line -->
         <div class="form-row">
-
           <div class="form-group col-md-6">
             <label for="phoneNum">Contact Number</label>
             <input type="number" class="form-control" id="phoneNum" placeholder="0000 000 000">
           </div>
-
           <div class="form-group col-md-6">
             <Label for="DOB">Date of Birth</Label>
             <input type="date" class="form-control" id="DOB">
           </div>
         </div>
         
+        <!-- Address input -->
         <div class="form-group">
           <label for="inputAddress">Address</label>
           <input type="text" class="form-control" id="inputAddress" placeholder="123 Name Street">
         </div>
 
+        <!-- Line 2 of address -->
         <div class="form-group">
           <label for="inputAddress2">Address 2</label>
           <input type="text" class="form-control" id="inputAddress2" placeholder="Suburb">
         </div>
 
+        <!-- Row for city, state and post code all on same line -->
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputCity">City</label>
             <input type="text" class="form-control" id="inputCity">
           </div>
-
+          <!-- Have selectable elements as each state of Australia -->
           <div class="form-group col-md-4">
             <label for="inputState">State</label>
             <select id="inputState" class="form-control">
@@ -64,7 +69,6 @@
               <option>WA</option>
             </select>
           </div>
-
           <div class="form-group col-md-2">
             <label for="inputZip">Zip</label>
             <input type="text" class="form-control" id="inputZip">
@@ -72,6 +76,7 @@
         </div>
 
         <hr>
+        <!-- Row for paragraph and check box -->
         <div class="form-row">
           <div class="col-10">
           <p class="text-sm-center">Would you like to connect to other sources to prefill, or fully complete your infromation? Please check the box if so.</p>
@@ -85,6 +90,7 @@
         </div>
         </div>
 
+        <!-- Using pagination for the navigation through registration -->
         <div class="row navigation">
           <div class="col-md-4">
             <p class="text stage">Stage</p>
@@ -97,13 +103,14 @@
                 </ul>
               </nav>
           </div>
-
+          
+          <!-- Close icon -->
           <div class="col-md-4">
             <button type="button " class="close" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-
+          <!-- Next button -->
           <div class="col-md-4">
             <button type="submit" class="btn signin"  id="nextIcon">Next</button> 
           </div>
