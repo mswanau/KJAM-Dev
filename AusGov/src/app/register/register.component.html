@@ -1,0 +1,115 @@
+<div class="container-fluid h-100 d-inline-block">
+
+  <form name="form" class="registerForm" (ngSubmit)="onSubmitBasicInformation()">
+
+    <div class="form-row row-first">
+
+      <div class="container container-register">
+        <h1>Basic Information</h1>
+        <hr>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputFirstName">First Name</label>
+            <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputLastName">Last Name</label>
+            <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="emailAddress">Email Address</label>
+          <input type="email" class="form-control" id="emailAddress" placeholder="Email Address">
+        </div>
+
+        <div class="form-row">
+
+          <div class="form-group col-md-6">
+            <label for="phoneNum">Contact Number</label>
+            <input type="number" class="form-control" id="phoneNum" placeholder="0000 000 000">
+          </div>
+
+          <div class="form-group col-md-6">
+            <Label for="DOB">Date of Birth</Label>
+            <input type="date" class="form-control" id="DOB">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="inputAddress">Address</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="123 Name Street">
+        </div>
+
+        <div class="form-group">
+          <label for="inputAddress2">Address 2</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Suburb">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="inputCity">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="inputState">State</label>
+            <select id="inputState" class="form-control">
+              <option selected>Choose...</option>
+              <option>NSW</option>
+              <option>QLD</option>
+              <option>SA</option>
+              <option>TAS</option>
+              <option>VIC</option>
+              <option>WA</option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-2">
+            <label for="inputZip">Zip</label>
+            <input type="text" class="form-control" id="inputZip">
+          </div>
+        </div>
+
+        <hr>
+        <div class="form-row">
+          <div class="col-10">
+          <p class="text-sm-center">Would you like to connect to other sources to prefill, or fully complete your infromation? Please check the box if so.</p>
+        </div>
+        <div class="col-2">
+            <div class="form-check">
+                <input class="form-check-input form-control-lg" type="checkbox" value="" id="prefillDataCheckBox">
+                <label class="form-check-label" for="prefillDataCheckBox">
+                </label>
+              </div>
+        </div>
+        </div>
+
+        <div class="row navigation">
+          <div class="col-md-4">
+            <p class="text stage">Stage</p>
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item active"><a class="page-link" href="#"></a></li>
+                  <li class="page-item"><a class="page-link" href="#"></a></li>
+                  <li class="page-item"><a class="page-link" href="#"></a></li>
+                  <li class="page-item"><a class="page-link" href="#"></a></li>
+                </ul>
+              </nav>
+          </div>
+
+          <div class="col-md-4">
+            <button type="button " class="close" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="col-md-4">
+            <button type="submit" class="btn signin"  id="nextIcon">Next</button> 
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</div>

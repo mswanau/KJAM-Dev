@@ -8,7 +8,33 @@
 
 @media screen and (min-width: 1000px) {
 .row-first {
-    max-width: 1200px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }}
+
+.container-fluid {
+    padding: 60px 5% 70px 5%;
+}
+
+.container {
+    margin-block-start: 20px;
+    background-color: #60beba; /* Login container colour */
+    background-image: none;
+    background-repeat: no-repeat;
+    color: #f5fbfb; /* Login text colour */
+    padding-bottom: 20px;
+    min-height: 462px;
+}
+
+hr {
+    margin-bottom: 15px;
+    margin-top: 5px;
+    width: 100%;
+    border: 1.5px solid #4d9895; /* Line break colour and size */
+ }
+
+ .container-register {
+    padding: 5%;
+    max-width: 800px;
+ }

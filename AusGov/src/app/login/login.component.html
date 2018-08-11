@@ -1,69 +1,69 @@
-
 <div class="container-fluid h-100 d-inline-block">
 
-        <span class="sr-only">Australian Government login page. Please enter email address followed
-                by your password. If you are registering please press tab 5 times and enter</span>
+    <!-- sr-only will read the text below when narrator is on. Is invisible on screen -->
+    <span class="sr-only">Australian Government login page. Please enter email address followed
+        by your password. If you are registering please press tab 5 times and enter</span>
             
 
-<div class="row row-first">
-    <div class="col-md-5">
+    <div class="row row-first">
+        <div class="col-md-5">
 
-<div class="container p-3">
-<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" nonvalidate>
+            <div class="container p-3">
+                <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" nonvalidate>
 
-    <div class="form-group email">
-        <label for="email">&nbsp;<h5>Email</h5></label>
-        <input type="email" class="form-control" id="email" name="you@email.com" [(ngModel)]="model.email" #email="ngModel"
-            [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email />
+                    <div class="form-group email">
+                        <label for="email">&nbsp;<h5>Email</h5></label>
+                        <input type="email" class="form-control" id="email" name="you@email.com" [(ngModel)]="model.email" #email="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email />
 
-        <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
-            <div *ngIf="email.errors.required">Email is required</div>
-            <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                        <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                            <div class="alert alert-danger" role="alert" *ngIf="email.errors.required">Email is required</div>
+                            <div class="alert alert-danger" role="alert" *ngIf="email.errors.email">Email must be a valid email address</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pwd" id="pwdmessage">&nbsp;<h5>Password</h5></label>
+                        <p id="pwdmessage2">Don't show your password to anyone</p>
+                        <input type="password" class="form-control" id="pwd" name="password" [(ngModel)]="model.password" #password="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6" />
+
+                        <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                            <div class="alert alert-danger" role="alert" *ngIf="password.errors.required">Password is required</div>
+                            <div class="alert alert-danger" role="alert" *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+                        </div>
+                        
+                    </div>
+                    <button type="submit" class="btn signin">Sign In</button> 
+                </form>
+
+                <p id="forgotpwd"><u>Forgot password? Click here</u></p>
+                <hr>
+
+                <form name="form-register" (ngSubmit)="onSubmitRegister()">
+                    <a href="#/dashboard"><button type="submit" class="btn createAcc">Create an Account</button></a>
+                </form>
+            </div> 
+        </div>
+
+        <div class="col-md-7">
+            <div class="container p-3 services">
+
+                <h4>OurAus Services</h4>
+                <hr id="servicesLineBreak">
+                <ul>
+                    <li>Australian JobSearch</li>
+                    <li>Australian Taxation Office</li>
+                    <li>Centrelink</li>
+                    <li>Child Support</li>
+                    <li>Department of Veteran's Affairs</li>
+                    <li>Medicare</li>
+                    <li>My Aged Care</li>
+                    <li>My Health Record</li>
+                    <li>National Disability Insurance Scheme</li>
+                    <li>Victorian Housing Register Application</li>
+                </ul>
+            </div>
         </div>
     </div>
-
-    <div class="form-group">
-        <label for="pwd" id="pwdmessage">&nbsp;<h5>Password</h5></label>
-        <p id="pwdmessage2">Do not show your password to anyone</p>
-        <input type="password" class="form-control" id="pwd" name="password" [(ngModel)]="model.password" #password="ngModel"
-            [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6" />
-
-        <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
-            <div *ngIf="password.errors.required">Password is required</div>
-            <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
-        </div>
-        
-    </div>
-    <button type="submit" class="btn signin">Sign In<a routerLink="/dashboard"></a></button> 
-    </form>
-
-    <p id="forgotpwd"><u>Forgot password? Click here</u></p>
-    <hr>
-    
-    <form>
-    <button type="submit" class="btn createAcc">Create an Account</button>
-</form>
-</div> 
-</div>
-<div class="col-md-7">
-
-<div class="container p-3 services">
-    <h4>OurAus Services</h4>
-    <hr id="servicesLineBreak">
-    <ul>
-        <li>Australian JobSearch</li>
-        <li>Australian Taxation Office</li>
-        <li>Centrelink</li>
-        <li>Child Support</li>
-        <li>Department of Veteran's Affairs</li>
-        <li>Medicare</li>
-        <li>My Aged Care</li>
-        <li>My Health Record</li>
-        <li>National Disability Insurance Scheme</li>
-        <li>Victorian Housing Register Application</li>
-    </ul>
-</div>
-</div>
-
-</div>
 </div>
