@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import {Router} from "@angular/router";
 
 @Component({
@@ -11,7 +11,6 @@ import {Router} from "@angular/router";
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
-  loading = false;
   submitted = false;
 
   stepOne = true;
@@ -24,12 +23,24 @@ export class RegisterComponent implements OnInit {
 
 
 
-  ngOnInit() {
-    this.registerForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      emailAddress: ['', Validators.required]
-    })
+    ngOnInit() {
+      this.registerForm = this.formBuilder.group({
+          firstName: ['', Validators.required],
+          lastName: ['', Validators.required],
+          email: ['', [Validators.required, Validators.email]],
+          phone: ['', Validators.required],
+          dob: ['', Validators.required],
+          address: ['', Validators.required],
+          suburb: ['', Validators.required],
+          city: ['', Validators.required],
+          postcode: ['', Validators.required]
+      });
+  }
+
+  get f() { return this.registerForm.controls; }
+
+  exitRegister() {
+    this.router.navigate(['/login']);
   }
 
   onSubmitStepOne() {
@@ -37,6 +48,19 @@ export class RegisterComponent implements OnInit {
     this.stepTwo = false;
     this.stepThree = false;
     this.stepFour = false;
+  }
+
+  onSubmitStepTwoValidate() {
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+    } else {
+      this.submitted = false;
+      this.stepOne = false;
+      this.stepTwo = true;
+      this.stepThree = false;
+      this.stepFour = false;
+    }
   }
 
   onSubmitStepTwo() {
@@ -61,6 +85,15 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
+    this.submitted = true;
+ 
+    // stop here if form is invalid
+    if (this.registerForm.invalid) {
+      alert('UNSUCCESSFUL!! :-)')
+        return;
+    }
+
+    alert('SUCCESS!! :-)'  + JSON.stringify(this.registerForm.value));
     this.router.navigate(['/login']);
   }
 
