@@ -1,44 +1,49 @@
 <div class="container-fluid">
 
   <div class="welcome-text">
-<p>Welcome to OurAus Dashboard. Please click  below for your desired service.</p>
-<p>If there are any issues please use the email, call or live chat to help you achieve your goal today.</p>
+    <p>Welcome to OurAus Dashboard. Please click  below for your desired service.</p>
+    <p>If there are any issues please use the email, call or live chat to help you achieve your goal today.</p>
   </div>
 
-<div class="row row-first">
+  <!-- Set up two bootstrap rows, add 3 buttons to each row -->
+  <!-- row-width is a setting in styles.css to limit width -->
+  <div class="row row-width">
 
-  <div class="col-md">
-    <a href="#centrelink"><button class="btn buttonDash colour1">Centrelink</button></a>
+    <div class="col-md">
+      <a href="#centrelink"><button class="btn buttonDash colour1">Centrelink</button></a> ADD LINKS
+    </div>
+
+    <div class="col-md">
+      <a href="#AusTax"><button class="btn buttonDash colour2">Australian Taxation Office</button></a>
+    </div>
+
+    <div class="col-md">
+      <a href="#JobSearch"><button class="btn buttonDash colour1">Australian Job Search</button></a>
+    </div>
+
   </div>
 
-  <div class="col-md">
-    <a href="#AusTax"><button class="btn buttonDash colour2">Australian Taxation Office</button></a>
+  <div class="row row-width">
+    <div class="col-md">
+      <a href="#Medicare"><button class="btn buttonDash colour2">Medicare</button></a>
+    </div>
+
+    <div class="col-md">
+      <a href="#AgeCare"><button class="btn buttonDash colour1">My Aged Care</button></a>
+    </div>
+
+    <div class="col-md">
+      <a href="#childSupport"><button class="btn buttonDash colour2">Child Support</button></a>
+    </div>
+    
   </div>
 
-  <div class="col-md">
-    <a href="#JobSearch"><button class="btn buttonDash colour1">Australian Job Search</button></a>
+  <div class="row row-width">
+    <div class="col-md">
+      <a routerLink="/login"><button class="btn logoutButton">Logout</button></a>
+    </div>
   </div>
 
 </div>
 
-<div class="row row-first">
-  <div class="col-md">
-    <a href="#Medicare"><button class="btn buttonDash colour2">Medicare</button></a>
-  </div>
-
-  <div class="col-md">
-    <a href="#AgeCare"><button class="btn buttonDash colour1">My Aged Care</button></a>
-  </div>
-
-  <div class="col-md">
-    <a href="#childSupport"><button class="btn buttonDash colour2">Child Support</button></a>
-  </div>
-  
-</div>
-
-<div class="row row-first">
-  <div class="col-md">
-  <a routerLink="/login"><button class="btn logoutButton">Logout</button></a>
-  </div>
-</div>
-</div>
+<!-- Colours can be changed from dashboards.css script "src/app/dashboard/dashboard.css" -->

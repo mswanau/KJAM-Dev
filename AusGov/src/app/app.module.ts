@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { AppRoutingModule } from './app-routing.module';
+import { RegisterComponent } from './register/register.component';
+
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -20,13 +22,14 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
     HttpClientModule
   ],
   providers: [
