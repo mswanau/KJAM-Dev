@@ -18,13 +18,15 @@
             <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                 <div *ngIf="f.firstName.errors.required">First Name is required</div>
             </div>
-        </div>
+          </div>
+
           <div class="form-group col-md-6">
             <label for="lastName">Last Name</label>
-            <input type="text" formControlName="lastName" class="form-control" id="lastName" placeholder="Last Name" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-               <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-                   <div *ngIf="f.lastName.errors.required">Last Name is required</div>
-               </div>
+            <input type="text" formControlName="lastName" class="form-control" id="lastName" placeholder="Last Name" 
+                [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+              <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+              </div>
           </div>
         </div>
         
@@ -48,9 +50,11 @@
                 <div *ngIf="f.phone.errors.required">Contact Number is required</div>
             </div>
           </div>
+
           <div class="form-group col-md-6">
-            <Label for="DOB">Date of Birth</Label>
-            <input type="date" formControlName="dob" class="form-control" id="DOB" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
+            <label for="DOB">Date of Birth</label>
+            <input type="date" formControlName="dob" class="form-control" id="DOB" 
+                [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
             <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
                 <div *ngIf="f.dob.errors.required">Date of Birth is Required</div>
             </div>
@@ -62,18 +66,18 @@
           <label for="inputAddress">Address</label>
           <input type="text" formControlName="address" class="form-control" id="inputAddress" placeholder="123 Name Street"
               [ngClass]="{ 'is-invalid': submitted && f.address.errors }" />
-            <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
-                <div *ngIf="f.address.errors.required">Address is Required</div>
-            </div>
+          <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+            <div *ngIf="f.address.errors.required">Address is Required</div>
+          </div>
         </div>
 
-        <!-- Line 2 of address -->
+        <!-- Suburb -->
         <div class="form-group">
           <label for="inputAddress2">Suburb</label>
           <input type="text" formControlName="suburb" class="form-control" id="inputAddress2" placeholder="Suburb"
               [ngClass]="{ 'is-invalid': submitted && f.suburb.errors }" />
             <div *ngIf="submitted && f.suburb.errors" class="invalid-feedback">
-                <div *ngIf="f.suburb.errors.required">Suburb is Required</div>
+              <div *ngIf="f.suburb.errors.required">Suburb is Required</div>
             </div>
         </div>
 
@@ -82,11 +86,12 @@
           <div class="form-group col-md-6">
             <label for="inputCity">City</label>
             <input type="text" formControlName="city" class="form-control" id="inputCity"
-                    [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
+                [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
             <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
-                <div *ngIf="f.city.errors.required">Suburb is Required</div>
+              <div *ngIf="f.city.errors.required">Suburb is Required</div>
             </div>
           </div>
+
           <!-- Have selectable elements as each state of Australia -->
           <div class="form-group col-md-4">
             <label for="inputState">State</label>
@@ -102,12 +107,13 @@
               <option>WA</option>
             </select>
           </div>
+
           <div class="form-group col-md-2">
             <label for="inputZip">Post Code</label>
             <input type="text" formControlName="postcode" class="form-control" id="inputZip"
-            [ngClass]="{ 'is-invalid': submitted && f.postcode.errors }" />
+                [ngClass]="{ 'is-invalid': submitted && f.postcode.errors }" />
             <div *ngIf="submitted && f.postcode.errors" class="invalid-feedback">
-                <div *ngIf="f.postcode.errors.required">Post Code is Required</div>
+              <div *ngIf="f.postcode.errors.required">Post Code is Required</div>
             </div>
           </div>
         </div>
@@ -116,15 +122,15 @@
         <!-- Row for paragraph and check box -->
         <div class="form-row">
           <div class="col-10">
-          <p class="text-sm-center">Would you like to connect to other sources to prefill, or fully complete your infromation? Please check the box if so.</p>
-        </div>
-        <div class="col-2">
+            <p class="text-sm-center">Would you like to connect to other sources to prefill, or fully complete your infromation? Please check the box if so.</p>
+          </div>
+          <div class="col-2">
             <div class="form-check">
-                <input class="form-check-input form-control-lg" type="checkbox" value="" id="prefillDataCheckBox">
-                <label class="form-check-label" for="prefillDataCheckBox">
-                </label>
-              </div>
-        </div>
+              <input class="form-check-input form-control-lg" type="checkbox" value="" id="prefillDataCheckBox">
+              <label class="form-check-label" for="prefillDataCheckBox">
+              </label>
+            </div>
+          </div>
         </div>
 
         <!-- Using pagination for the navigation through registration -->
@@ -133,10 +139,10 @@
             <p class="text stage">Stage</p>
               <nav aria-label="Page navigation example">
                 <ul class="pagination">
-                    <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepOne()></button></li>
-                    <li class="page-item"><button type="button" class="page-link" (click)=onSubmitStepTwo()></button></li>
-                    <li class="page-item"><button type="button" class="page-link" (click)=onSubmitStepThree()></button></li>
-                    <li class="page-item"><button type="button" class="page-link" (click)=onSubmitStepFour()></button></li>
+                  <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepOne()></button></li>
+                  <li class="page-item"><button type="button" class="page-link" (click)=onSubmitStepTwo()></button></li>
+                  <li class="page-item"><button type="button" class="page-link" (click)=onSubmitStepThree()></button></li>
+                  <li class="page-item"><button type="button" class="page-link" (click)=onSubmitStepFour()></button></li>
                 </ul>
               </nav>
           </div>
@@ -149,15 +155,17 @@
           </div>
           <!-- Next button -->
           <div class="col-md-4">
-              <button type="button" class="close"  aria-label="close" (click)=onSubmitStepTwoValidate()>
-                  <span aria-hidden="true">&rarr;</span>
-                </button>
+            <button type="button" class="close"  aria-label="close" (click)=onSubmitStepTwoValidate()>
+              <span aria-hidden="true">&rarr;</span>
+            </button>
           </div>
         </div>
 
       </div>
     </div>
     </div>
+
+    <!-- -------------------------------------------------------------------------------------------------- -->
 
     <div *ngIf="stepTwo">
       <div class="form-row row-width">
@@ -214,6 +222,8 @@
     </div>
     </div>
 
+    <!-- --------------------------------------------------------------------------------------------------- -->
+
     <div *ngIf="stepThree">
         <div class="form-row row-width">
 
@@ -256,6 +266,8 @@
           </div>
           </div>
     </div>
+
+    <!-- --------------------------------------------------------------------------------------------- -->
 
     <div *ngIf="stepFour">
         <div class="form-row row-width">
