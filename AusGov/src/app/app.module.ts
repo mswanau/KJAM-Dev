@@ -13,6 +13,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RegisterComponent } from './register/register.component';
 
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,9 +29,12 @@ import { RegisterComponent } from './register/register.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'})
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    HttpClient
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
