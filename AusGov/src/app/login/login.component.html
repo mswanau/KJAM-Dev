@@ -28,7 +28,7 @@
 
                     <!-- Password label and input, with angulars validation -->
                     <div class="form-group">
-                        <label for="pwd" id="pwdmessage">&nbsp;<h5>Password</h5></label>
+                        <label for="pwd" id="pwdmessage">&nbsp;<h5>Password</h5></label> ADD POPOVER FOR PASSWORD
                         <p id="pwdmessage2">Don't show your password to anyone</p>
                         <input type="password" class="form-control" id="pwd" name="password" [(ngModel)]="model.password" #password="ngModel"
                             [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6" />
@@ -39,8 +39,9 @@
                             <div class="alert alert-danger" role="alert" *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
                         </div>  
                     </div>
-                    <!-- Sign in button, will initiate onSubmit function -->
+                    <div class="form-group">
                     <button type="submit" class="btn signin">Sign In</button> 
+                    </div>
                 </form>
 
                 <p id="forgotpwd"><u>Forgot password? Click here</u></p>

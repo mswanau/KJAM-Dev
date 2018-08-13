@@ -11,7 +11,10 @@
 #nextIcon {
     float: right;
     margin-top: 20px;
-    margin-right: 5px;
+}
+
+.prevButton {
+    margin-top: 20px;
 }
 
 .navigation {
@@ -21,4 +24,25 @@
 
 .stage {
     margin-left: 30px;
+}
+
+
+.signin {
+    padding: 20px;
+    margin: 30px;
+    background-color:#2b7a78;
+}
+
+#last {
+    margin-bottom: 60px;
+}
+
+.photo {
+    background-color:#2b7a78;
+    margin-bottom: 20px;
+}
+
+.close2 {
+    font-size: 60px;
+    width: 100%;
 }
