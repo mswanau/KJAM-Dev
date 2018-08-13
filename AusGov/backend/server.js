@@ -83,3 +83,9 @@ app.post('/users', (req, res) => {
     });
     db.close();
 });
+
+// Route for user registration
+app.post('/users/register', (req, res) => {
+    console.log('Register user request.');
+    
+});
