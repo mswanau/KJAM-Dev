@@ -76,9 +76,11 @@ app.post('/users', (req, res) => {
     var db = new sqlite3.Database(db_file);
     db.serialize(() => {
         db.get('SELECT * FROM users WHERE email = (?)', [email], (err, row) => {
-            if (row.password === password) {
+            if (row == null) {
+                res.sendStatus(401) // Return error if email not found
+            } else if (row.password === password) {
                 res.send(row)
-            } else res.sendStatus(401) // Return error if email not found
+            } else res.sendStatus(401) // Return error if password does not match
         })
     });
     db.close();
