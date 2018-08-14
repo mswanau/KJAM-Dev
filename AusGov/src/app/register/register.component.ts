@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import {Router} from "@angular/router";
+import { PasswordValidation } from '../password-validation';
 
 @Component({
   selector: 'app-register',
@@ -34,8 +35,11 @@ export class RegisterComponent implements OnInit {
           suburb: ['', Validators.required],
           city: ['', Validators.required],
           postcode: ['', Validators.required],
-          password: ['', [Validators.required, Validators.minLength(6)]]
-      });
+          password: ['', [Validators.required, Validators.minLength(6)]],
+          verify: ['', [Validators.required, Validators.minLength(6)]]
+      },{
+        validator: PasswordValidation.MatchPassword // your validation method
+      })
   }
 
   get f() { return this.registerForm.controls; }

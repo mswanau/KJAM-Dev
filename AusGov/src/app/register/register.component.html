@@ -132,12 +132,11 @@
           <div class="form-group col-md-6">
             <label for="password">Re-enter Password</label>
             <input type="password" formControlName="verify" class="form-control" id="pwd" required minlength="6"
-                [ngClass]="{ 'is-invalid': submitted && f.password.errors }"  />
+                [ngClass]="{ 'is-invalid': submitted && f.verify.errors }"  />
 
             <!-- Alert message form validation requirements, minlength 6 characters -->
-            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-              <div *ngIf="f.password.errors.required">Password is required</div>
-              <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+            <div *ngIf="submitted && f.verify.errors" class="invalid-feedback">
+                <div *ngIf="f.verify.errors?.MatchPassword">Password not match</div>
             </div>
           </div>
         </div>
