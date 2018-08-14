@@ -45,7 +45,8 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="phone">Contact Number</label>
-            <input type="text" formControlName="phone" class="form-control" id="phone" placeholder="0000 000 000" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+            <input type="text" formControlName="phone" class="form-control" id="phone" maxlength="10"
+                 [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
             <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                 <div *ngIf="f.phone.errors.required">Contact Number is required</div>
             </div>
@@ -295,7 +296,7 @@
 
         <div class="container container-register">
           <h1>Confirm Details</h1>
-          <p><span>First Name: {{ first_name }} </span></p>
+          <p><span>First Name:  </span></p>
           <p><span>Last Name: {{ last_name }} </span></p>
           <p><span>Email Address: {{ email_address }} </span></p>
           <p><span>Date of Birth: {{ dob }} </span></p>
