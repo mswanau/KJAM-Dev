@@ -4,8 +4,8 @@ const parser = require('body-parser');
 const app = express();
 const cors = require('cors');
 
-//var router = express.Router();
-
+var bcrypt = require('bcrypt');
+const saltRounds = 10;
 const db_file = './data.db';
 const port = 3000;
 
@@ -71,14 +71,14 @@ app.get('/users/:email', (req, res) => {
 // Route for user authentication (login)
 app.post('/users', (req, res) => {
     console.log('Login user request.')
-    const email = req.body.uemail;
-    const password = req.body.upassword; 
+    var email = req.body.uemail;
+    var password = req.body.upassword; 
     var db = new sqlite3.Database(db_file);
     db.serialize(() => {
         db.get('SELECT * FROM users WHERE email = (?)', [email], (err, row) => {
             if (row == null) {
                 res.sendStatus(401) // Return error if email not found
-            } else if (row.password === password) {
+            } else if (bcrypt.compareSync(password, row.password)) {
                 res.send(row)
             } else res.sendStatus(401) // Return error if password does not match
         })
@@ -89,5 +89,26 @@ app.post('/users', (req, res) => {
 // Route for user registration
 app.post('/users/register', (req, res) => {
     console.log('Register user request.');
-    
+    // Gather all inputs
+    var first_name = req.body.first_name;
+    var last_name = req.body.last_name;
+    var phone = req.body.phone;
+    var address = req.body.address;
+    var suburb = req.body.suburb;
+    var city = req.body.city;
+    var postcode = req.body.postcode;
+    var email = req.body.email;
+    var password = bcrypt.hashSync(req.body.password, saltRounds);
+
+    db.serialize(() => {
+        var stmt = db.prepare(
+            `INSERT INTO users(
+                first_name, last_name, email, password, phone, address, suburb, city, postcode, birth_date
+            ) VALUES (?,?,?,?,?,?,?,?,?,?)`
+        );
+        stmt.run([first_name, last_name, email, password, address, suburb, city, postcode, birth_date]);
+        stmt.finalize();
+        db.res.sendStatus(201);
+    })
+
 });
