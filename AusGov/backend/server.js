@@ -5,7 +5,7 @@ const app = express();
 const cors = require('cors');
 
 var bcrypt = require('bcrypt');
-const saltRounds = 10;
+const saltRounds = 1000;
 const db_file = './data.db';
 const port = 3000;
 
@@ -23,22 +23,7 @@ app.use(cors(corsOptions));
 // Listen to specified port
 app.listen(port, () => {
     console.log('Server initialised.');
-    // var db = new sqlite3.Database('./data.db');
-
-    // db.serialize(() => {
-    //     var stmt = db.prepare(
-    //         `INSERT INTO users(
-    //             id, first_name, last_name, email, password, phone, address, birth_date
-    //         ) VALUES (?,?,?,?,?,?,?,?)`
-    //     );
-    //     stmt.run(['123456789', 'John', 'Doe', 'john@mail.com', 'password', '12345678', '1 Fake St', '1980-10-10']);
-    //     stmt.finalize();
-
-    //     db.each('SELECT * FROM users', function (err, row) {
-    //         console.log(row.first_name)
-    //     })
-
-    // })
+    // TODO delete and refill database
   });
 
 // Route for returning all users
@@ -89,6 +74,8 @@ app.post('/users', (req, res) => {
 // Route for user registration
 app.post('/users/register', (req, res) => {
     console.log('Register user request.');
+    var id = 140632963;
+
     // Gather all inputs
     var first_name = req.body.first_name;
     var last_name = req.body.last_name;
@@ -103,12 +90,18 @@ app.post('/users/register', (req, res) => {
     db.serialize(() => {
         var stmt = db.prepare(
             `INSERT INTO users(
-                first_name, last_name, email, password, phone, address, suburb, city, postcode, birth_date
-            ) VALUES (?,?,?,?,?,?,?,?,?,?)`
+                id, first_name, last_name, email, password, phone, address, suburb, city, postcode, birth_date
+            ) VALUES (?,?,?,?,?,?,?,?,?,?,?)`
         );
         stmt.run([first_name, last_name, email, password, address, suburb, city, postcode, birth_date]);
         stmt.finalize();
-        db.res.sendStatus(201);
+        db.res.send(201, req.body);
     })
-
 });
+
+// Route for password reset
+app.get('/users/reset/:email', (req, res) => {
+    console.log('User password reset.');
+    var email = req.params['email'];
+    // TODO email user
+})
