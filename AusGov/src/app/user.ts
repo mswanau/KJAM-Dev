@@ -8,6 +8,10 @@ export class User {
         public password: string,
         public phone: string,
         public address: string,
+        public suburb: string,
+        public city: string,
+        public state: string,
+        public postcode: number,
         public birth_date: string
     ) {}
 
