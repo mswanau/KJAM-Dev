@@ -33,7 +33,8 @@ export class RegisterComponent implements OnInit {
           address: ['', Validators.required],
           suburb: ['', Validators.required],
           city: ['', Validators.required],
-          postcode: ['', Validators.required]
+          postcode: ['', Validators.required],
+          password: ['', [Validators.required, Validators.minLength(6)]]
       });
   }
 
