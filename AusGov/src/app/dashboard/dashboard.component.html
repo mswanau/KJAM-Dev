@@ -1,7 +1,13 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page"><a routerLink="/dashboard">Dashboard</a></li>    
+  </ol>
+</nav>
+
 <div class="container-fluid">
 
   <div class="welcome-text">
-    <p>Welcome to OurAus Dashboard. Please click  below for your desired service.</p>
+    <p id="textOne">Welcome to OurAus Dashboard. Please click  below for your desired service.</p>
     <p>If there are any issues please use the email, call or live chat to help you achieve your goal today.</p>
   </div>
 
@@ -10,30 +16,30 @@
   <div class="row row-width">
 
     <div class="col-md">
-      <a href="#centrelink"><button class="btn buttonDash colour1">Centrelink</button></a> ADD LINKS
+      <a routerLink="/dashboard/centrelink"><button class="btn buttonDash colour1">Centrelink</button></a>
     </div>
 
     <div class="col-md">
-      <a href="#AusTax"><button class="btn buttonDash colour2">Australian Taxation Office</button></a>
+      <a routerLink="/UnderConstruction"><button class="btn buttonDash colour2">Australian Taxation Office</button></a>
     </div>
 
     <div class="col-md">
-      <a href="#JobSearch"><button class="btn buttonDash colour1">Australian Job Search</button></a>
+      <a routerLink="/UnderConstruction"><button class="btn buttonDash colour1">Australian Job Search</button></a>
     </div>
 
   </div>
 
   <div class="row row-width">
     <div class="col-md">
-      <a href="#Medicare"><button class="btn buttonDash colour2">Medicare</button></a>
+      <a routerLink="/UnderConstruction"><button class="btn buttonDash colour2">Medicare</button></a>
     </div>
 
     <div class="col-md">
-      <a href="#AgeCare"><button class="btn buttonDash colour1">My Aged Care</button></a>
+      <a routerLink="/UnderConstruction"><button class="btn buttonDash colour1">My Aged Care</button></a>
     </div>
 
     <div class="col-md">
-      <a href="#childSupport"><button class="btn buttonDash colour2">Child Support</button></a>
+      <a routerLink="/UnderConstruction"><button class="btn buttonDash colour2">Child Support</button></a>
     </div>
     
   </div>

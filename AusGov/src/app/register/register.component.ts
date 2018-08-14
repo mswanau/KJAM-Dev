@@ -96,5 +96,4 @@ export class RegisterComponent implements OnInit {
     alert('SUCCESS!! :-)'  + JSON.stringify(this.registerForm.value));
     this.router.navigate(['/login']);
   }
-
 }

@@ -1,8 +1,10 @@
 .welcome-text {
     text-align: center;
-    margin-top: 15px;
 }
 
+#textOne {
+    margin-top: -60px;
+}
 .buttonDash {
     width: 90%;
     margin-left: 5%;
