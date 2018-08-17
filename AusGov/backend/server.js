@@ -5,7 +5,7 @@ const app = express();
 const cors = require('cors');
 
 var bcrypt = require('bcrypt');
-const saltRounds = 1000;
+var saltRounds = 10;
 const db_file = './data.db';
 const port = 3000;
 
@@ -74,6 +74,7 @@ app.post('/users', (req, res) => {
 // Route for user registration
 app.post('/users/register', (req, res) => {
     console.log('Register user request.');
+    var db = new sqlite3.Database(db_file);
     var id = 140632963;
 
     // Gather all inputs
@@ -86,6 +87,7 @@ app.post('/users/register', (req, res) => {
     var postcode = req.body.postcode;
     var email = req.body.email;
     var password = bcrypt.hashSync(req.body.password, saltRounds);
+    var birth_date = req.body.birth_date;
 
     db.serialize(() => {
         var stmt = db.prepare(
@@ -93,10 +95,11 @@ app.post('/users/register', (req, res) => {
                 id, first_name, last_name, email, password, phone, address, suburb, city, postcode, birth_date
             ) VALUES (?,?,?,?,?,?,?,?,?,?,?)`
         );
-        stmt.run([first_name, last_name, email, password, address, suburb, city, postcode, birth_date]);
+        stmt.run([id, first_name, last_name, email, password, phone, address, suburb, city, postcode, birth_date]);
         stmt.finalize();
         db.res.send(201, req.body);
     })
+    db.close();
 });
 
 // Route for password reset
