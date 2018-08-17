@@ -1,3 +1,33 @@
-<p>
-  centrelink-dashboard works!
-</p>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item" aria-current="page"><a routerLink="/dashboard">Dashboard</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><a routerLink="/dashboard/centrelink">Centrelink</a></li>      
+  </ol>
+</nav>
+
+<div class="container-fluid">
+
+
+  <!-- Set up two bootstrap rows, add 3 buttons to each row -->
+  <!-- row-width is a setting in styles.css to limit width -->
+  <div class="row row-width">
+
+    <a routerLink="/dashboard/centrelink"><button class="btn buttonDash colour1" ><p>Next Payment</p><p>$500</p></button></a>
+
+  </div>
+
+      <div class="row row-width">
+
+    <div class="col-md">
+      <a routerLink="/UnderConstruction"><button class="btn buttonDash colour2">MAKE A CLAIM</button></a>
+    </div>
+
+    <div class="col-md">
+      <a routerLink="/UnderConstruction"><button class="btn buttonDash colour1">MY OUTSTANDING CLAIMS</button></a>
+    </div>
+    <div class="col-md">
+      <a routerLink="/UnderConstruction"><button class="btn buttonDash colour2">PROCESSED CLAIMS</button></a>
+    </div>
+
+    </div>
+</div>
