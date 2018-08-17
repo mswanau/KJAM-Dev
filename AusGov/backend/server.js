@@ -9,6 +9,9 @@ var saltRounds = 10;
 const db_file = './data.db';
 const port = 3000;
 
+const MAXID = 999999999;
+const MINID = 100000000;
+
 var corsOptions = {
     origin: 'http://localhost:4200',
     optionsSuccessStatus: 200
@@ -75,7 +78,9 @@ app.post('/users', (req, res) => {
 app.post('/users/register', (req, res) => {
     console.log('Register user request.');
     var db = new sqlite3.Database(db_file);
-    var id = 140632963;
+
+    // Generate random ID
+    var id = Math.floor(Math.random() * MAXID) + MINID
 
     // Gather all inputs
     var first_name = req.body.first_name;
@@ -92,12 +97,16 @@ app.post('/users/register', (req, res) => {
     db.serialize(() => {
         var stmt = db.prepare(
             `INSERT INTO users(
-                id, first_name, last_name, email, password, phone, address, suburb, city, postcode, birth_date
-            ) VALUES (?,?,?,?,?,?,?,?,?,?,?)`
+                id, first_name, last_name, email, password, phone, address, suburb, city, state, postcode, birth_date
+            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)`
         );
         stmt.run([id, first_name, last_name, email, password, phone, address, suburb, city, postcode, birth_date]);
         stmt.finalize();
-        db.res.send(201, req.body);
+
+        // Return the newly created user
+        db.get('SELECT * FROM users WHERE id = (?)', [id], (err, row) => {
+            res.send(row)
+        })
     })
     db.close();
 });
