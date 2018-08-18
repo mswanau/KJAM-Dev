@@ -5,9 +5,12 @@ const app = express();
 const cors = require('cors');
 
 var bcrypt = require('bcrypt');
-const saltRounds = 1000;
+var saltRounds = 10;
 const db_file = './data.db';
 const port = 3000;
+
+const MAXID = 999999999;
+const MINID = 100000000;
 
 var corsOptions = {
     origin: 'http://localhost:4200',
@@ -74,7 +77,10 @@ app.post('/users', (req, res) => {
 // Route for user registration
 app.post('/users/register', (req, res) => {
     console.log('Register user request.');
-    var id = 140632963;
+    var db = new sqlite3.Database(db_file);
+
+    // Generate random ID
+    var id = Math.floor(Math.random() * MAXID) + MINID
 
     // Gather all inputs
     var first_name = req.body.first_name;
@@ -86,17 +92,23 @@ app.post('/users/register', (req, res) => {
     var postcode = req.body.postcode;
     var email = req.body.email;
     var password = bcrypt.hashSync(req.body.password, saltRounds);
+    var birth_date = req.body.birth_date;
 
     db.serialize(() => {
         var stmt = db.prepare(
             `INSERT INTO users(
-                id, first_name, last_name, email, password, phone, address, suburb, city, postcode, birth_date
-            ) VALUES (?,?,?,?,?,?,?,?,?,?,?)`
+                id, first_name, last_name, email, password, phone, address, suburb, city, state, postcode, birth_date
+            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)`
         );
-        stmt.run([first_name, last_name, email, password, address, suburb, city, postcode, birth_date]);
+        stmt.run([id, first_name, last_name, email, password, phone, address, suburb, city, postcode, birth_date]);
         stmt.finalize();
-        db.res.send(201, req.body);
+
+        // Return the newly created user
+        db.get('SELECT * FROM users WHERE id = (?)', [id], (err, row) => {
+            res.send(row)
+        })
     })
+    db.close();
 });
 
 // Route for password reset
