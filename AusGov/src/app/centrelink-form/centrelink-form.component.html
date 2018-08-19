@@ -1,3 +1,161 @@
-<p>
-  centrelink-form works!
-</p>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item" aria-current="page"><a routerLink="/dashboard">Dashboard</a></li>
+      <li class="breadcrumb-item" aria-current="page"><a routerLink="/dashboard/centrelink">Centrelink</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><a routerLink="/dashboard/centrelink/centrelink-form">Centrelink Claim</a></li>      
+    </ol>
+  </nav>
+
+<div class="container-fluid h-100 d-inline-block">
+
+<!-- Form for the first page of registration, will perform function from the registratio.ts file -->
+  <form  (ngSubmit)="onSubmit()">
+    <div *ngIf="stepOne">
+      <!--<div *ngIf="stepOne">-->
+      <div class="form-row row-width">
+
+        <div class="container container-centrelinkform">
+          <h1>Check Eligibility</h1>
+          <hr>
+          <div class="form-row">
+            <p>Are you currently studying full time?&nbsp;&nbsp; <input type="checkbox"/></p>
+          </div>
+          <div class="form-row">
+            <p> YO &nbsp;&nbsp; <input type="text" /></p>
+          </div>
+
+          <!-- Using pagination for the navigation through registration -->
+          <div class="row navigation">
+            <div class="col-md-4">
+              <p class="text stage">Stage</p>
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepOne()></button></li>
+                  <li class="page-item"><button type="button" class="page-link" (click)=onSubmitStepTwo()></button></li>
+                  <li class="page-item"><button type="button" class="page-link" (click)=onSubmitStepThree()></button></li>
+                  <li class="page-item"><button type="button" class="page-link" (click)=onSubmitStepFour()></button></li>
+                </ul>
+              </nav>
+            </div>
+
+          <!-- Close icon -->
+            <div class="col-md-4">
+              <button type="button " class="close" aria-label="Close" routerLink='/dashboard/centrelink'>
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <!-- Next button -->
+            <div class="col-md-4">
+              <button type="button" class="close"  aria-label="close" (click)=onSubmitStepTwo()>
+                <span aria-hidden="true">&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="stepTwo">
+      <div class="form-row row-width">
+
+        <div class="container container-centrelinkform">
+
+        <!-- Using pagination for the navigation through registration -->
+          <div class="row navigation">
+            <div class="col-md-4">
+              <p class="text stage">Stage</p>
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepOne()></button></li>
+                  <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepTwo()></button></li>
+                  <li class="page-item"><button type="button" class="page-link" (click)=onSubmitStepThree()></button></li>
+                  <li class="page-item"><button type="button" class="page-link" (click)=onSubmitStepFour()></button></li>
+                </ul>
+              </nav>
+            </div>
+
+            <!-- Close icon -->
+            <div class="col-md-4">
+              <button type="button " class="close" aria-label="Close" (click)=onSubmitStepOne()>
+                <span aria-hidden="true">&larr;</span>
+              </button>
+            </div>
+            <!-- Next button -->
+            <div class="col-md-4">
+              <button type="button" class="close"  aria-label="close" (click)=onSubmitStepThree()>
+                <span aria-hidden="true">&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="stepThree">
+      <div class="form-row row-width">
+        <div class="container container-centrelinkform">
+
+        <!-- Using pagination for the navigation through registration -->
+          <div class="row navigation">
+            <div class="col-md-4">
+              <p class="text stage">Stage</p>
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepOne()></button></li>
+                  <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepTwo()></button></li>
+                  <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepThree()></button></li>
+                  <li class="page-item"><button type="button" class="page-link" (click)=onSubmitStepFour()></button></li>
+                </ul>
+              </nav>
+            </div>
+
+            <!-- Close icon -->
+            <div class="col-md-4">
+              <button type="button " class="close" aria-label="Close" (click)=onSubmitStepTwo()>
+                <span aria-hidden="true">&larr;</span>
+              </button>
+            </div>
+            <!-- Next button -->
+            <div class="col-md-4">
+              <button type="button" class="close"  aria-label="close" (click)=onSubmitStepFour()>
+                <span aria-hidden="true">&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="stepFour">
+      <div class="form-row row-width">
+        <div class="container container-centrelinkform">
+        <!-- Using pagination for the navigation through registration -->
+          <div class="row navigation">
+            <div class="col-md-4">
+              <p class="text stage">Stage</p>
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepOne()></button></li>
+                  <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepTwo()></button></li>
+                  <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepThree()></button></li>
+                  <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepFour()></button></li>
+                </ul>
+              </nav>
+            </div>
+
+          <!-- Close icon -->
+            <div class="col-md-4">
+              <button type="button " class="close" aria-label="Close" (click)=onSubmitStepThree()>
+                <span aria-hidden="true">&larr;</span>
+              </button>
+            </div>
+            <!-- Next button -->
+            <div class="form-group col-md-4">
+              <button type="submit" class="btn signin"  id="nextIcon">Finish</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

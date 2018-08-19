@@ -1,0 +1,54 @@
+.container-centrelinkform {
+    padding: 5%;
+    max-width: 800px;
+}
+
+
+#prefillDataCheckBox {
+    width: 100%;
+    height: 100%;
+}
+
+.close {
+    font-size: 60px;
+    width: 100%;
+}
+
+#nextIcon {
+    float: right;
+    margin-top: 20px;
+}
+
+.prevButton {
+    margin-top: 20px;
+}
+
+.navigation {
+    flex-wrap: nowrap;
+    margin-bottom: -5%;
+}
+
+.stage {
+    margin-left: 30px;
+}
+
+
+.signin {
+    padding: 20px;
+    margin: 30px;
+    background-color:#2b7a78;
+}
+
+#last {
+    margin-bottom: 60px;
+}
+
+.photo {
+    background-color:#2b7a78;
+    margin-bottom: 20px;
+}
+
+.close2 {
+    font-size: 60px;
+    width: 100%;
+}

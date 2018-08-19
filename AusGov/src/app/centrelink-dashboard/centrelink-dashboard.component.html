@@ -7,19 +7,22 @@
 
 <div class="container-fluid">
 
+  <div class="welcome-text">
+    <p id="textOne">Centrelink Dashboard</p>
+    <p>text text text</p>
+  </div>
 
   <!-- Set up two bootstrap rows, add 3 buttons to each row -->
   <!-- row-width is a setting in styles.css to limit width -->
   <div class="row row-width">
-
-    <a routerLink="/dashboard/centrelink"><button class="btn buttonDash colour1" ><p>Next Payment</p><p>$500</p></button></a>
-
+    <div class="col-md">
+      <a routerLink="/UnderConstruction"><button class="btn buttonDash colour1 paymentBut" >Next Payment</button></a>
+    </div>
   </div>
 
-      <div class="row row-width">
-
+  <div class="row row-width">
     <div class="col-md">
-      <a routerLink="/UnderConstruction"><button class="btn buttonDash colour2">MAKE A CLAIM</button></a>
+      <a routerLink="/dashboard/centrelink/centrelink-form"><button class="btn buttonDash colour2">MAKE A CLAIM</button></a>
     </div>
 
     <div class="col-md">
@@ -28,6 +31,11 @@
     <div class="col-md">
       <a routerLink="/UnderConstruction"><button class="btn buttonDash colour2">PROCESSED CLAIMS</button></a>
     </div>
+  </div>
 
+  <div class="row row-width">
+    <div class="col-md">
+      <a routerLink="/dashboard"><button class="btn logoutButton">Exit</button></a>
     </div>
+  </div>
 </div>
