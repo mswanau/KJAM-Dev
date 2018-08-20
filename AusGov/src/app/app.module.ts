@@ -17,6 +17,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { ProgressPageComponent } from './progress-page/progress-page.component';
 import { CentrelinkDashboardComponent } from './centrelink-dashboard/centrelink-dashboard.component';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CentrelinkDashboardComponent } from './centrelink-dashboard/centrelink-
     DashboardComponent,
     RegisterComponent,
     ProgressPageComponent,
-    CentrelinkDashboardComponent
+    CentrelinkDashboardComponent,
+    PasswordResetComponent
   ],
   imports: [
     BrowserModule,
