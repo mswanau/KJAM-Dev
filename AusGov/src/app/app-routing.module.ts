@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { ProgressPageComponent } from './progress-page/progress-page.component';
 import { CentrelinkDashboardComponent } from './centrelink-dashboard/centrelink-dashboard.component';
 import { CentrelinkFormComponent } from './centrelink-form/centrelink-form.component';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'UnderConstruction', component: ProgressPageComponent },
   { path: 'dashboard/centrelink', component: CentrelinkDashboardComponent },
-  { path: 'dashboard/centrelink/centrelink-form', component: CentrelinkFormComponent}
+  { path: 'dashboard/centrelink/centrelink-form', component: CentrelinkFormComponent},
+  { path: 'reset', component: PasswordResetComponent }
 ];
 
 @NgModule({

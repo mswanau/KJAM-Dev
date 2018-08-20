@@ -45,8 +45,13 @@ export class UserService {
 
   // Log user in
   loginUser(email: string, password: string) {
-    console.log('login');
     var body = {uemail: email, upassword: password};
     return this.http.post<User>('http://localhost:3000/users', body);
+  }
+
+  // Reset password of user with specified email
+  resetPassword(email: string, password: string) {
+    var body = {email: email, password: password}
+    return this.http.put<void>('http://localhost:3000/users/reset', body)
   }
 }

@@ -112,8 +112,15 @@ app.post('/users/register', (req, res) => {
 });
 
 // Route for password reset
-app.get('/users/reset/:email', (req, res) => {
+app.put('/users/reset', (req, res) => {
     console.log('User password reset.');
-    var email = req.params['email'];
-    // TODO email user
+    var db = new sqlite3.Database(db_file);
+
+    var email = req.body.email;
+    var password = bcrypt.hashSync(req.body.password, saltRounds);
+
+    var stmt = db.prepare(`UPDATE users SET password = ? WHERE email = ?`);
+    stmt.run([password, email]);
+    stmt.finalize();
+    db.close();
 })
