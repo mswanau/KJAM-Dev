@@ -3,14 +3,23 @@
     height: 100%;
 }
 
-.close {
+.close  {
     font-size: 60px;
     width: 100%;
+    margin: auto;
+    margin-left: -10%;
+    float: left;
 }
 
 #nextIcon {
-    float: right;
-    margin-top: 20px;
+    float: left;
+    margin-top: 15px;
+    padding: 10px;
+    margin-left: -35px;
+    width: 100%;
+    max-width: 50%;
+    min-width: 70px;
+    background-color:#2b7a78;
 }
 
 .prevButton {
@@ -20,6 +29,12 @@
 .navigation {
     flex-wrap: nowrap;
     margin-bottom: -5%;
+    position: absolute;
+    width: 100%;
+}
+
+.next {
+    width: 100%;
 }
 
 .stage {
@@ -45,4 +60,9 @@
 .close2 {
     font-size: 60px;
     width: 100%;
+}
+
+.container-register {
+    position: relative;
+    padding-bottom: 100px;
 }
