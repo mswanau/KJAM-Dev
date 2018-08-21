@@ -102,6 +102,21 @@
           <h1>Extra Documentation</h1>
           <hr>
           <div class="form-row">
+            <h4><span><button type="button" class="btn signin"></button> Rental Agreement </span></h4>
+          </div>
+  
+          <div class="form-row">
+            <h4><span><button type="button" class="btn signin"></button> Proof of Identity </span></h4>
+          </div>
+  
+          <div class="form-row">
+            <h4><span><button type="button" class="btn signin" ></button>ETC</span></h4>
+          </div>
+
+          <div class="form-row">
+            <p>The required Documentation can simply be uploaded via scan or mobile. 
+              You may also come into the office however it is not required
+            </p>
           </div>
 
         <!-- Using pagination for the navigation through registration -->
@@ -142,7 +157,41 @@
           <h1>Claim Complete</h1>
           <hr>
           <div class="form-row">
+            <p>Congratulations!</p>
+            </div>
+            <div class="form-row">
+            <p>You have completed the claim process. The estimated completion date is below:</p>
           </div>
+
+            <p>28/11/2018</p>
+            <p>14 Days</p>
+            <p>For updates on the claim and the progression please choose how you would like
+              to be notified
+            </p>
+            <div class="form-row">
+              <div class="col-md">
+                <p>Email</p>
+              </div>
+              <div class="col-md">
+                <p>Call</p>
+              </div>
+              <div class="col-md">
+                <p>SMS</p>
+              </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md">
+                  <input type="checkbox"/>
+                </div>
+                <div class="col-md">
+                  <input type="checkbox"/>
+                </div>
+                <div class="col-md">
+                  <input type="checkbox"/>  
+                </div>
+              </div>
+
         <!-- Using pagination for the navigation through registration -->
           <div class="row navigation">
             <div class="col-md-4">
@@ -165,7 +214,7 @@
             </div>
             <!-- Next button -->
             <div class="form-group col-md-4">
-              <button type="submit" class="btn signin"  id="nextIcon">Finish</button> 
+              <a routerLink='/dashboard/centrelink'><button type="submit" class="btn signin"  id="nextIcon">Finish</button></a> 
             </div>
           </div>
         </div>
