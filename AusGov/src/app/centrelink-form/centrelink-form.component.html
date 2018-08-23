@@ -17,12 +17,60 @@
         <div class="container container-centrelinkform">
           <h1>Check Eligibility</h1>
           <hr>
-          <div class="form-row">
-            <p>Are you currently studying full time?&nbsp;&nbsp; <input type="checkbox"/></p>
-          </div>
-          <div class="form-row">
-            <p> YO &nbsp;&nbsp; <input type="text" /></p>
-          </div>
+          <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Education
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p>Are you currently studying?&nbsp;&nbsp; <input type="checkbox"/></p>
+                    <p>Full time or Part time? Full time <input type="checkbox"/> Part time <input type="checkbox"/></p>
+                    <p>If so, where are you studying? <input type="text"/></p>
+                    <p>When is your expected completion date? <input type="date"/></p>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                  <button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Living Conditions
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                  <p>Do you live with a Parent / Guardian? <input type="checkbox"/> </p>
+                  <p>Do you live out of home renting? <input type="checkbox"/></p>
+                  <p>How much do you pay each week in rent?<input type="number"/></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                  <button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Work Information
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                  <p>Do you currently have a full/part or casual job? <input type="checkbox"/></p>
+                  <p>What is your average weekly amount of hours at work? <input type="number"/></p>
+                  <p>What is your average gross income per week? $<input type="number"/></p>
+                </div>
+              </div>
+            </div>
+            </div>
 
           <!-- Using pagination for the navigation through registration -->
           <div class="row navigation">
@@ -62,6 +110,10 @@
             <h1>Results</h1>
             <hr>
             <div class="form-row">
+              <h1>Congratulations you are eligible!!!</h1>
+              <p>You may do the Student Allowance Claim</p>
+              <p>Please allow our system to compile your information to make this as simple as possible</p>
+              <p>The following page will require minimal action to complete your claim, thank you.</p>
             </div>
 
         <!-- Using pagination for the navigation through registration -->

@@ -25,6 +25,16 @@ export class RegisterComponent implements OnInit {
   currentUser: User;
   // tempUser: User;
 
+  firstName = '';
+  lastName = '';
+  email = '';
+  phone = '';
+  address = '';
+  suburb = '';
+  city = '';
+  postcode = '';
+  dob = '';
+
   constructor( 
     private formBuilder: FormBuilder,
     private router: Router,
