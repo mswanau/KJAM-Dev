@@ -200,8 +200,32 @@
         <p>Please add details of the following;</p>
 
         <div class="form-row">
-          <h4><span><button type="button" class="btn signin"></button> University </span></h4>
+          <div *ngIf="uni"><h4><span><button type="button" class="btn signin" data-toggle="modal" data-target="#uniLogin"></button> University </span></h4></div>
         </div>
+        <div id="uniLogin" class="modal fade" role="dialog">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <h4 class="modal-title">University Connect</h4>
+            <div class="modal-body">
+              <p>Please use your university login details below</p>
+              <label>Username</label>
+              <input type="text"/>
+              <label>Password</label>
+              <input type="password"/>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal" (click)=uniRemove()>Submit</button>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div *ngIf="uniMessage" class="form-row alert alert-primary">
+          <p>Successfully connected to your University Account, Study details will now be prefilled. Thankyou</p>
+        </div>
+
+
+
 
         <div class="form-row">
           <h4><span><button type="button" class="btn signin"></button> Australian Taxation Office </span></h4>
@@ -299,16 +323,61 @@
         <div class="container container-register">
           <h1>Confirm Details</h1>
           <hr>
-          <p><span>First Name:  </span></p>
-          <p><span>Last Name: {{ last_name }} </span></p>
-          <p><span>Email Address: {{ email_address }} </span></p>
-          <p><span>Date of Birth: {{ dob }} </span></p>
-          <p><span>Address: {{ address1 }} </span></p>
-          <p><span>Address: {{ address2 }} </span></p>
-          <p><span>City: {{ city }} </span></p>
-          <p><span>State: {{ state }} </span></p>
-          <p><span>Zip Code: {{ zip_code }} </span></p>
+          <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Basic Information
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  <p><span>First Name:  {{ firstName }} </span></p>
+                  <p><span>Last Name: {{ lastName }} </span></p>
+                  <p><span>Email Address: {{ email }} </span></p>
+                  <p><span>Phone Number: {{ phone }} </span></p>
+                  <p><span>Date of Birth: {{ dob }} </span></p>
+                  <p><span>Address: {{ address }} </span></p>
+                  <p><span>Suburb: {{ suburb }} </span></p>
+                  <p><span>City: {{ city }} </span></p>
+                  <p><span>Post Code: {{ postcode }} </span></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                  <button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Study Information
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Work Information
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                  </div>
+                </div>
+              </div>
+
+          </div>
           
+
 
         <!-- Using pagination for the navigation through registration -->
           <div class="row navigation">

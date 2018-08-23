@@ -19,6 +19,8 @@ export class RegisterComponent implements OnInit {
   stepTwo = false;
   stepThree = false;
   stepFour = false;
+  uni = true;
+  uniMessage = false;
 
   currentUser: User;
   // tempUser: User;
@@ -28,8 +30,6 @@ export class RegisterComponent implements OnInit {
     private router: Router,
     private users: UserService
   ) { }
-
-
 
     ngOnInit() {
       this.registerForm = this.formBuilder.group({
@@ -94,8 +94,22 @@ export class RegisterComponent implements OnInit {
     this.stepTwo = false;
     this.stepThree = false;
     this.stepFour = true;
+
+    this.firstName = this.registerForm.value.firstName;
+    this.lastName = this.registerForm.value.lastName;
+    this.email = this.registerForm.value.email;
+    this.phone = this.registerForm.value.phone;
+    this.address = this.registerForm.value.address;
+    this.suburb = this.registerForm.value.suburb;
+    this.city = this.registerForm.value.city;
+    this.postcode = this.registerForm.value.postcode;
+    this.dob = this.registerForm.value.dob;
   }
 
+  uniRemove() {
+    this.uni = false;
+    this.uniMessage = true;
+  }
   onSubmit() {
     this.submitted = true;
  
@@ -104,6 +118,8 @@ export class RegisterComponent implements OnInit {
       alert('UNSUCCESSFUL!! :-)')
         return;
     }
+
+    
 
 
 
