@@ -124,3 +124,36 @@ app.put('/users/reset', (req, res) => {
     stmt.finalize();
     db.close();
 })
+
+
+
+
+
+
+// Routes for University-side API usage
+
+app.put('/student/update', (req, res) => {
+    console.log('Student update.');
+    var db = new sqlite3.Database(db_file);
+
+    var studentNo = req.body.studentNo;
+    var id = req.body.id;
+    var institue = req.body.institue
+
+    // Insert student details
+    var stmt = db.prepare(`INSERT INTO students (institute, student_id) VALUES (?,?)`);
+    stmt.run([institue, studentNo]);
+    stmt.finalize();
+
+    // Get new reference ID
+    var stmt = db.prepare(`SELECT id FROM students WHERE (institute, student_id) = (?,?)`);
+    var referenceId = stmt.run([institue, studentNo]);
+    stmt.finalize();
+
+    // Update users table
+    var stmt = db.prepare(`UPDATE users SET student = ? WHERE id = ?`);
+    var referenceId = stmt.run([referenceId, id]);
+    stmt.finalize();
+})
+
+
