@@ -1,6 +1,8 @@
+/* #005757 dark blue, #037D96 blue */
+
 /* You can add global styles to this file, and also import other style files */
 .navbar {
-    background-color: #2b7a78;
+    background-color: #005757;
     background-image: none;
     background-repeat: no-repeat;
 }
@@ -23,7 +25,7 @@
 
 .container {
     margin-block-start: 20px;
-    background-color: #60beba; /* Login container colour */
+    background-color: #037D96; /* Login container colour */
     background-image: none;
     background-repeat: no-repeat;
     color: #f5fbfb; /* Login text colour */

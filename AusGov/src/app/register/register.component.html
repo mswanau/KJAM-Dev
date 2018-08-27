@@ -54,7 +54,7 @@
 
           <div class="form-group col-md-6">
             <label for="DOB">Date of Birth</label>
-            <input type="date" formControlName="dob" class="form-control" id="DOB" 
+            <input type="date" formControlName="dob" class="form-control" id="DOB" max="9999-12-31"
                 [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
             <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
                 <div *ngIf="f.dob.errors.required">Date of Birth is Required</div>
