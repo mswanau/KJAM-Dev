@@ -6,5 +6,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StudentService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  updateStudent(studentNo, id, institute) {
+    var body = {
+      'studentNo': studentNo,
+      'id': id,
+      'institute': institute
+    }
+    return this.http.put('http://localhost:3000/student/update', body);
+  }
 }
