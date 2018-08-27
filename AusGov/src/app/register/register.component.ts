@@ -20,10 +20,11 @@ export class RegisterComponent implements OnInit {
   stepThree = false;
   stepFour = false;
   uni = true;
+  otherAccounts = true;
   uniMessage = false;
+  otherAccountsMessage = false;
 
   currentUser: User;
-  // tempUser: User;
 
   firstName = '';
   lastName = '';
@@ -128,24 +129,6 @@ export class RegisterComponent implements OnInit {
       alert('UNSUCCESSFUL!! :-)')
         return;
     }
-
-    
-
-
-
-    // this.tempUser.id = 111111111, // Placeholder ID
-    // this.tempUser.first_name = this.registerForm.value.firstName,
-    // this.tempUser.last_name = this.registerForm.value.lastName,
-    // this.tempUser.email = this.registerForm.value.email,
-    // this.tempUser.password = this.registerForm.value.password,
-    // this.tempUser.phone = this.registerForm.value.phone,
-    // this.tempUser.address = this.registerForm.value.address,
-    // this.tempUser.suburb = this.registerForm.value.suburb,
-    // this.tempUser.city = this.registerForm.value.city,
-    // this.tempUser.state = this.registerForm.value.state,
-    // this.tempUser.postcode = this.registerForm.value.postcode,
-    // this.tempUser.birth_date = this.registerForm.value.dob
-    
 
     this.users.registerUser(
       this.registerForm.value.firstName,
