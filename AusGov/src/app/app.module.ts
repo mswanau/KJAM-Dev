@@ -15,6 +15,7 @@ import { ProgressPageComponent } from './progress-page/progress-page.component';
 import { CentrelinkDashboardComponent } from './centrelink-dashboard/centrelink-dashboard.component';
 import { CentrelinkFormComponent } from './centrelink-form/centrelink-form.component';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
+import { WebcamModule } from 'ngx-webcam';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
     PasswordResetComponent
   ],
   imports: [
+    WebcamModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,
