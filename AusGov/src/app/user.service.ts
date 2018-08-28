@@ -26,7 +26,8 @@ export class UserService {
   }
 
   // Add user
-  registerUser(firstName, lastName, email, password, phone, address, suburb, city, state, postcode, birthDate) {
+  registerUser(firstName, lastName, email, password, phone, address, suburb, 
+    city, state, postcode, birthDate, guardian1, guardian2, partner) {
     var body = {
       first_name: firstName,
       last_name: lastName,
@@ -38,7 +39,10 @@ export class UserService {
       city: city,
       state: state,
       postcode: postcode,
-      birth_date: birthDate
+      birth_date: birthDate,
+      guardian1: guardian1,
+      guardian2: guardian2,
+      partner: partner
     }
     return this.http.post<User>('http://localhost:3000/users/register', body);
   }

@@ -35,6 +35,9 @@ export class RegisterComponent implements OnInit {
   city = '';
   postcode = '';
   dob = '';
+  guardian1 = '';
+  guardian2 = '';
+  partnerId = '';
 
   constructor( 
     private formBuilder: FormBuilder,
@@ -54,7 +57,10 @@ export class RegisterComponent implements OnInit {
           city: ['', Validators.required],
           postcode: ['', Validators.required],
           password: ['', [Validators.required, Validators.minLength(6)]],
-          verify: ['', [Validators.required, Validators.minLength(6)]]
+          verify: ['', [Validators.required, Validators.minLength(6)]],
+          guardian1: [''],
+          guardian2: [''],
+          partnerId: ['']
       },{
         validator: PasswordValidation.MatchPassword // your validation method
       })
@@ -141,7 +147,10 @@ export class RegisterComponent implements OnInit {
       this.registerForm.value.city,
       this.registerForm.value.state,
       this.registerForm.value.postcode,
-      this.registerForm.value.dob
+      this.registerForm.value.dob,
+      this.registerForm.value.guardian1,
+      this.registerForm.value.guardian2,
+      this.registerForm.value.partnerId
     ).subscribe(
       users => {
         this.currentUser = users;

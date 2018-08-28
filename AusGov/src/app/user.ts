@@ -12,7 +12,11 @@ export class User {
         public city: string,
         public state: string,
         public postcode: number,
-        public birth_date: string
+        public birth_date: string,
+        public guardian1: number,
+        public guardian2: number,
+        public partner: number,
+        public student: number
     ) {}
 
 }

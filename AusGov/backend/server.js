@@ -93,14 +93,19 @@ app.post('/users/register', (req, res) => {
     var email = req.body.email;
     var password = bcrypt.hashSync(req.body.password, saltRounds);
     var birth_date = req.body.birth_date;
+    var guardian1 = req.body.guardian1;
+    var guardian2 = req.body.guardian2;
+    var partner = req.body.partner;
 
     db.serialize(() => {
         var stmt = db.prepare(
             `INSERT INTO users(
-                id, first_name, last_name, email, password, phone, address, suburb, city, state, postcode, birth_date
-            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)`
+                id, first_name, last_name, email, password, phone, address, suburb, city, state, 
+                postcode, birth_date, guardian1, guardian2, partner
+            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`
         );
-        stmt.run([id, first_name, last_name, email, password, phone, address, suburb, city, postcode, birth_date]);
+        stmt.run([id, first_name, last_name, email, password, phone, address, 
+            suburb, city, postcode, birth_date, guardian1, guardian2, partner]);
         stmt.finalize();
 
         // Return the newly created user
