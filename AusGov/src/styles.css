@@ -5,6 +5,7 @@
     background-color: #005757;
     background-image: none;
     background-repeat: no-repeat;
+    color: white;
 }
 
 .breadcrumb {
@@ -25,7 +26,7 @@
 
 .container {
     margin-block-start: 20px;
-    background-color: #037D96; /* Login container colour */
+    background-color: #0176D5; /* Login container colour */
     background-image: none;
     background-repeat: no-repeat;
     color: #f5fbfb; /* Login text colour */
@@ -37,7 +38,8 @@ hr {
     margin-bottom: 15px;
     margin-top: 5px;
     width: 100%;
-    border: 1.5px solid #4d9895; /* Line break colour and size */
+    border: 1.5px solid black; /* Line break colour and size */
+    background-color: black;
  }
 
  .container-register {
@@ -46,7 +48,7 @@ hr {
  }
 
  .footer-button {
-    background-color: #4d6d9a; /* Set footer button colours */
+    background-color: black; /* Set footer button colours */
     border: 0px;
     padding: 5px 20px 5px 20px;
     color: white; /* Set text colour for buttons */
