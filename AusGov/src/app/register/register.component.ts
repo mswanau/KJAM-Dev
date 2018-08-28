@@ -19,17 +19,28 @@ export class RegisterComponent implements OnInit {
   stepTwo = false;
   stepThree = false;
   stepFour = false;
+  uni = true;
+  otherAccounts = true;
+  uniMessage = false;
+  otherAccountsMessage = false;
 
   currentUser: User;
-  // tempUser: User;
+
+  firstName = '';
+  lastName = '';
+  email = '';
+  phone = '';
+  address = '';
+  suburb = '';
+  city = '';
+  postcode = '';
+  dob = '';
 
   constructor( 
     private formBuilder: FormBuilder,
     private router: Router,
     private users: UserService
   ) { }
-
-
 
     ngOnInit() {
       this.registerForm = this.formBuilder.group({
@@ -94,8 +105,22 @@ export class RegisterComponent implements OnInit {
     this.stepTwo = false;
     this.stepThree = false;
     this.stepFour = true;
+
+    this.firstName = this.registerForm.value.firstName;
+    this.lastName = this.registerForm.value.lastName;
+    this.email = this.registerForm.value.email;
+    this.phone = this.registerForm.value.phone;
+    this.address = this.registerForm.value.address;
+    this.suburb = this.registerForm.value.suburb;
+    this.city = this.registerForm.value.city;
+    this.postcode = this.registerForm.value.postcode;
+    this.dob = this.registerForm.value.dob;
   }
 
+  uniRemove() {
+    this.uni = false;
+    this.uniMessage = true;
+  }
   onSubmit() {
     this.submitted = true;
  
@@ -104,22 +129,6 @@ export class RegisterComponent implements OnInit {
       alert('UNSUCCESSFUL!! :-)')
         return;
     }
-
-
-
-    // this.tempUser.id = 111111111, // Placeholder ID
-    // this.tempUser.first_name = this.registerForm.value.firstName,
-    // this.tempUser.last_name = this.registerForm.value.lastName,
-    // this.tempUser.email = this.registerForm.value.email,
-    // this.tempUser.password = this.registerForm.value.password,
-    // this.tempUser.phone = this.registerForm.value.phone,
-    // this.tempUser.address = this.registerForm.value.address,
-    // this.tempUser.suburb = this.registerForm.value.suburb,
-    // this.tempUser.city = this.registerForm.value.city,
-    // this.tempUser.state = this.registerForm.value.state,
-    // this.tempUser.postcode = this.registerForm.value.postcode,
-    // this.tempUser.birth_date = this.registerForm.value.dob
-    
 
     this.users.registerUser(
       this.registerForm.value.firstName,
