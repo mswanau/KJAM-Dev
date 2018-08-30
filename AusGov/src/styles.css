@@ -2,7 +2,7 @@
 
 /* You can add global styles to this file, and also import other style files */
 .navbar {
-    background-color: #005757;
+    background-color: #E37222;
     background-image: none;
     background-repeat: no-repeat;
     color: white;
@@ -26,7 +26,7 @@
 
 .container {
     margin-block-start: 20px;
-    background-color: #0176D5; /* Login container colour */
+    background-color: #07889B; /* Login container colour */
     background-image: none;
     background-repeat: no-repeat;
     color: #f5fbfb; /* Login text colour */
