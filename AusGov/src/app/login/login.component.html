@@ -1,14 +1,14 @@
-<div class="container-all">
-<div class="container-fluid h-100 d-inline-block">
+<div class="page-container">
 
     <!-- sr-only will read the text below when narrator is on. Is invisible on screen -->
     <span class="sr-only">Australian Government login page. Please enter email address followed
         by your password. If you are registering please press tab 5 times and enter</span>
+
+        <div class="container-content">
             
 
-    <div class="row row-width">
-        <div class="col-md-5">
-            <div class="container p-3">
+    <div class="row">
+        <div class="col-md-5 login-container">
 
                 <!-- Form on submit will perform function from the component.ts file -->
                 <!-- following form uses Angulars client side validation -->
@@ -41,24 +41,22 @@
                         </div>  
                     </div>
                     <div class="form-group">
-                    <button type="submit" class="btn signin">Sign In</button> 
+                    <button type="submit" class="btn formButton lightButton">Sign In</button> 
                     </div>
                 </form>
 
-                <a routerLink='/reset'><p id="forgotpwd">Forgot password? Click here</p></a>
+                <a routerLink='/reset'><p class="forgotpwd">Forgot password? Click here</p></a>
                 <hr>
 
                 <!-- form for when register button is submitted -->
-                <a routerLink='/register'><button type="submit" class="btn createAcc">Create an Account</button></a>
-            </div> 
+                <a routerLink='/register'><button type="submit" class="btn formButton darkButton">Create an Account</button></a>
         </div>
       
         <!-- OurAus information column -->
-        <div class="col-md-7">
-            <div class="container p-3 services">
+        <div class="col-md-7 login-container">
 
                 <h4>OurAus Services</h4>
-                <hr id="servicesLineBreak">
+                <hr>
                 <ul>
                     <li>Australian JobSearch</li>
                     <li>Australian Taxation Office</li>
@@ -71,11 +69,9 @@
                     <li>National Disability Insurance Scheme</li>
                     <li>Victorian Housing Register Application</li>
                 </ul>
-            </div>
         </div>
     </div>
-</div>
-
+    </div>
 </div>
 
 <!-- For colours go to the login.css script in the same folder -->

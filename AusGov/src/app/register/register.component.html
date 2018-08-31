@@ -1,4 +1,5 @@
-<div class="container-fluid h-100 d-inline-block">
+<div class="page-container">
+    
 
   <!-- Form for the first page of registration, will perform function from the registration.ts file -->
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
@@ -6,7 +7,7 @@
     <div *ngIf="stepOne">
     <div class="form-row row-width">
 
-      <div class="container container-register">
+      <div class="container-content register-container">
         <h1>Basic Information</h1>
         <hr>
         <!-- Created rows for form inputs on same line, here is first and last name -->
@@ -157,34 +158,17 @@
           </div>
         </div>
 
-        <!-- Using pagination for the navigation through registration -->
-        <div class="row navigation">
-          <div class="col-md-4">
-            <p class="text stage">Stage</p>
-              <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                  <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepOne()></button></li>
-                  <li class="page-item"><button type="button" class="page-link" (click)=onSubmitStepTwo()></button></li>
-                  <li class="page-item"><button type="button" class="page-link" (click)=onSubmitStepThree()></button></li>
-                  <li class="page-item"><button type="button" class="page-link" (click)=onSubmitStepFour()></button></li>
-                </ul>
-              </nav>
-          </div>
-          
-          <!-- Close icon -->
-          <div class="col-md-4">
-            <button type="button " class="close" aria-label="Close" (click)=exitRegister()>
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <!-- Next button -->
-          <div class="col-md-4">
-            <button type="button" class="close next"  aria-label="close" (click)=onSubmitStepTwoValidate()>
-              <span aria-hidden="true">&rarr;</span>
-            </button>
-          </div>
-        </div>
 
+          <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+              <li class="page-item active"><a class="page-link" (click)=onSubmitStepOne()>1</a></li>
+              <li class="page-item"><a class="page-link" (click)=onSubmitStepTwo()>2</a></li>
+              <li class="page-item"><a class="page-link" (click)=onSubmitStepThree()>3</a></li>
+              <li class="page-item"><a class="page-link" (click)=onSubmitStepFour()>4</a></li>
+              <li class="page-item"><a class="page-link" (click)=onSubmitStepTwo()>Next</a></li>
+            </ul>
+          </nav>
+       
       </div>
     </div>
     </div>
@@ -192,15 +176,15 @@
     <!-- -------------------------------------------------------------------------------------------------- -->
 
     <div *ngIf="stepTwo">
-      <div class="form-row row-width">
+        <div class="form-row row-width">
 
-      <div class="container container-register">
+            <div class="container-content register-container">
         <h1>Information Shortcuts</h1>
         <hr>
         <p>Please add details of the following;</p>
 
         <div class="form-row">
-          <div *ngIf="uni"><h4><span><button type="button" class="btn signin" data-toggle="modal" data-target="#uniLogin"></button> University </span></h4></div>
+          <div *ngIf="uni"><h4><span><button type="button" class="btn buttonForm" data-toggle="modal" data-target="#uniLogin"> University </button></span></h4></div>
         </div>
         <div id="uniLogin" class="modal fade" role="dialog">
           <div class="modal-dialog modal-sm">
@@ -228,15 +212,15 @@
 
 
         <div class="form-row">
-          <h4><span><button type="button" class="btn signin"></button> Australian Taxation Office </span></h4>
+          <h4><span><button type="button" class="btn buttonForm"> Australian Taxation Office </button></span></h4>
         </div>
 
         <div class="form-row">
-          <h4><span><button type="button" class="btn signin" ></button> Department of Transport </span></h4>
+          <h4><span><button type="button" class="btn buttonForm" > Department of Transport </button></span></h4>
         </div>
 
         <div class="form-row">
-          <div *ngIf="otherAccounts"><h4><span><button type="button" class="btn signin" data-toggle="modal" data-target="#otherAccounts"></button> Related OurAus Accounts </span></h4></div>
+          <div *ngIf="otherAccounts"><h4><span><button type="button" class="btn buttonForm" data-toggle="modal" data-target="#otherAccounts"> Related OurAus Accounts</button> </span></h4></div>
         </div>
         <div id="otherAccounts" class="modal fade" role="dialog">
           <div class="modal-dialog modal-sm">
@@ -262,35 +246,16 @@
           <p>Successfully connected related accounts, these details will now be prefilled. Thank you.</p>
         </div>
 
-
-
-          <!-- Using pagination for the navigation through registration -->
-        <div class="row navigation">
-            <div class="col-md-4">
-              <p class="text stage">Stage</p>
-                <nav aria-label="Page navigation example">
-                  <ul class="pagination">
-                    <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepOne()></button></li>
-                    <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepTwo()></button></li>
-                    <li class="page-item"><button type="button" class="page-link" (click)=onSubmitStepThree()></button></li>
-                    <li class="page-item"><button type="button" class="page-link" (click)=onSubmitStepFour()></button></li>
-                  </ul>
-                </nav>
-            </div>
-            
-            <!-- Close icon -->
-            <div class="col-md-4">
-              <button type="button" class="close"  aria-label="close" (click)=onSubmitStepOne()>
-                <span aria-hidden="true">&larr;</span>
-              </button>
-            </div>
-            <!-- Next button -->
-            <div class="col-md-4">
-              <button type="button" class="close"  aria-label="close" (click)=onSubmitStepThree()>
-                <span aria-hidden="true">&rarr;</span>
-              </button> 
-            </div>
-          </div>
+            <nav aria-label="Page navigation">
+              <ul class="pagination justify-content-center">
+                <li class="page-item"><a class="page-link" (click)=onSubmitStepOne()>Previous</a></li>
+                <li class="page-item"><a class="page-link" (click)=onSubmitStepOne()>1</a></li>
+                <li class="page-item active"><a class="page-link" (click)=onSubmitStepTwo()>2</a></li>
+                <li class="page-item"><a class="page-link" (click)=onSubmitStepThree()>3</a></li>
+                <li class="page-item"><a class="page-link" (click)=onSubmitStepFour()>4</a></li>
+                <li class="page-item"><a class="page-link" (click)=onSubmitStepThree()>Next</a></li>
+              </ul>
+            </nav>
         </div>
       </div>
     </div>
@@ -298,9 +263,9 @@
     <!-- --------------------------------------------------------------------------------------------------- -->
 
     <div *ngIf="stepThree">
-      <div class="form-row row-width">
+        <div class="form-row row-width">
 
-        <div class="container container-register">
+            <div class="container-content register-container">
           <h1>Photo Verification</h1>
           <hr>
 
@@ -310,33 +275,17 @@
 
           <div class="form-row"></div>
 
-        <!-- Using pagination for the navigation through registration -->
-        <div class="row navigation">
-            <div class="col-md-4">
-              <p class="text stage">Stage</p>
-                <nav aria-label="Page navigation example">
-                  <ul class="pagination">
-                    <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepOne()></button></li>
-                    <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepTwo()></button></li>
-                    <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepThree()></button></li>
-                    <li class="page-item"><button type="button" class="page-link" (click)=onSubmitStepFour()></button></li>
-                  </ul>
-                </nav>
-            </div>
-            
-            <!-- Close icon -->
-            <div class="col-md-4">
-              <button type="button" class="close"  aria-label="close" (click)=onSubmitStepTwo()>
-                <span aria-hidden="true">&larr;</span>
-              </button>
-            </div>
-            <!-- Next button -->
-            <div class="col-md-4">
-              <button type="button" class="close"  aria-label="close" (click)=onSubmitStepFour()>
-                <span aria-hidden="true">&rarr;</span>
-              </button>
-            </div>
-          </div>
+
+              <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item"><a class="page-link" (click)=onSubmitStepTwo()>Previous</a></li>
+                  <li class="page-item"><a class="page-link" (click)=onSubmitStepOne()>1</a></li>
+                  <li class="page-item"><a class="page-link" (click)=onSubmitStepTwo()>2</a></li>
+                  <li class="page-item active"><a class="page-link" (click)=onSubmitStepThree()>3</a></li>
+                  <li class="page-item"><a class="page-link" (click)=onSubmitStepFour()>4</a></li>
+                  <li class="page-item"><a class="page-link" (click)=onSubmitStepFour()>Next</a></li>
+                </ul>
+              </nav>
         </div>
       </div>
     </div>
@@ -344,9 +293,9 @@
     <!-- --------------------------------------------------------------------------------------------- -->
 
     <div *ngIf="stepFour">
-      <div class="form-row row-width">
+        <div class="form-row row-width">
 
-        <div class="container container-register">
+            <div class="container-content register-container">
           <h1>Confirm Details</h1>
           <hr>
           <div class="accordion" id="accordionExample">
@@ -400,36 +349,20 @@
                 </div>
               </div>
             </div>
-
           </div>
           
-
-
-        <!-- Using pagination for the navigation through registration -->
-          <div class="row navigation">
-            <div class="col-md-4">
-              <p class="text stage">Stage</p>
-              <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                  <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepOne()></button></li>
-                  <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepTwo()></button></li>
-                  <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepThree()></button></li>
-                  <li class="page-item active"><button type="button" class="page-link" (click)=onSubmitStepFour()></button></li>
+              <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item"><a class="page-link" (click)=onSubmitStepThree()>Previous</a></li>
+                  <li class="page-item"><a class="page-link" (click)=onSubmitStepOne()>1</a></li>
+                  <li class="page-item"><a class="page-link" (click)=onSubmitStepTwo()>2</a></li>
+                  <li class="page-item"><a class="page-link" (click)=onSubmitStepThree()>3</a></li>
+                  <li class="page-item active"><a class="page-link" (click)=onSubmitStepFour()>4</a></li>
                 </ul>
               </nav>
-            </div>
-            
-            <!-- Close icon -->
-            <div class="col-md-4">
-              <button type="button" class="close"  aria-label="close" (click)=onSubmitStepThree()>
-                <span aria-hidden="true">&larr;</span>
-              </button>
-            </div>
-            <!-- Next button -->
-            <div class="form-group col-md-4">
-              <button type="submit" class="btn"  id="nextIcon">Finish</button> 
-              
-            </div>
+
+            <div class="row">
+              <button type="submit" class="btn buttonForm center-button darkButton">Finish</button> 
           </div>
         </div>
       </div>

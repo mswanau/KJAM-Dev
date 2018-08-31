@@ -8,46 +8,7 @@
     color: white;
 }
 
-.breadcrumb {
-    margin-top: 55px;
-}
-
-
-@media screen and (min-width: 1000px) {
-.row-width {
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-}}
-
-.container-fluid {
-    padding: 60px 5% 70px 5%;
-}
-
-.container {
-    margin-block-start: 20px;
-    background-color: #07889B; /* Login container colour */
-    background-image: none;
-    background-repeat: no-repeat;
-    color: #f5fbfb; /* Login text colour */
-    padding-bottom: 20px;
-    min-height: 462px;
-}
-
-hr {
-    margin-bottom: 15px;
-    margin-top: 5px;
-    width: 100%;
-    border: 1.5px solid black; /* Line break colour and size */
-    background-color: black;
- }
-
- .container-register {
-    padding: 5%;
-    max-width: 800px;
- }
-
- .footer-button {
+.footer-button {
     background-color: black; /* Set footer button colours */
     border: 0px;
     padding: 5px 20px 5px 20px;
@@ -58,7 +19,81 @@ hr {
     background-color: #4d9895;  /* Set footer button hovered colours */ 
 }
 
-.buttonDash {
+
+.page-container {
+    padding: 60px 5% 70px 5%;
+    width: 100%;
+}
+
+.container-content {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 1000px) {
+    .container-content {
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }}
+
+.login-container {
+    background-color: #07889B; /* Login container colour */
+    color: #f5fbfb; /* Login text colour */
+    padding: 5%;
+    width: 100%;
+}
+
+.register-container {
+    background-color: #07889B; /* Login container colour */
+    color: #f5fbfb; /* Login text colour */
+    padding: 5%;
+    width: 100%;
+}
+
+
+hr {
+    margin-bottom: 15px;
+    margin-top: 5px;
+    width: 100%;
+    border: 1.5px solid black; /* Line break colour and size */
+    background-color: black;
+ }
+
+.formButton {
+    padding: 10px 25px 10px 25px;
+    width: 100%;
+    text-align:center;
+    margin:auto;
+}
+
+.darkButton {
+    background-color:#17252a; /* button colour */
+    color: white; /* button text colour */
+}
+
+.lightButton {
+    background-color:#2b7a78; /* button colour */
+    color: white; /* button text colour */
+}
+
+.center-button {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.card {
+    color: inherit;
+    background-color: inherit;
+    width: 100%;
+}
+
+.buttonDashboard {
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
@@ -76,54 +111,12 @@ hr {
     background-color: #4d6d9a; /* Dashboard button colour 2 */
 }
 
-.logoutButton {
-    width: 150px;
-    display: block;
-    margin: auto;
-    margin-top: 10px;
-    background-color: #17252a; /* Logout button colour */
-    color: #f5fbfb;  /* Logout button text colour */
-    margin-bottom: 60px; 
-}
-.welcome-text {
+.center-text {
     text-align: center;
 }
 
-#textOne {
-    margin-top: -60px;
-}
-
-.navigation {
-    flex-wrap: nowrap;
-    margin-bottom: -5%;
-    position: absolute;
-    width: 100%;
-}
-.close  {
-    font-size: 60px;
-    width: 100%;
-    margin: auto;
-    margin-left: -10%;
-    float: left;
-}
-
-#nextIcon {
-    float: left;
-    margin-top: 15px;
-    padding: 10px;
-    margin-left: -35px;
-    width: 100%;
-    max-width: 50%;
-    min-width: 70px;
-    background-color:#2b7a78;
-}
-
-.prevButton {
-    margin-top: 20px;
-}
-
-
-
-.next {
-    width: 100%;
+.forgotpwd {
+    color: black; /* Forgot Password colour */
+    margin: 5px;
+    text-align: center;
 }
