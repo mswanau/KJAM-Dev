@@ -1,24 +1,78 @@
-/* #005757 dark blue, #037D96 blue */
-
-/* You can add global styles to this file, and also import other style files */
 .navbar {
     background-color: #E37222;
-    background-image: none;
-    background-repeat: no-repeat;
     color: white;
 }
 
 .footer-button {
-    background-color: black; /* Set footer button colours */
+    background-color: black;
+    color: white;
+}
+.footer-button:hover {
+    background-color: #4d9895;
+}
+
+.login-container {
+    background-color: #07889B;
+    color: #f5fbfb;
+}
+
+.register-container {
+    background-color: #07889B; 
+    color: #f5fbfb;
+}
+
+hr {
+    border: 1.5px solid black;
+    background-color: black;
+ }
+
+ 
+.darkButton {
+    background-color:#17252a;
+    color: white;
+}
+
+.lightButton {
+    background-color:#2b7a78;
+    color: white;
+}
+
+.colour1 {
+    background-color: #5f6366;
+    color: white;
+}
+
+.colour2 {
+    background-color: #4d6d9a;
+    color: white;
+}
+
+.forgotpwd {
+    color: black;
+}
+
+.pagination {
+    color: black;
+}
+
+.modal-content {
+    background-color: #E37222;
+}
+
+
+/* ------------------------------------------------------------------------------------------------*/
+
+
+/* You can add global styles to this file, and also import other style files */
+.navbar {
+    background-image: none;
+    background-repeat: no-repeat;
+}
+
+.footer-button {
     border: 0px;
     padding: 5px 20px 5px 20px;
-    color: white; /* Set text colour for buttons */
 }
-
-.footer-button:hover {
-    background-color: #4d9895;  /* Set footer button hovered colours */ 
-}
-
 
 .page-container {
     padding: 60px 5% 70px 5%;
@@ -38,15 +92,11 @@
     }}
 
 .login-container {
-    background-color: #07889B; /* Login container colour */
-    color: #f5fbfb; /* Login text colour */
     padding: 5%;
     width: 100%;
 }
 
 .register-container {
-    background-color: #07889B; /* Login container colour */
-    color: #f5fbfb; /* Login text colour */
     padding: 5%;
     width: 100%;
 }
@@ -56,8 +106,6 @@ hr {
     margin-bottom: 15px;
     margin-top: 5px;
     width: 100%;
-    border: 1.5px solid black; /* Line break colour and size */
-    background-color: black;
  }
 
 .formButton {
@@ -65,16 +113,6 @@ hr {
     width: 100%;
     text-align:center;
     margin:auto;
-}
-
-.darkButton {
-    background-color:#17252a; /* button colour */
-    color: white; /* button text colour */
-}
-
-.lightButton {
-    background-color:#2b7a78; /* button colour */
-    color: white; /* button text colour */
 }
 
 .center-button {
@@ -100,15 +138,13 @@ hr {
     height: 100px;
     margin-top: 10px;
     margin-bottom: 10px;
-    color: #f5fbfb; /* Dashboard buttons text colour */
 }
 
-.colour1 {
-    background-color: #5f6366; /* Dashboard button colour 1*/
-}
-
-.colour2 {
-    background-color: #4d6d9a; /* Dashboard button colour 2 */
+.paymentButton {
+    width: 97%;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    height: 100px;
 }
 
 .center-text {
@@ -116,7 +152,17 @@ hr {
 }
 
 .forgotpwd {
-    color: black; /* Forgot Password colour */
     margin: 5px;
     text-align: center;
+}
+
+.modal-content {
+    padding: 10%;
+    margin-top: 30%;
+}
+
+.linkButton {
+    width: 200px;
+    padding: 5%;
+    margin-left: 20%;
 }
