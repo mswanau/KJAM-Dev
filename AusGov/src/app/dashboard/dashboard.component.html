@@ -1,55 +1,56 @@
+<div class="page-container">
+
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item active" aria-current="page"><a routerLink="/dashboard">Dashboard</a></li>    
   </ol>
 </nav>
 
-<div class="container-fluid">
+<div class="container-content">
 
-  <div class="welcome-text">
-    <p id="textOne">Welcome to OurAus Dashboard. Please click  below for your desired service.</p>
+  <div class="center-text">
+    <p>Welcome to OurAus Dashboard. Please click  below for your desired service.</p>
     <p>If there are any issues please use the email, call or live chat to help you achieve your goal today.</p>
   </div>
 
   <!-- Set up two bootstrap rows, add 3 buttons to each row -->
-  <!-- row-width is a setting in styles.css to limit width -->
-  <div class="row row-width">
+  <div class="row">
 
     <div class="col-md">
-      <a routerLink="/dashboard/centrelink"><button class="btn buttonDash colour1">Centrelink</button></a>
+      <a routerLink="/dashboard/centrelink"><button class="btn buttonDashboard colour1">Centrelink</button></a>
     </div>
 
     <div class="col-md">
-      <a routerLink="/UnderConstruction"><button class="btn buttonDash colour2">Australian Taxation Office</button></a>
+      <a routerLink="/UnderConstruction"><button class="btn buttonDashboard colour2">Australian Taxation Office</button></a>
     </div>
 
     <div class="col-md">
-      <a routerLink="/UnderConstruction"><button class="btn buttonDash colour1">Australian Job Search</button></a>
+      <a routerLink="/UnderConstruction"><button class="btn buttonDashboard colour1">Australian Job Search</button></a>
     </div>
 
   </div>
 
-  <div class="row row-width">
+  <div class="row">
     <div class="col-md">
-      <a routerLink="/UnderConstruction"><button class="btn buttonDash colour2">Medicare</button></a>
+      <a routerLink="/UnderConstruction"><button class="btn buttonDashboard colour2">Medicare</button></a>
     </div>
 
     <div class="col-md">
-      <a routerLink="/UnderConstruction"><button class="btn buttonDash colour1">My Aged Care</button></a>
+      <a routerLink="/UnderConstruction"><button class="btn buttonDashboard colour1">My Aged Care</button></a>
     </div>
 
     <div class="col-md">
-      <a routerLink="/UnderConstruction"><button class="btn buttonDash colour2">Child Support</button></a>
+      <a routerLink="/UnderConstruction"><button class="btn buttonDashboard colour2">Child Support</button></a>
     </div>
     
   </div>
 
-  <div class="row row-width">
+  <div class="row">
     <div class="col-md">
-      <a routerLink="/login"><button class="btn logoutButton">Logout</button></a>
+      <a routerLink="/login"><button class="btn darkButton center-button">Logout</button></a>
     </div>
   </div>
-
+</div>
 </div>
 
 <!-- Colours can be changed from styles.css script "src/styles.css" -->
