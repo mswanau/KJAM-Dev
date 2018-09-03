@@ -142,23 +142,29 @@ app.put('/student/update', (req, res) => {
     var db = new sqlite3.Database(db_file);
 
     var studentNo = req.body.studentNo;
+    var course = req.body.course;
+    console.log(course);
+    var startDate = req.body.startDate;
+    var endDate = req.body.endDate;
     var id = req.body.id;
-    var institue = req.body.institue
+    var institute = req.body.institute
 
     // Insert student details
-    var stmt = db.prepare(`INSERT INTO students (institute, student_id) VALUES (?,?)`);
-    stmt.run([institue, studentNo]);
+    var stmt = db.prepare(`INSERT INTO students (institute, student_id, course, start_date, end_date) VALUES (?,?,?,?,?)`);
+    stmt.run([institute, studentNo, course, startDate, endDate]);
     stmt.finalize();
 
     // Get new reference ID
     var stmt = db.prepare(`SELECT id FROM students WHERE (institute, student_id) = (?,?)`);
-    var referenceId = stmt.run([institue, studentNo]);
+    var referenceId = stmt.run([institute, studentNo]);
     stmt.finalize();
 
     // Update users table
     var stmt = db.prepare(`UPDATE users SET student = ? WHERE id = ?`);
     var referenceId = stmt.run([referenceId, id]);
     stmt.finalize();
+
+    db.close();
 })
 
 
