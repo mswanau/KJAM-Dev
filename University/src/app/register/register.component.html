@@ -18,7 +18,7 @@
     <label for="endDate">End date</label>
       <input type="date" placeholder="2021-11-16" [(ngModel)]="model.endDate" #endDate="ngModel" [ngModelOptions]="{standalone: true}"><br><br>
     <label for="ourAus">OurAus ID (optional)</label>
-      <input type="text">
+      <input type="text" [(ngModel)]="model.ausGov" #ausGov="ngModel" [ngModelOptions]="{standalone: true}">
       <input type="submit" value="Submit">
   </form>
 </div>
