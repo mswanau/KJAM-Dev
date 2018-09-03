@@ -5,17 +5,21 @@ import { AppComponent } from './app.component';
 import { ApplicationComponent } from './application/application.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RegisterComponent } from './register/register.component';
+import { SubmittedComponent } from './submitted/submitted.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     ApplicationComponent,
     RegisterComponent,
+    SubmittedComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
