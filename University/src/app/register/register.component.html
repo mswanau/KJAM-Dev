@@ -1,0 +1,24 @@
+<header>
+  University Registration
+</header>
+
+<div>
+  <form name="form" (ngSubmit)="onSubmit()" #f="ngForm" nonvalidate>
+    <label for="course">Student Number</label>
+      <input type="text" placeholder="1234567" [(ngModel)]="model.studentNo" #studentNo="ngModel" [ngModelOptions]="{standalone: true}"><br><br>
+    <label for="course">Course</label>
+      <input type="text" placeholder="Bachelor of Business (Management)" [(ngModel)]="model.course" #course="ngModel" [ngModelOptions]="{standalone: true}"><br><br>
+    <label for="units">Units</label><br>
+      <input type="checkbox" name="unit" value="BSB115" checked="checked">BSB115 Management<br>
+      <input type="checkbox" name="unit" value="BSB119" checked="checked">BSB119 Global Business<br>
+      <input type="checkbox" name="unit" value="BSB123" checked="checked">BSB123 Data Analysis<br>
+      <input type="checkbox" name="unit" value="BSB126" checked="checked">BSB126 Marketing<br><br>
+    <label for="startDate">Start date</label>
+      <input type="date" placeholder="2018-03-23" [(ngModel)]="model.startDate" #startDate="ngModel" [ngModelOptions]="{standalone: true}"><br><br>
+    <label for="endDate">End date</label>
+      <input type="date" placeholder="2021-11-16" [(ngModel)]="model.endDate" #endDate="ngModel" [ngModelOptions]="{standalone: true}"><br><br>
+    <label for="ourAus">OurAus ID (optional)</label>
+      <input type="text">
+      <input type="submit" value="Submit">
+  </form>
+</div>
