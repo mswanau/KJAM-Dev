@@ -1,10 +1,12 @@
 .navbar {
     background-color: #E37222;
+    background-color: #C06014;
     color: white;
 }
 
 .footer-button {
     background-color: black;
+    /*background-color: #984B43;*/
     color: white;
 }
 .footer-button:hover {
@@ -12,13 +14,16 @@
 }
 
 .login-container {
-    background-color: #07889B;
+    background-color: #CDCDCD;
+    /*background-color: #99CED4;*/
     color: #f5fbfb;
+    color: black;
 }
 
 .register-container {
     background-color: #07889B; 
-    color: #f5fbfb;
+    background-color: #CDCDCD;
+    color: black;
 }
 
 hr {
@@ -29,21 +34,25 @@ hr {
  
 .darkButton {
     background-color:#17252a;
+    /*background-color: #984B43;*/
     color: white;
 }
 
 .lightButton {
-    background-color:#2b7a78;
+    background-color:#984B43;
+    /*background-color: #EAC67A;*/
     color: white;
 }
 
 .colour1 {
     background-color: #5f6366;
+    background-color: rgb(255, 181, 22);
     color: white;
 }
 
 .colour2 {
     background-color: #4d6d9a;
+    background-color: #984B43;
     color: white;
 }
 
@@ -80,8 +89,8 @@ hr {
 }
 
 .container-content {
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin-top: 2%;
+    overflow: hidden;
 }
 
 @media screen and (min-width: 1000px) {
