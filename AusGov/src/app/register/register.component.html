@@ -8,7 +8,7 @@
     <div class="form-row">
 
       <div class="container-content register-container">
-        <h1>Basic Information</h1>
+        <span><h1>Basic Information<h5>All Information is Required</h5></h1></span>
         <hr>
         <!-- Created rows for form inputs on same line, here is first and last name -->
         <div class="form-row">
@@ -143,32 +143,19 @@
           </div>
         </div>
 
-        <hr>
-        <!-- Row for paragraph and check box -->
-        <div class="form-row">
-          <div class="col-10">
-            <p class="text-sm-center">Would you like to connect to other sources to prefill, or fully complete your infromation? Please check the box if so.</p>
-          </div>
-          <div class="col-2">
-            <div class="form-check">
-              <input class="form-check-input form-control-lg" type="checkbox" value="" id="prefillDataCheckBox">
-              <label class="form-check-label" for="prefillDataCheckBox">
-              </label>
-            </div>
-          </div>
-        </div>
+      
 
 
           <nav aria-label="Page navigation">
             <ul class="pagination justify-content-center">
-              <li class="page-item active"><a class="page-link" (click)=onSubmitStepOne()>1</a></li>
-              <li class="page-item"><a class="page-link" (click)=onSubmitStepTwo()>2</a></li>
-              <li class="page-item"><a class="page-link" (click)=onSubmitStepThree()>3</a></li>
-              <li class="page-item"><a class="page-link" (click)=onSubmitStepFour()>4</a></li>
-              <li class="page-item"><a class="page-link" (click)=onSubmitStepTwo()>Next</a></li>
+              <li class="page-item active"><a class="page-link" (click)=goStepOne()>1</a></li>
+              <li class="page-item"><a class="page-link" (click)=goStepTwoValidate()>2</a></li>
+              <li class="page-item"><a class="page-link" (click)=goStepThree()>3</a></li>
+              <li class="page-item"><a class="page-link" (click)=goStepFour()>4</a></li>
+              <li class="page-item"><a class="page-link" (click)=goStepFive()>4</a></li>
+              <li class="page-item"><a class="page-link" (click)=goStepTwoValidate()>Next</a></li>
             </ul>
           </nav>
-       
       </div>
     </div>
     </div>
@@ -179,13 +166,17 @@
         <div class="form-row">
 
             <div class="container-content register-container">
-        <h1>Information Shortcuts</h1>
+        <h1>Information Shortcuts<i class="fa fa-question-circle"></i> </h1>
         <hr>
-        <p>Please add details of the following;</p>
+        <p>The following connections are used to aid in the gathering of your information, allowing
+          for a more seamless process. By connecting to any of the sources below you are agreeing to
+          have your information shared with OurAus and used in prefilling your information. You can opt
+          to skip this, however it will require you fill in further information manually.
+        </p>
 
-        <div class="form-row">
-          <div *ngIf="uni"><h4><span><button type="button" class="btn buttonForm darkButton linkButton" data-toggle="modal" data-target="#uniLogin">University</button></span></h4></div>
-        </div>
+
+          <div *ngIf="uni"><button type="button" class="btn buttonForm darkButton linkButton" data-toggle="modal" data-target="#uniLogin">Connect to University</button></div>
+
         
         <div id="uniLogin" class="modal fade" role="dialog">
             
@@ -214,18 +205,13 @@
 
 
 
-        <div class="form-row">
-          <h4><span><button type="button" class="btn buttonForm darkButton linkButton"> Australian Taxation Office </button></span></h4>
-        </div>
+          <span><button type="button" class="btn buttonForm darkButton linkButton">Connect to Taxation Office</button></span>
 
-        <div class="form-row">
-          <h4><span><button type="button" class="btn buttonForm darkButton linkButton" > Department of Transport </button></span></h4>
-        </div>
+          <span><button type="button" class="btn buttonForm darkButton linkButton">Connect to Transport Office</button></span>
 
-        <div class="form-row">
-          <div *ngIf="otherAccounts"><h4><span><button type="button" class="btn buttonForm darkButton linkButton" data-toggle="modal" data-target="#otherAccounts"> Related OurAus Accounts</button> </span></h4></div>
-        </div>
-        <div id="otherAccounts" class="modal fade" role="dialog">
+          <div *ngIf="otherAccounts"><span><button type="button" class="btn buttonForm darkButton linkButton" data-toggle="modal" data-target="#otherAccount">Connect to Parent/Gaurdian Account</button></span></div>
+
+        <div id="otherAccount" class="modal fade" role="dialog">
           <div class="modal-dialog modal-sm">
             <div class="modal-content">
               <h4 class="modal-title">Related AusGov accounts</h4>
@@ -240,7 +226,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn formButton lightButton" data-dismiss="modal">Cancel</button>
-              <button type="button" class="btn formButton darkButton" data-dismiss="modal" (click)=uniRemove()>Submit</button>
+              <button type="button" class="btn formButton darkButton" data-dismiss="modal" (click)=parentConnectRemove()>Submit</button>
             </div>
           </div>
           </div>
@@ -263,20 +249,15 @@
       </div>
     </div>
 
-    <!-- --------------------------------------------------------------------------------------------------- -->
+    <!----------------------------------------------------------------------------------------------------------->
 
     <div *ngIf="stepThree">
         <div class="form-row">
 
             <div class="container-content register-container">
-          <h1>Photo Verification</h1>
-          <hr>
-
-          <div class="container photo">
-            <webcam></webcam>
-          </div>
-
-          <div class="form-row"></div>
+                <h1>Missing Information</h1>
+                <hr>
+                <p>The following information is required:</p>
 
 
               <nav aria-label="Page navigation">
@@ -293,20 +274,66 @@
       </div>
     </div>
 
-    <!-- --------------------------------------------------------------------------------------------- -->
-
+    <!-- ------------------------------------------------------------------------------------------------------------>
     <div *ngIf="stepFour">
         <div class="form-row">
 
             <div class="container-content register-container">
-          <h1>Confirm Details</h1>
+                <h1>Photo Verification</h1>
+                <hr>
+                <p>In order to verify your identity you may either take a photo now on your webcam
+                  and upload your proof of identity, or go to your nearest OurAus office. Please
+                  choose an option below:
+                </p>
+                <div *ngIf="identityButtons">
+                <button type="button" class="btn formButton lightButton" (click)=showWebcam()>Take Photo Now</button>
+                <p>OR</p>
+                <button type="button" class="btn formButton darkButton" (click)=notWebcam()>Go to Centrelink Office</button>
+              </div>
+                <div *ngIf="webcam" class="container photo">
+
+                  <webcam style="margin-left: 5%;"></webcam>
+                  <button type="button" class="btn center-button lightButton" (click)=hideWebcam()>Cancel</button>
+
+                </div>
+                <div *ngIf="goInOffice" class="form-row alert alert-primary">
+                  <p>Please take proof of identity to your nearest OurAus office, use the following
+                    number to identify your claim: 123456789
+                  </p>
+                  <button type="button" class="btn center-button lightButton" (click)=hideWebcam()>Cancel</button>
+                </div>
+
+
+              <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item"><a class="page-link" (click)=onSubmitStepTwo()>Previous</a></li>
+                  <li class="page-item"><a class="page-link" (click)=onSubmitStepOne()>1</a></li>
+                  <li class="page-item"><a class="page-link" (click)=onSubmitStepTwo()>2</a></li>
+                  <li class="page-item active"><a class="page-link" (click)=onSubmitStepThree()>3</a></li>
+                  <li class="page-item"><a class="page-link" (click)=onSubmitStepFour()>4</a></li>
+                  <li class="page-item"><a class="page-link" (click)=onSubmitStepFour()>Next</a></li>
+                </ul>
+              </nav>
+        </div>
+      </div>
+    </div>
+    <!-- --------------------------------------------------------------------------------------------------- -->
+
+
+    <!-- --------------------------------------------------------------------------------------------- -->
+
+    <div *ngIf="stepFive">
+        <div class="form-row">
+
+            <div class="container-content register-container">
+          <h1>Application Complete</h1>
           <hr>
           <div class="accordion" id="accordionExample">
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
                   <button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                    Basic Information
+                    + Basic Information
                   </button>
                 </h5>
               </div>
@@ -329,7 +356,7 @@
               <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
                   <button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Study Information
+                    + Study Information
                   </button>
                 </h5>
               </div>
@@ -343,7 +370,7 @@
               <div class="card-header" id="headingThree">
                 <h5 class="mb-0">
                   <button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Work Information
+                    + Work Information
                   </button>
                 </h5>
               </div>
@@ -365,10 +392,35 @@
               </nav>
 
             <div class="row">
-              <button type="submit" class="btn buttonForm center-button darkButton">Finish</button> 
+              <button type="submit" class="btn buttonForm center-button darkButton">Complete Claim</button> 
           </div>
         </div>
       </div>
     </div>
   </form>
+  <div *ngIf="stepSix">
+        <div class="form-row">
+
+            <div class="container-content register-container">
+                <h1>Account Created</h1>
+                <hr>
+                <p>Your account has successfully been created. Thank you for taking the time to complete the registration process.
+                </p>
+                <button type="button" class="btn formButton lightButton">Go to your Dashboard</button>
+                <p>OR</p>
+                <button type="button" class="btn formButton darkButton">Return to front page</button>
+
+              <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item"><a class="page-link" (click)=onSubmitStepTwo()>Previous</a></li>
+                  <li class="page-item"><a class="page-link" (click)=onSubmitStepOne()>1</a></li>
+                  <li class="page-item"><a class="page-link" (click)=onSubmitStepTwo()>2</a></li>
+                  <li class="page-item active"><a class="page-link" (click)=onSubmitStepThree()>3</a></li>
+                  <li class="page-item"><a class="page-link" (click)=onSubmitStepFour()>4</a></li>
+                  <li class="page-item"><a class="page-link" (click)=onSubmitStepFour()>Next</a></li>
+                </ul>
+              </nav>
+        </div>
+      </div>
+    </div>
 </div>

@@ -19,10 +19,14 @@ export class RegisterComponent implements OnInit {
   stepTwo = false;
   stepThree = false;
   stepFour = false;
+  stepFive = false;
   uni = true;
   otherAccounts = true;
   uniMessage = false;
   otherAccountsMessage = false;
+  identityButtons = true;
+  webcam = false;
+  goInOffice = false;
 
   currentUser: User;
 
@@ -72,45 +76,58 @@ export class RegisterComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-  onSubmitStepOne() {
+  goStepOne() {
     this.stepOne = true;
     this.stepTwo = false;
     this.stepThree = false;
     this.stepFour = false;
+    this.stepFive = false;
   }
 
-  onSubmitStepTwoValidate() {
+  goStepTwoValidate() {
     this.submitted = true;
-    if (this.registerForm.invalid) {
+    /*if (this.registerForm.invalid) {
       return;
-    } else {
+    } else {*/
       this.submitted = false;
       this.stepOne = false;
       this.stepTwo = true;
       this.stepThree = false;
       this.stepFour = false;
-    }
+      this.stepFive = false;
+    
   }
 
-  onSubmitStepTwo() {
+  goStepTwo() {
     this.stepOne = false;
     this.stepTwo = true;
     this.stepThree = false;
     this.stepFour = false;
+    this.stepFive = false;
   }
 
-  onSubmitStepThree() {
+  goStepThree() {
     this.stepOne = false;
     this.stepTwo = false;
     this.stepThree = true;
     this.stepFour = false;
+    this.stepFive = false;
   }
 
-  onSubmitStepFour() {
+  goStepFour() {
     this.stepOne = false;
     this.stepTwo = false;
     this.stepThree = false;
     this.stepFour = true;
+    this.stepFive = false;
+  }
+
+  goStepFive() {
+    this.stepOne = false;
+    this.stepTwo = false;
+    this.stepThree = false;
+    this.stepFour = false;
+    this.stepFive = true;
 
     this.firstName = this.registerForm.value.firstName;
     this.lastName = this.registerForm.value.lastName;
@@ -126,6 +143,27 @@ export class RegisterComponent implements OnInit {
   uniRemove() {
     this.uni = false;
     this.uniMessage = true;
+  }
+
+  parentConnectRemove() {
+    this.otherAccounts = false;
+    this.otherAccountsMessage = true;
+  }
+
+  showWebcam() {
+    this.webcam = true;
+    this.identityButtons = false;
+  }
+
+  hideWebcam() {
+    this.webcam = false;
+    this.identityButtons = true;
+    this.goInOffice = false;
+  }
+
+  notWebcam() {
+    this.identityButtons = false;
+    this.goInOffice = true;
   }
   onSubmit() {
     this.submitted = true;

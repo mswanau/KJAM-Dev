@@ -1,5 +1,7 @@
+/* ---------------Colours------------------------------------------------------------------------*/
+
 .navbar {
-    background-color: #E37222;
+    /*background-color: #E37222;*/
     background-color: #C06014;
     color: white;
 }
@@ -8,6 +10,7 @@
     background-color: black;
     /*background-color: #984B43;*/
     color: white;
+    border-color: #5f6366;
 }
 .footer-button:hover {
     background-color: #4d9895;
@@ -21,7 +24,7 @@
 }
 
 .register-container {
-    background-color: #07889B; 
+    background-color: #07889B;
     background-color: #CDCDCD;
     color: black;
 }
@@ -69,7 +72,8 @@ hr {
 }
 
 
-/* ------------------------------------------------------------------------------------------------*/
+
+/* ------------Content Changes----------------------------------------------------------------------*/
 
 
 /* You can add global styles to this file, and also import other style files */
@@ -79,7 +83,6 @@ hr {
 }
 
 .footer-button {
-    border: 0px;
     padding: 5px 20px 5px 20px;
 }
 
@@ -93,6 +96,10 @@ hr {
     overflow: hidden;
 }
 
+.forgotpwd {
+    text-decoration: underline;
+}
+
 @media screen and (min-width: 1000px) {
     .container-content {
         max-width: 900px;
@@ -101,7 +108,7 @@ hr {
     }}
 
 .login-container {
-    padding: 5%;
+    padding: 3% 5% 3% 5%;
     width: 100%;
 }
 
@@ -128,6 +135,7 @@ hr {
     display: block;
     margin: auto;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .pagination {
@@ -171,7 +179,17 @@ hr {
 }
 
 .linkButton {
-    width: 200px;
-    padding: 5%;
-    margin-left: 20%;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 20px 0px 20px 0px;
+    margin-bottom: 10px;
+}
+
+
+.fa-question-circle {
+    font-size: 25px;
+    text-align: right;
+    position: relative;
+    bottom: 1ex;
 }

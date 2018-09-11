@@ -1,6 +1,7 @@
  import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { UserService } from '../user.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -27,7 +28,6 @@ export class LoginComponent implements OnInit {
     this.users.loginUser(this.model.email, this.model.password).subscribe(
       users => {
         this.currentUser = users;
-        console.log(this.currentUser);
         // Check if user authenticated correctly
         if (this.currentUser != null) {
           localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
