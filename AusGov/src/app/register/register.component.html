@@ -168,8 +168,19 @@
             </div>
           </div>
         </div>
-      </div>
+      
+
+<div class="form-row">
+  <div class="col-auto mr-auto">
+<a routerLink="/login"><button type="button" class="btn lightButton">Cancel</button></a>
 </div>
+<div class="col-auto">
+<button type="button" class="btn darkButton" (click)=gostepTwo()>Next Page</button>
+</div>
+</div>
+</div>
+</div>
+
 </div>
 
 
@@ -275,6 +286,15 @@
           <p>Successfully connected related accounts, these details will now be prefilled. Thank you.</p>
         </div>
 
+        <div class="form-row">
+            <div class="col-auto mr-auto">
+          <button type="button" class="btn lightButton" (click)=goStepOne()>Previous Page</button>
+          </div>
+          <div class="col-auto">
+          <button type="button" class="btn darkButton" (click)=gostepThree()>Next Page</button>
+          </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -313,6 +333,16 @@
                 <h1>Missing Information</h1>
                 <hr>
                 <p>The following information is required:</p>
+
+
+                <div class="form-row">
+                    <div class="col-auto mr-auto">
+                  <button type="button" class="btn lightButton" (click)=goStepTwo()>Previous Page</button>
+                  </div>
+                  <div class="col-auto">
+                  <button type="button" class="btn darkButton" (click)=gostepFour()>Next Page</button>
+                  </div>
+                  </div>
 
         </div>
       </div>
@@ -372,6 +402,15 @@
                   </p>
                   <button type="button" class="btn center-button lightButton" (click)=hideWebcam()>Cancel</button>
                 </div>
+
+                <div class="form-row">
+                    <div class="col-auto mr-auto">
+                  <button type="button" class="btn lightButton" (click)=goStepThree()>Previous Page</button>
+                  </div>
+                  <div class="col-auto">
+                  <button type="button" class="btn darkButton" (click)=gostepFive()>Next Page</button>
+                  </div>
+                  </div>
         </div>
       </div>
     </div>
@@ -469,6 +508,15 @@
             <div class="row">
               <button type="submit" class="btn buttonForm center-button darkButton">Complete Claim</button> 
           </div>
+
+          <div class="form-row">
+              <div class="col-auto mr-auto">
+            <button type="button" class="btn lightButton" (click)=goStepFour()>Previous Page</button>
+            </div>
+            <div class="col-auto">
+            <button type="button" class="btn darkButton" (click)=gostepSix()>Next Page</button>
+            </div>
+            </div>
         </div>
       </div>
     </div>
