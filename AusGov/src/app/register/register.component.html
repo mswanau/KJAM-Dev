@@ -3,19 +3,9 @@
 
   <!-- Form for the first page of registration, will perform function from the registration.ts file -->
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-
+      
     <div *ngIf="stepOne">
-    <div class="form-row">
-
-      <div class="container-content register-container">
-        <div class="row">
-          <div class="col-md-6">
-        <span><h1>Basic Information<h5>All Information is Required</h5></h1></span>
-        </div>
-        <div class="col-md-6">
-
-            
-          <div class="f1-steps">
+        <div class="f1-steps">
             <div class="f1-progress">
                 <div class="f1-progress-line" style="width: 0%;"></div>
             </div>
@@ -24,7 +14,7 @@
                 <p>Info</p>
             </div>
             <div class="f1-step">
-                <button type="button" class="f1-step-icon" (click)=goStepTwoValidate()><i class="fa fa-plug"></i></button>
+                <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
                 <p>links</p>
             </div>
             <div class="f1-step">
@@ -41,9 +31,10 @@
             </div>
         </div>
 
-
-      </div>
-      </div>
+    <div class="form-row">
+      <div class="container-content register-container">
+        <div *ngIf="needInputs" class="form-row alert alert-primary"><p>There is still information to be filled in below:</p></div>
+        <span><h1>Basic Information<h5>All Information is Required</h5></h1></span>
         <hr>
         <!-- Created rows for form inputs on same line, here is first and last name -->
         <div class="form-row">
@@ -178,20 +169,13 @@
           </div>
         </div>
       </div>
-    </div>
-    </div>
+</div>
+</div>
+
 
     <!-- -------------------------------------------------------------------------------------------------- -->
 
     <div *ngIf="stepTwo">
-        <div class="form-row">
-
-            <div class="container-content register-container">
-              <div class="row">
-                <div class="col-md-6">
-        <h1>Information Shortcuts<i class="fa fa-question-circle"></i> </h1>
-        </div>
-        <div class="col-md-6">
         <div class="f1-steps">
             <div class="f1-progress">
                 <div class="f1-progress-line" style="width: 30%;"></div>
@@ -201,7 +185,7 @@
                 <p>Info</p>
             </div>
             <div class="f1-step active">
-                <button type="button" class="f1-step-icon" (click)=goStepTwoValidate()><i class="fa fa-plug"></i></button>
+                <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
                 <p>links</p>
             </div>
             <div class="f1-step">
@@ -217,8 +201,12 @@
                 <p>Verify</p>
             </div>
         </div>
-        </div>
-        </div>
+
+        <div class="form-row">
+
+            <div class="container-content register-container">
+        <h1>Information Shortcuts<i class="fa fa-question-circle"></i> </h1>
+ 
         <hr>
         <p>The following connections are used to aid in the gathering of your information, allowing
           for a more seamless process. By connecting to any of the sources below you are agreeing to
@@ -294,42 +282,35 @@
     <!----------------------------------------------------------------------------------------------------------->
 
     <div *ngIf="stepThree">
+        <div class="f1-steps">
+            <div class="f1-progress">
+                <div class="f1-progress-line" style="width: 50%;"></div>
+            </div>
+            <div class="f1-step active">
+                <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
+                <p>Info</p>
+            </div>
+            <div class="f1-step active">
+                <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
+                <p>links</p>
+            </div>
+            <div class="f1-step active">
+                <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
+                <p>Add</p>
+            </div>
+            <div class="f1-step">
+                <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
+                <p>Identify</p>
+            </div>
+            <div class="f1-step">
+                <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
+                <p>Verify</p>
+            </div>
+        </div>
         <div class="form-row">
 
             <div class="container-content register-container">
-              <div class="row">
-                <div class="col-md-6">
-              
                 <h1>Missing Information</h1>
-                </div>
-                <div class="col-md-6">
-                    <div class="f1-steps">
-                        <div class="f1-progress">
-                            <div class="f1-progress-line" style="width: 50%;"></div>
-                        </div>
-                        <div class="f1-step active">
-                            <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
-                            <p>Info</p>
-                        </div>
-                        <div class="f1-step active">
-                            <button type="button" class="f1-step-icon" (click)=goStepTwoValidate()><i class="fa fa-plug"></i></button>
-                            <p>links</p>
-                        </div>
-                        <div class="f1-step active">
-                            <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
-                            <p>Add</p>
-                        </div>
-                        <div class="f1-step">
-                            <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
-                            <p>Identify</p>
-                        </div>
-                        <div class="f1-step">
-                            <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
-                            <p>Verify</p>
-                        </div>
-                    </div>
-                    </div>
-                    </div>
                 <hr>
                 <p>The following information is required:</p>
 
@@ -339,42 +320,36 @@
 
     <!-- ------------------------------------------------------------------------------------------------------------>
     <div *ngIf="stepFour">
+        <div class="f1-steps">
+            <div class="f1-progress">
+                <div class="f1-progress-line" style="width: 80%;"></div>
+            </div>
+            <div class="f1-step active">
+                <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
+                <p>Info</p>
+            </div>
+            <div class="f1-step active">
+                <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
+                <p>links</p>
+            </div>
+            <div class="f1-step active">
+                <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
+                <p>Add</p>
+            </div>
+            <div class="f1-step active">
+                <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
+                <p>Identify</p>
+            </div>
+            <div class="f1-step">
+                <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
+                <p>Verify</p>
+            </div>
+        </div>
+
         <div class="form-row">
 
             <div class="container-content register-container">
-                <div class="row">
-                    <div class="col-md-6">
-                  
                     <h1>Verify Identity</h1>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="f1-steps">
-                            <div class="f1-progress">
-                                <div class="f1-progress-line" style="width: 80%;"></div>
-                            </div>
-                            <div class="f1-step active">
-                                <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
-                                <p>Info</p>
-                            </div>
-                            <div class="f1-step active">
-                                <button type="button" class="f1-step-icon" (click)=goStepTwoValidate()><i class="fa fa-plug"></i></button>
-                                <p>links</p>
-                            </div>
-                            <div class="f1-step active">
-                                <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
-                                <p>Add</p>
-                            </div>
-                            <div class="f1-step active">
-                                <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
-                                <p>Identify</p>
-                            </div>
-                            <div class="f1-step">
-                                <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
-                                <p>Verify</p>
-                            </div>
-                        </div>
-                        </div>
-                        </div>
                 <hr>
                 <p>In order to verify your identity you may either take a photo now on your webcam
                   and upload your proof of identity, or go to your nearest OurAus office. Please
@@ -406,42 +381,37 @@
     <!-- --------------------------------------------------------------------------------------------- -->
 
     <div *ngIf="stepFive">
+        <div class="f1-steps">
+            <div class="f1-progress">
+                <div class="f1-progress-line" style="width: 100%;"></div>
+            </div>
+            <div class="f1-step active">
+                <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
+                <p>Info</p>
+            </div>
+            <div class="f1-step active">
+                <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
+                <p>links</p>
+            </div>
+            <div class="f1-step active">
+                <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
+                <p>Add</p>
+            </div>
+            <div class="f1-step active">
+                <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
+                <p>Identify</p>
+            </div>
+            <div class="f1-step active">
+                <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
+                <p>Verify</p>
+            </div>
+        </div>
+
         <div class="form-row">
 
             <div class="container-content register-container">
-                <div class="row">
-                    <div class="col-md-6">
-                  
-                    <h1>Finalise Application</h1>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="f1-steps">
-                            <div class="f1-progress">
-                                <div class="f1-progress-line" style="width: 100%;"></div>
-                            </div>
-                            <div class="f1-step active">
-                                <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
-                                <p>Info</p>
-                            </div>
-                            <div class="f1-step active">
-                                <button type="button" class="f1-step-icon" (click)=goStepTwoValidate()><i class="fa fa-plug"></i></button>
-                                <p>links</p>
-                            </div>
-                            <div class="f1-step active">
-                                <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
-                                <p>Add</p>
-                            </div>
-                            <div class="f1-step active">
-                                <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
-                                <p>Identify</p>
-                            </div>
-                            <div class="f1-step active">
-                                <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
-                                <p>Verify</p>
-                            </div>
-                        </div>
-                        </div>
-                        </div>
+                    <h1>Review Application</h1>
+
           <hr>
           <div class="accordion" id="accordionExample">
             <div class="card">
@@ -511,9 +481,9 @@
                 <hr>
                 <p>Your account has successfully been created. Thank you for taking the time to complete the registration process.
                 </p>
-                <button type="button" class="btn formButton lightButton">Go to your Dashboard</button>
+                <a routerLink="/dashboard"><button type="button" class="btn formButton lightButton">Go to your Dashboard</button></a>
                 <p>OR</p>
-                <button type="button" class="btn formButton darkButton">Return to front page</button>
+                <a routerLink="/login"><button type="button" class="btn formButton darkButton">Return to front page</button></a>
         </div>
       </div>
     </div>

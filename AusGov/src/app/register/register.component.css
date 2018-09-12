@@ -2,33 +2,58 @@
 
 /***** Top content *****/
 
-
-.f1 {
-	padding: 25px; background: #fff;
-	-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+.f1-steps { 
+    overflow: hidden; 
+    position: relative;    
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 4%; 
+    margin-bottom: -20px;
+    margin-top: 10px;
 }
 
-.f1-steps { overflow: hidden; position: relative; }
+.f1-progress { 
+    position: absolute; 
+    top: 24px; 
+    left: 0; 
+    width: 80%; 
+    height: 1px; 
+    background: #ddd; 
+}
 
-.f1-progress { position: absolute; top: 24px; left: 0; width: 80%; height: 1px; background: #ddd; margin-left: 5%; }
-.f1-progress-line { position: absolute; top: 0; left: 0; height: 1px; background: #f35b3f; }
+.f1-progress-line { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    height: 1px; 
+    background: #C06014; 
+}
 
-.f1-step { position: relative; float: left; width: 20%; }
+.f1-step { 
+    position: relative; 
+    float: left; 
+    width: 20%; 
+}
 
 .f1-step-icon {
-	display: inline-block; width: 40px; height: 40px; margin-top: 4px; background: #ddd;
-	font-size: 16px; color: #fff; line-height: 40px;
-    -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%;
+    width: 40px; 
+    height: 40px; 
+    margin-top: 4px; 
+    background: #ddd;
+    color: #fff; 
+    border-radius: 50%;
     border-width: 0px;
     cursor:pointer;
 }
 .f1-step.activated .f1-step-icon {
-	background: #fff; border: 1px solid #f35b3f; color: #f35b3f;
+    background: #fff; 
+    color: #C06014;
 }
 .f1-step.active .f1-step-icon {
-    background: #f35b3f;
+    background: #C06014;
 }
 
 .f1-step p { color: #ccc; }
-.f1-step.activated p { color: #f35b3f; }
-.f1-step.active p { color: #f35b3f; }
+.f1-step.activated p { color: #C06014; }
+.f1-step.active p { color: #C06014; }
