@@ -193,3 +193,72 @@ hr {
     position: relative;
     bottom: 1ex;
 }
+
+
+
+
+
+
+/***** Form navigation  *****/
+
+.f1-steps { 
+    overflow: hidden; 
+    position: relative;    
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 4%; 
+    margin-bottom: -20px;
+    margin-top: 10px;
+}
+
+.f1-progress { 
+    position: absolute; 
+    top: 24px; 
+    left: 0; 
+    width: 80%; 
+    height: 1px; 
+    background: #ddd; 
+}
+.centrelink-line {
+    width: 75%;
+}
+
+.f1-progress-line { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    height: 1px; 
+    background: #C06014; 
+}
+
+.f1-step { 
+    position: relative; 
+    float: left; 
+    width: 20%; 
+}
+.centrelink-nav {
+    width: 25%;
+}
+
+.f1-step-icon {
+    width: 40px; 
+    height: 40px; 
+    margin-top: 4px; 
+    background: #ddd;
+    color: #fff; 
+    border-radius: 50%;
+    border-width: 0px;
+    cursor:pointer;
+}
+.f1-step.activated .f1-step-icon {
+    background: #fff; 
+    color: #C06014;
+}
+.f1-step.active .f1-step-icon {
+    background: #C06014;
+}
+
+.f1-step p { color: #ccc; }
+.f1-step.activated p { color: #C06014; }
+.f1-step.active p { color: #C06014; }

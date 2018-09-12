@@ -12,9 +12,249 @@
           <div class="form-row">
 
               <div class="container-content register-container">
-          <h1>Check Eligibility</h1>
+          <h1>What You Need</h1>
           <hr>
-          <div class="accordion" id="accordionExample">
+          <p>Based on the information that you have provided through your OurAus account, 
+            you will need to supply the following documentation and details later on in this claim, 
+            to assist in a fast process speed gather all the documents required.</p>
+          
+          <div class="row">
+            <h3>Documents:</h3>
+          </div>
+          <div class="row">
+            <h3>Details:</h3>
+          </div>
+          <div class="row">
+          <h4>Eligibility Test Recieved</h4>
+          </div>
+          <div class="row">
+          <p>Details from the eligilibilty checklist you performed have been prefilled.</p>
+          </div>
+
+          <button type="button" class="btn center-button lightButton" (click)=beginClaim()>Start your Claim</button>
+            
+        </div>
+      </div>
+    </div>
+
+
+    <div *ngIf="stepTwo">
+        <div class="f1-steps">
+            <div class="f1-progress centrelink-line">
+                <div class="f1-progress-line" style="width: 0%;"></div>
+            </div>
+            <div class="f1-step active centrelink-nav">
+                <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-user"></i></button>
+                <p>Info</p>
+            </div>
+            <div class="f1-step centrelink-nav">
+                <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-file-text"></i></button>
+                <p>Documents</p>
+            </div>
+            <div class="f1-step centrelink-nav">
+                <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-list"></i></button>
+                <p>Confirm</p>
+            </div>
+            <div class="f1-step centrelink-nav">
+                <button type="button" class="f1-step-icon" (click)=goStepFive()><i class="fa fa-check"></i></button>
+                <p>Complete</p>
+            </div>
+        </div>
+        <div class="form-row">
+
+            <div class="container-content register-container">
+            <h1>Provide Information</h1>
+            <hr>
+            <div class="form-row">
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="stepThree">
+        <div class="f1-steps">
+            <div class="f1-progress centrelink-line">
+                <div class="f1-progress-line" style="width: 35%;"></div>
+            </div>
+            <div class="f1-step active centrelink-nav">
+                <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-user"></i></button>
+                <p>Info</p>
+            </div>
+            <div class="f1-step active centrelink-nav">
+                <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-file-text"></i></button>
+                <p>Documents</p>
+            </div>
+            <div class="f1-step centrelink-nav">
+                <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-list"></i></button>
+                <p>Confirm</p>
+            </div>
+            <div class="f1-step centrelink-nav">
+                <button type="button" class="f1-step-icon" (click)=goStepFive()><i class="fa fa-check"></i></button>
+                <p>Complete</p>
+            </div>
+        </div>
+        <div class="form-row">
+
+            <div class="container-content register-container">
+
+          <h1>Documentation</h1>
+          <hr>
+          <div class="form-row">
+          <div class="col-md-4">
+            <p>Rental Agreement</p>
+          </div>
+          <div class="col-md-8">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+              </div>
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+              </div>
+            </div>
+            </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-4">
+                Proof of Identity
+              </div>
+              <div class="col-md-8">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                </div>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                </div>
+              </div>
+              </div>
+            </div>
+
+          <div class="form-row">
+            <p>The required Documentation can simply be uploaded via scan or mobile. 
+              You may also come into the office however it is not required
+            </p>
+          </div>
+          
+
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="stepFour">
+        <div class="f1-steps">
+            <div class="f1-progress centrelink-line">
+                <div class="f1-progress-line" style="width: 70%;"></div>
+            </div>
+            <div class="f1-step active centrelink-nav">
+                <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-user"></i></button>
+                <p>Info</p>
+            </div>
+            <div class="f1-step active centrelink-nav">
+                <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-file-text"></i></button>
+                <p>Documents</p>
+            </div>
+            <div class="f1-step active centrelink-nav">
+                <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-list"></i></button>
+                <p>Confirm</p>
+            </div>
+            <div class="f1-step centrelink-nav">
+                <button type="button" class="f1-step-icon" (click)=goStepFive()><i class="fa fa-check"></i></button>
+                <p>Complete</p>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="container-content register-container">
+
+          <h1>Confirm Information</h1>
+          <hr>
+         
+
+               
+
+        </div>
+      </div>
+    </div>
+  
+  <div *ngIf="stepFive">
+      <div class="f1-steps">
+          <div class="f1-progress centrelink-line">
+              <div class="f1-progress-line" style="width: 100%;"></div>
+          </div>
+          <div class="f1-step active centrelink-nav">
+              <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-user"></i></button>
+              <p>Info</p>
+          </div>
+          <div class="f1-step active centrelink-nav">
+              <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-file-text"></i></button>
+              <p>Documents</p>
+          </div>
+          <div class="f1-step active centrelink-nav">
+              <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-list"></i></button>
+              <p>Confirm</p>
+          </div>
+          <div class="f1-step active centrelink-nav">
+              <button type="button" class="f1-step-icon" (click)=goStepFive()><i class="fa fa-check"></i></button>
+              <p>Complete</p>
+          </div>
+      </div>
+      <div class="container-content register-container">
+        <h1>Claim Complete</h1>
+        <hr>
+        <button type="submit" class="btn buttonForm center-button darkButton">Submit your Claim</button>
+      </div>
+  </div>
+</form>
+
+  <div *ngIf="stepSix">
+    <div class="container-content register-container">
+      <h1>Claim Submitted Successfully</h1>
+      <hr>
+      <div class="form-row">
+      <p>Congratulations your claim has been processed through our system.</p>
+    </div>
+
+    <div>{{ date | date }}</div>
+
+      <div class="form-row">
+        <div class="col-md">
+          <p>Email</p>
+        </div>
+        <div class="col-md">
+          <p>Call</p>
+        </div>
+        <div class="col-md">
+          <p>SMS</p>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-md">
+          <input type="checkbox"/>
+        </div>
+        <div class="col-md">
+          <input type="checkbox"/>
+        </div>
+        <div class="col-md">
+          <input type="checkbox"/>  
+        </div>
+      </div>
+    </div>
+        
+</div>
+
+
+
+
+
+
+
+<!-------------DROP DOWN ELIBILITY CHECK REMOVED --------------------------------------------------------------------------------------------
+  <div class="accordion" id="accordionExample">
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
@@ -68,142 +308,4 @@
               </div>
             </div>
             </div>
-
-            <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item active"><a class="page-link" (click)=onSubmitStepOne()>1</a></li>
-                  <li class="page-item"><a class="page-link" (click)=onSubmitStepTwo()>2</a></li>
-                  <li class="page-item"><a class="page-link" (click)=onSubmitStepThree()>3</a></li>
-                  <li class="page-item"><a class="page-link" (click)=onSubmitStepFour()>4</a></li>
-                  <li class="page-item"><a class="page-link" (click)=onSubmitStepTwo()>Next</a></li>
-                </ul>
-              </nav>
-        </div>
-      </div>
-    </div>
-
-    <div *ngIf="stepTwo">
-        <div class="form-row">
-
-            <div class="container-content register-container">
-            <h1>Results</h1>
-            <hr>
-            <div class="form-row">
-              <h1>Congratulations you are eligible!!!</h1>
-              <p>You may do the Student Allowance Claim</p>
-              <p>Please allow our system to compile your information to make this as simple as possible</p>
-              <p>The following page will require minimal action to complete your claim, thank you.</p>
-            </div>
-
-            <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item"><a class="page-link" (click)=onSubmitStepOne()>Previous</a></li>
-                  <li class="page-item"><a class="page-link" (click)=onSubmitStepOne()>1</a></li>
-                  <li class="page-item active"><a class="page-link" (click)=onSubmitStepTwo()>2</a></li>
-                  <li class="page-item"><a class="page-link" (click)=onSubmitStepThree()>3</a></li>
-                  <li class="page-item"><a class="page-link" (click)=onSubmitStepFour()>4</a></li>
-                  <li class="page-item"><a class="page-link" (click)=onSubmitStepThree()>Next</a></li>
-                </ul>
-              </nav>
-        </div>
-      </div>
-    </div>
-
-    <div *ngIf="stepThree">
-        <div class="form-row">
-
-            <div class="container-content register-container">
-
-          <h1>Extra Documentation</h1>
-          <hr>
-          <div class="form-row">
-            <h4><span><button type="button" class="btn formButton darkButton linkButton"> Rental Agreement </button></span></h4>
-          </div>
-  
-          <div class="form-row">
-            <h4><span><button type="button" class="btn formButton darkButton linkButton"> Proof of Identity </button></span></h4>
-          </div>
-  
-          <div class="form-row">
-            <h4><span><button type="button" class="btn formButton darkButton linkButton" >ETC</button></span></h4>
-          </div>
-
-          <div class="form-row">
-            <p>The required Documentation can simply be uploaded via scan or mobile. 
-              You may also come into the office however it is not required
-            </p>
-          </div>
-
-          <nav aria-label="Page navigation">
-              <ul class="pagination justify-content-center">
-                <li class="page-item"><a class="page-link" (click)=onSubmitStepTwo()>Previous</a></li>
-                <li class="page-item"><a class="page-link" (click)=onSubmitStepOne()>1</a></li>
-                <li class="page-item"><a class="page-link" (click)=onSubmitStepTwo()>2</a></li>
-                <li class="page-item active"><a class="page-link" (click)=onSubmitStepThree()>3</a></li>
-                <li class="page-item"><a class="page-link" (click)=onSubmitStepFour()>4</a></li>
-                <li class="page-item"><a class="page-link" (click)=onSubmitStepFour()>Next</a></li>
-              </ul>
-            </nav>
-        </div>
-      </div>
-    </div>
-
-    <div *ngIf="stepFour">
-        <div class="form-row">
-            <div class="container-content register-container">
-
-          <h1>Claim Complete</h1>
-          <hr>
-          <div class="form-row">
-            <p>Congratulations!</p>
-            </div>
-            <div class="form-row">
-            <p>You have completed the claim process. The estimated completion date is below:</p>
-          </div>
-
-            <p>28/11/2018</p>
-            <p>14 Days</p>
-            <p>For updates on the claim and the progression please choose how you would like
-              to be notified
-            </p>
-
-            <div class="form-row">
-              <div class="col-md">
-                <p>Email</p>
-              </div>
-              <div class="col-md">
-                <p>Call</p>
-              </div>
-              <div class="col-md">
-                <p>SMS</p>
-              </div>
-            </div>
-
-            <div class="form-row">
-                <div class="col-md">
-                  <input type="checkbox"/>
-                </div>
-                <div class="col-md">
-                  <input type="checkbox"/>
-                </div>
-                <div class="col-md">
-                  <input type="checkbox"/>  
-                </div>
-              </div>
-              <nav aria-label="Page navigation">
-                  <ul class="pagination justify-content-center">
-                    <li class="page-item"><a class="page-link" (click)=onSubmitStepThree()>Previous</a></li>
-                    <li class="page-item"><a class="page-link" (click)=onSubmitStepOne()>1</a></li>
-                    <li class="page-item"><a class="page-link" (click)=onSubmitStepTwo()>2</a></li>
-                    <li class="page-item"><a class="page-link" (click)=onSubmitStepThree()>3</a></li>
-                    <li class="page-item active"><a class="page-link" (click)=onSubmitStepFour()>4</a></li>
-                  </ul>
-                </nav>
-
-                <a routerLink='/dashboard/centrelink'><button type="submit" class="btn buttonForm center-button darkButton">Finish</button></a>
-
-        </div>
-      </div>
-    </div>
-  </form>
-</div>
+            ----------------------------------------->
