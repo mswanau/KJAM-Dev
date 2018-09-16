@@ -21,9 +21,16 @@
           <div class="row">
             <h3>Documents:</h3>
           </div>
+            <ul>
+              <li><h4>Rental Agreement</h4></li>
+              <li><h4>Proof of Identity</h4></li>
+            </ul>
           <div class="row">
             <h3>Details:</h3>
           </div>
+          <ul>
+              <li><h4>Work Details</h4></li>
+            </ul>
           <div class="row">
           <h4>Eligibility Test Recieved</h4>
           </div>
@@ -65,8 +72,34 @@
             <div class="container-content register-container">
             <h1>Provide Information</h1>
             <hr>
+            <h4>Work Details</h4>
             <div class="form-row">
+              <div class="form-group col-md">
+                <label for="jobTitle">Job Title</label>
+                <input type="text" formControlName="jobTitle" class="form-control"/>
+              </div>
+              </div>
+              <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="companyName">Company Name</label>
+                <input type="text" formControlName="companyName" class="form-control"/>
+              </div>
+            
+              <div class="form-group col-md-6">
+                <label for="dateJob">Start Date</label>
+                <input type="date"  class="form-control" max="9999-12-31"/>
+              </div>
             </div>
+
+
+            <div class="form-row">
+                <div class="col-auto mr-auto">
+              <button type="button" class="btn lightButton navButton" (click)=goStepOne()>Previous Page</button>
+              </div>
+              <div class="col-auto">
+              <button type="button" class="btn darkButton navButton" (click)=goStepThree()>Next Page</button>
+              </div>
+              </div>
 
         </div>
       </div>
@@ -138,6 +171,15 @@
               You may also come into the office however it is not required
             </p>
           </div>
+
+          <div class="form-row">
+              <div class="col-auto mr-auto">
+            <button type="button" class="btn lightButton navButton" (click)=goStepTwo()>Previous Page</button>
+            </div>
+            <div class="col-auto">
+            <button type="button" class="btn darkButton navButton" (click)=goStepFour()>Next Page</button>
+            </div>
+            </div>
           
 
         </div>
@@ -172,10 +214,67 @@
 
           <h1>Confirm Information</h1>
           <hr>
-         
 
-               
+          <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      + Work Details
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p><span>First Name:  {{ firstName }} </span></p>
+                    <p><span>Last Name: {{ lastName }} </span></p>
+                    <p><span>Email Address: {{ email }} </span></p>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      + Rental Details
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                      <p><span>University:  {{ institute }} </span></p>
+                      <p><span>Student Number: {{ studentID }} </span></p>
+                </div>
+              </div>
+  
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      + Identity
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                      <p><span>Parent/Guardian 1 ID:  {{ guardian1 }} </span></p>
+                      <p><span>Parent/Guardian 2 ID: {{ guardian2 }} </span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
 
+
+          <div class="form-row">
+              <div class="col-auto mr-auto">
+            <button type="button" class="btn lightButton navButton" (click)=goStepThree()>Previous Page</button>
+            </div>
+            <div class="col-auto">
+            <button type="button" class="btn darkButton navButton" (click)=goStepFive()>Next Page</button>
+            </div>
+            </div>
         </div>
       </div>
     </div>
@@ -205,7 +304,16 @@
       <div class="container-content register-container">
         <h1>Claim Complete</h1>
         <hr>
+
+        <p class="center-text">You have supplied all necessary information for your claim to be submitted.</p>
+        <p class="center-text">Please click below to have your claim sent through to OurAus</p>
+        
         <button type="submit" class="btn buttonForm center-button darkButton">Submit your Claim</button>
+        <div class="form-row">
+            <div class="col-auto mr-auto">
+          <button type="button" class="btn lightButton navButton" (click)=goStepFour()>Previous Page</button>
+          </div>
+          </div>
       </div>
   </div>
 </form>
@@ -218,31 +326,30 @@
       <p>Congratulations your claim has been processed through our system.</p>
     </div>
 
-    <div>{{ date | date }}</div>
+
+    <p>The estimated processing time is 2 weeks, the below date is the estimated date of first assistance allowance.</p>
+    <div class="center-text"><h1>{{ date | date }}</h1></div>
+
+    <p>Please indicate with the checkboxes below for how you would like to be contacted throughout the processing phase.</p><p>Please choose atleast one option below</p>
 
       <div class="form-row">
+        <div class="col-md"></div>
         <div class="col-md">
           <p>Email</p>
+          <input type="checkbox"/>
         </div>
         <div class="col-md">
           <p>Call</p>
+          <input type="checkbox"/>
         </div>
         <div class="col-md">
           <p>SMS</p>
+          <input type="checkbox"/>
         </div>
       </div>
 
-      <div class="form-row">
-        <div class="col-md">
-          <input type="checkbox"/>
-        </div>
-        <div class="col-md">
-          <input type="checkbox"/>
-        </div>
-        <div class="col-md">
-          <input type="checkbox"/>  
-        </div>
-      </div>
+      <a routerLink="/dashboard/centrelink"><button type="button" class="btn buttonForm center-button darkButton">Accept and Return to Dashboard</button></a>
+
     </div>
         
 </div>

@@ -29,6 +29,8 @@ export class RegisterComponent implements OnInit {
   webcam = false;
   goInOffice = false;
   needInputs = false;
+  uniDetails = true;
+  parentDetails = true;
 
   currentUser: User;
 
@@ -44,6 +46,12 @@ export class RegisterComponent implements OnInit {
   guardian1 = '';
   guardian2 = '';
   partnerId = '';
+  studentID = '';
+  institute = '';
+  workHours = '';
+  workIncome = '';
+  rent1 = '';
+  rent2 = '';
 
   constructor( 
     private formBuilder: FormBuilder,
@@ -66,7 +74,14 @@ export class RegisterComponent implements OnInit {
           verify: ['', [Validators.required, Validators.minLength(6)]],
           guardian1: [''],
           guardian2: [''],
-          partnerId: ['']
+          partnerId: [''],
+          studentID: [''],
+          institute: [''],
+          workHours: [''],
+          workIncome: [''],
+          rent1: [''],
+          rent2: ['']
+
       },{
         validator: PasswordValidation.MatchPassword // your validation method
       })
@@ -181,17 +196,40 @@ export class RegisterComponent implements OnInit {
     this.city = this.registerForm.value.city;
     this.postcode = this.registerForm.value.postcode;
     this.dob = this.registerForm.value.dob;
+    this.rent1 = this.registerForm.value.rent1;
+    this.rent2 = this.registerForm.value.rent2;
+    this.workHours = this.registerForm.value.workHours;
+    this.workIncome = this.registerForm.value.workIncome;
+    this.institute = this.registerForm.value.institute;
+    this.studentID = this.registerForm.value.studentID;
+    this.guardian1 = this.registerForm.value.guardian1;
+    this.guardian2 = this.registerForm.value.guardian2;
+    this.partnerId = this.registerForm.value.partnerId;
   }
 }
 
   uniRemove() {
     this.uni = false;
     this.uniMessage = true;
+    this.uniDetails = false;
+  }
+
+  uniAdd() {
+    this.uni = true;
+    this.uniMessage = false;
+    this.uniDetails = true;
+  }
+
+  parentConnectAdd() {
+    this.otherAccounts = true;
+    this.otherAccountsMessage = false;
+    this.parentDetails = true;
   }
 
   parentConnectRemove() {
     this.otherAccounts = false;
     this.otherAccountsMessage = true;
+    this.parentDetails = false;
   }
 
   showWebcam() {

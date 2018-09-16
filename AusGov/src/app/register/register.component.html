@@ -15,7 +15,7 @@
             </div>
             <div class="f1-step">
                 <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
-                <p>links</p>
+                <p>Links</p>
             </div>
             <div class="f1-step">
                 <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
@@ -172,10 +172,10 @@
 
 <div class="form-row">
   <div class="col-auto mr-auto">
-<a routerLink="/login"><button type="button" class="btn lightButton">Cancel</button></a>
+<a routerLink="/login"><button type="button" class="btn lightButton navButton">Cancel</button></a>
 </div>
 <div class="col-auto">
-<button type="button" class="btn darkButton" (click)=gostepTwo()>Next Page</button>
+<button type="button" class="btn darkButton navButton" (click)=goStepTwo()>Next Page</button>
 </div>
 </div>
 </div>
@@ -197,7 +197,7 @@
             </div>
             <div class="f1-step active">
                 <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
-                <p>links</p>
+                <p>Links</p>
             </div>
             <div class="f1-step">
                 <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
@@ -237,9 +237,9 @@
             <div class="modal-body">
               <p>Please use your university details below</p>
               <label>Institute</label>
-              <input type="text" class="form-control"/>
+              <input type="text" formControlName="institute" class="form-control"/>
               <label>Student ID</label>
-              <input type="text" class="form-control"/>
+              <input type="text" formControlName="studentID" class="form-control"/>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn formButton lightButton" data-dismiss="modal">Cancel</button>
@@ -251,6 +251,7 @@
         </div>
         <div *ngIf="uniMessage" class="form-row alert alert-primary">
           <p>Successfully connected to your University Account, Study details will now be prefilled. Thank you.</p>
+          <button type="button" class="btn lightButton center-button" (click)=uniAdd()>Cancel</button>
         </div>
 
 
@@ -283,15 +284,16 @@
           </div>
         </div>
         <div *ngIf="otherAccountsMessage" class="form-row alert alert-primary">
-          <p>Successfully connected related accounts, these details will now be prefilled. Thank you.</p>
+          <p>Successfully connected your legal guardians and/or your partners accounts, these details will now be prefilled. Thank you.</p>
+          <button type="button" class="btn lightButton center-button" (click)=parentConnectAdd()>Cancel</button>
         </div>
 
         <div class="form-row">
             <div class="col-auto mr-auto">
-          <button type="button" class="btn lightButton" (click)=goStepOne()>Previous Page</button>
+          <button type="button" class="btn lightButton navButton" (click)=goStepOne()>Previous Page</button>
           </div>
           <div class="col-auto">
-          <button type="button" class="btn darkButton" (click)=gostepThree()>Next Page</button>
+          <button type="button" class="btn darkButton navButton" (click)=goStepThree()>Next Page</button>
           </div>
           </div>
 
@@ -312,7 +314,7 @@
             </div>
             <div class="f1-step active">
                 <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
-                <p>links</p>
+                <p>Links</p>
             </div>
             <div class="f1-step active">
                 <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
@@ -333,14 +335,106 @@
                 <h1>Missing Information</h1>
                 <hr>
                 <p>The following information is required:</p>
+                <hr>
 
+
+                <div *ngIf="uniDetails">
+                  <h4>University Details</h4>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label>University Institute</label>
+                    <input type="text" class="form-control"/>
+                  </div>
+        
+                  <div class="form-group col-md-6">
+                    <label for="courseTitle">Course Title</label>
+                    <input type="text" class="form-control"/>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="uniStart">Start Date</label>
+                  <input type="date" class="form-control" max="9999-12-31"/>
+                </div>
+        
+                  <div class="form-group col-md-6">
+                    <label for="uniEnd">End Date</label>
+                    <input type="date" class="form-control" max="9999-12-31"/>
+                  </div>
+                  </div>
+                  <hr>
+                  </div>
+                  
+
+                  <div *ngIf="parentDetails">
+                      <h4>Parent/Guardian Details</h4>
+                  Parent/Guardian 1 
+                  <!-- Email Address input -->
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="parentName">Name</label>
+                    <input type="text" class="form-control"/>
+                  </div>
+          
+                  <!-- Contact number and date of birth on same line -->
+                    <div class="form-group col-md-6">
+                      <label for="parentDob">Date of Birth</label>
+                      <input type="date" class="form-control" max="9999-12-31"/>
+                    </div>
+                    </div>
+
+                    Parent/Guardian 2
+                    <!-- Email Address input -->
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="parentName2">Name</label>
+                      <input type="text" class="form-control"/>
+                    </div>
+            
+                    <!-- Contact number and date of birth on same line -->
+                      <div class="form-group col-md-6">
+                        <label for="parentDob2">Date of Birth</label>
+                        <input type="date"  class="form-control" max="9999-12-31"/>
+                      </div>
+                      </div>
+                      <hr>
+                    </div>
+
+                      <h4>Income Details</h4>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="workHours">Average Hours worked per Week</label>
+                          <input type="text" formControlName="workHours" class="form-control"/>
+                        </div>
+              
+                        <div class="form-group col-md-6">
+                          <label for="workIncome">Average income per Week</label>
+                          <input type="text" formControlName="workIncome" class="form-control"/>
+                        </div>
+                      </div>
+                      <hr>
+
+                      <h4>Living Details</h4>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="rent1">Rent for entire rental per week</label>
+                          <input type="text" formControlName="rent1" class="form-control"/>
+                        </div>
+              
+                        <div class="form-group col-md-6">
+                          <label for="rent2">Your rent per week</label>
+                          <input type="text" formControlName="rent2" class="form-control"/>
+                        </div>
+                      </div>
+      
 
                 <div class="form-row">
                     <div class="col-auto mr-auto">
-                  <button type="button" class="btn lightButton" (click)=goStepTwo()>Previous Page</button>
+                  <button type="button" class="btn lightButton navButton" (click)=goStepTwo()>Previous Page</button>
                   </div>
                   <div class="col-auto">
-                  <button type="button" class="btn darkButton" (click)=gostepFour()>Next Page</button>
+                  <button type="button" class="btn darkButton navButton" (click)=goStepFour()>Next Page</button>
                   </div>
                   </div>
 
@@ -360,7 +454,7 @@
             </div>
             <div class="f1-step active">
                 <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
-                <p>links</p>
+                <p>Links</p>
             </div>
             <div class="f1-step active">
                 <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
@@ -387,7 +481,7 @@
                 </p>
                 <div *ngIf="identityButtons">
                 <button type="button" class="btn formButton lightButton" (click)=showWebcam()>Take Photo Now</button>
-                <p>OR</p>
+                <p class="orText">OR</p>
                 <button type="button" class="btn formButton darkButton" (click)=notWebcam()>Go to Centrelink Office</button>
               </div>
                 <div *ngIf="webcam" class="container photo">
@@ -405,10 +499,10 @@
 
                 <div class="form-row">
                     <div class="col-auto mr-auto">
-                  <button type="button" class="btn lightButton" (click)=goStepThree()>Previous Page</button>
+                  <button type="button" class="btn lightButton navButton" (click)=goStepThree()>Previous Page</button>
                   </div>
                   <div class="col-auto">
-                  <button type="button" class="btn darkButton" (click)=gostepFive()>Next Page</button>
+                  <button type="button" class="btn darkButton navButton" (click)=goStepFive()>Next Page</button>
                   </div>
                   </div>
         </div>
@@ -430,7 +524,7 @@
             </div>
             <div class="f1-step active">
                 <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
-                <p>links</p>
+                <p>Links</p>
             </div>
             <div class="f1-step active">
                 <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
@@ -486,7 +580,8 @@
               </div>
               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                 <div class="card-body">
-                </div>
+                    <p><span>University:  {{ institute }} </span></p>
+                    <p><span>Student Number: {{ studentID }} </span></p>
               </div>
             </div>
 
@@ -494,12 +589,19 @@
               <div class="card-header" id="headingThree">
                 <h5 class="mb-0">
                   <button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    + Work Information
+                    + Other Information
                   </button>
                 </h5>
               </div>
               <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                 <div class="card-body">
+                    <p><span>Parent/Guardian 1 ID:  {{ guardian1 }} </span></p>
+                    <p><span>Parent/Guardian 2 ID: {{ guardian2 }} </span></p>
+                    <p><span>Partner ID:  {{ partnerId }} </span></p>
+                    <p><span>Average Hours worked per week: {{ workHours }} </span></p>
+                    <p><span>Average income per week: {{ workIncome }} </span></p>
+                    <p><span>Rent per week for house: {{ rent1 }} </span></p>
+                    <p><span>Your rent per week: {{ rent2 }} </span></p>
                 </div>
               </div>
             </div>
@@ -511,14 +613,12 @@
 
           <div class="form-row">
               <div class="col-auto mr-auto">
-            <button type="button" class="btn lightButton" (click)=goStepFour()>Previous Page</button>
-            </div>
-            <div class="col-auto">
-            <button type="button" class="btn darkButton" (click)=gostepSix()>Next Page</button>
+            <button type="button" class="btn lightButton navButton" (click)=goStepFour()>Previous Page</button>
             </div>
             </div>
         </div>
       </div>
+    </div>
     </div>
   </form>
   <div *ngIf="stepSix">
@@ -530,7 +630,7 @@
                 <p>Your account has successfully been created. Thank you for taking the time to complete the registration process.
                 </p>
                 <a routerLink="/dashboard"><button type="button" class="btn formButton lightButton">Go to your Dashboard</button></a>
-                <p>OR</p>
+                <p class="orText">OR</p>
                 <a routerLink="/login"><button type="button" class="btn formButton darkButton">Return to front page</button></a>
         </div>
       </div>
