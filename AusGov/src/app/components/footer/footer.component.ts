@@ -13,7 +13,7 @@ export class FooterComponent implements OnInit {
   }
 
   openChat() {
-    window.open('/chat');
+    window.open('/livechat');
   }
 
 }
