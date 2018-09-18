@@ -208,6 +208,11 @@ export class RegisterComponent implements OnInit {
   }
 }
 
+goStepSix() {
+  this.stepSix = true;
+  this.stepFive = false;
+}
+
   uniRemove() {
     this.uni = false;
     this.uniMessage = true;
@@ -281,10 +286,9 @@ export class RegisterComponent implements OnInit {
       users => {
         this.currentUser = users;
         localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
-        this.router.navigate(['/dashboard']);
+        this.stepSix = true;
+        this.stepFive = false;
       }
     )
-      this.stepFive = false;
-      this.stepSix = true;
   }
 }
