@@ -5,37 +5,39 @@
     <li class="breadcrumb-item active" aria-current="page"><a routerLink="/dashboard/centrelink">Centrelink</a></li>      
   </ol>
 </nav>
-
+<div class="row">
+<div class="col-md">
+    <a routerLink="/dashboard"><button class="btn darkButton center-button">Return to Dashboard</button></a>
+  </div>
+  <div class="col-md-10"></div>
+</div>
   <div class="container-content">
   <div class="center-text">
-    <p>Centrelink Dashboard</p> 
-    <p>text text text</p>
+    <h1>Centrelink Dashboard</h1>
+    <p>Welcome to the Centrelink Dashboard. Here you can create and manage your claims, update information, add reports and much more.
+      If you have never applied for a centrelink claim before please use the link below to check you are eligible. 
+    </p>
+    <h2><a href="url">Go to the Elibility Test</a></h2>
+    <p>If you go through the elibility check, the details from the test will be applied to a real claim making it much simplier to process through</p>
   </div>
 
   <!-- Set up two bootstrap rows, add 3 buttons to each row -->
   <!-- row-width is a setting in styles.css to limit width -->
   <div class="row">
-    <div class="col-md">
-      <a routerLink="/UnderConstruction"><button class="btn buttonDashboard colour1 paymentButton">Next Payment</button></a>
-    </div>
-  </div>
-
-  <div class="row">
+      <div *ngIf="claimMade" class="col-md">
+        <a routerLink="/UnderConstruction"><button class="btn buttonDashboard colour1 paymentButton">Next Payment</button></a>
+      </div>
     <div class="col-md">
       <a routerLink="/dashboard/centrelink/centrelink-form"><button class="btn buttonDashboard colour2">MAKE A CLAIM</button></a>
     </div>
+  </div>
 
+  <div *ngIf="claimMade" class="row">
     <div class="col-md">
       <a routerLink="/UnderConstruction"><button class="btn buttonDashboard colour1">MY OUTSTANDING CLAIMS</button></a>
     </div>
     <div class="col-md">
       <a routerLink="/UnderConstruction"><button class="btn buttonDashboard colour2">PROCESSED CLAIMS</button></a>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md">
-      <a routerLink="/dashboard"><button class="btn darkButton center-button">Exit</button></a>
     </div>
   </div>
   </div>

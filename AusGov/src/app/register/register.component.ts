@@ -20,6 +20,7 @@ export class RegisterComponent implements OnInit {
   stepThree = false;
   stepFour = false;
   stepFive = false;
+  stepSix = false;
   uni = true;
   otherAccounts = true;
   uniMessage = false;
@@ -27,6 +28,9 @@ export class RegisterComponent implements OnInit {
   identityButtons = true;
   webcam = false;
   goInOffice = false;
+  needInputs = false;
+  uniDetails = true;
+  parentDetails = true;
 
   currentUser: User;
 
@@ -42,6 +46,12 @@ export class RegisterComponent implements OnInit {
   guardian1 = '';
   guardian2 = '';
   partnerId = '';
+  studentID = '';
+  institute = '';
+  workHours = '';
+  workIncome = '';
+  rent1 = '';
+  rent2 = '';
 
   constructor( 
     private formBuilder: FormBuilder,
@@ -64,7 +74,14 @@ export class RegisterComponent implements OnInit {
           verify: ['', [Validators.required, Validators.minLength(6)]],
           guardian1: [''],
           guardian2: [''],
-          partnerId: ['']
+          partnerId: [''],
+          studentID: [''],
+          institute: [''],
+          workHours: [''],
+          workIncome: [''],
+          rent1: [''],
+          rent2: ['']
+
       },{
         validator: PasswordValidation.MatchPassword // your validation method
       })
@@ -77,52 +94,93 @@ export class RegisterComponent implements OnInit {
   }
 
   goStepOne() {
+    if (this.registerForm.invalid) {
+      this.submitted = true;
+      this.stepOne = true;
+      this.stepTwo = false;
+      this.stepThree = false;
+      this.stepFour = false;
+      this.stepFive = false;
+      this.needInputs = true;
+      return;
+    } else {
     this.stepOne = true;
     this.stepTwo = false;
     this.stepThree = false;
     this.stepFour = false;
     this.stepFive = false;
   }
+}
 
-  goStepTwoValidate() {
-    this.submitted = true;
-    /*if (this.registerForm.invalid) {
-      return;
-    } else {*/
-      this.submitted = false;
-      this.stepOne = false;
-      this.stepTwo = true;
+
+  goStepTwo() {
+    if (this.registerForm.invalid) {
+      this.submitted = true;
+      this.stepOne = true;
+      this.stepTwo = false;
       this.stepThree = false;
       this.stepFour = false;
       this.stepFive = false;
-    
-  }
-
-  goStepTwo() {
+      this.needInputs = true;
+      return;
+    } else {
     this.stepOne = false;
     this.stepTwo = true;
     this.stepThree = false;
     this.stepFour = false;
     this.stepFive = false;
   }
+}
 
   goStepThree() {
+    if (this.registerForm.invalid) {
+      this.submitted = true;
+      this.stepOne = true;
+      this.stepTwo = false;
+      this.stepThree = false;
+      this.stepFour = false;
+      this.stepFive = false;
+      this.needInputs = true;
+      return;
+    } else {
     this.stepOne = false;
     this.stepTwo = false;
     this.stepThree = true;
     this.stepFour = false;
     this.stepFive = false;
   }
+}
 
   goStepFour() {
+    if (this.registerForm.invalid) {
+      this.submitted = true;
+      this.stepOne = true;
+      this.stepTwo = false;
+      this.stepThree = false;
+      this.stepFour = false;
+      this.stepFive = false;
+      this.needInputs = true;
+      return;
+    } else {
     this.stepOne = false;
     this.stepTwo = false;
     this.stepThree = false;
     this.stepFour = true;
     this.stepFive = false;
   }
+}
 
   goStepFive() {
+    if (this.registerForm.invalid) {
+      this.submitted = true;
+      this.stepOne = true;
+      this.stepTwo = false;
+      this.stepThree = false;
+      this.stepFour = false;
+      this.stepFive = false;
+      this.needInputs = true;
+      return;
+    } else {
     this.stepOne = false;
     this.stepTwo = false;
     this.stepThree = false;
@@ -138,16 +196,40 @@ export class RegisterComponent implements OnInit {
     this.city = this.registerForm.value.city;
     this.postcode = this.registerForm.value.postcode;
     this.dob = this.registerForm.value.dob;
+    this.rent1 = this.registerForm.value.rent1;
+    this.rent2 = this.registerForm.value.rent2;
+    this.workHours = this.registerForm.value.workHours;
+    this.workIncome = this.registerForm.value.workIncome;
+    this.institute = this.registerForm.value.institute;
+    this.studentID = this.registerForm.value.studentID;
+    this.guardian1 = this.registerForm.value.guardian1;
+    this.guardian2 = this.registerForm.value.guardian2;
+    this.partnerId = this.registerForm.value.partnerId;
   }
+}
 
   uniRemove() {
     this.uni = false;
     this.uniMessage = true;
+    this.uniDetails = false;
+  }
+
+  uniAdd() {
+    this.uni = true;
+    this.uniMessage = false;
+    this.uniDetails = true;
+  }
+
+  parentConnectAdd() {
+    this.otherAccounts = true;
+    this.otherAccountsMessage = false;
+    this.parentDetails = true;
   }
 
   parentConnectRemove() {
     this.otherAccounts = false;
     this.otherAccountsMessage = true;
+    this.parentDetails = false;
   }
 
   showWebcam() {
@@ -170,7 +252,13 @@ export class RegisterComponent implements OnInit {
  
     // stop here if form is invalid
     if (this.registerForm.invalid) {
-      alert('UNSUCCESSFUL!! :-)')
+      this.submitted = true;
+      this.stepOne = true;
+      this.stepTwo = false;
+      this.stepThree = false;
+      this.stepFour = false;
+      this.stepFive = false;
+      this.needInputs = true;
         return;
     }
 
@@ -196,6 +284,7 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['/dashboard']);
       }
     )
+      this.stepFive = false;
+      this.stepSix = true;
   }
-
 }

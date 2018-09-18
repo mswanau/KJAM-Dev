@@ -13,6 +13,7 @@
                 <!-- Form on submit will perform function from the component.ts file -->
                 <!-- following form uses Angulars client side validation -->
                 <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" nonvalidate>
+                    <div *ngIf="incorrect" class="alert alert-danger"><h6>There was a problem</h6><p>We cannot find an account with that username and password</p></div>
 
                     <!-- Email label and input, with angulars validation-->
                     <div class="form-group email">
