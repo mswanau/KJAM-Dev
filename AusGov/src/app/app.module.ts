@@ -16,6 +16,7 @@ import { CentrelinkDashboardComponent } from './centrelink-dashboard/centrelink-
 import { CentrelinkFormComponent } from './centrelink-form/centrelink-form.component';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 import { WebcamModule } from 'ngx-webcam';
+import { LivechatComponent } from './livechat/livechat.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { WebcamModule } from 'ngx-webcam';
     ProgressPageComponent,
     CentrelinkDashboardComponent,
     CentrelinkFormComponent,
-    PasswordResetComponent
+    PasswordResetComponent,
+    LivechatComponent
   ],
   imports: [
     WebcamModule,

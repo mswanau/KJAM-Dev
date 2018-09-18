@@ -9,7 +9,17 @@ export class FooterComponent implements OnInit {
 
   constructor() { }
 
+  chatOpen = false;
+
   ngOnInit() {
+  }
+
+  openChat() {
+    if (this.chatOpen) {
+      this.chatOpen = false;
+    } else {
+      this.chatOpen = true;
+    }
   }
 
 }
