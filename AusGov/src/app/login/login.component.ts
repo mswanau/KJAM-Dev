@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   model: any = {};
   currentUser: Object;
+  incorrect = false;
   
   constructor(
     private router: Router,
@@ -33,6 +34,11 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
           this.router.navigate(['/dashboard']);
         }
+      
+      }, 
+      errorResponse => {
+        // Login Error
+        this.incorrect = true;
       }
     );
   }

@@ -7,7 +7,7 @@
       <li class="breadcrumb-item active" aria-current="page"><a routerLink="/dashboard/centrelink/centrelink-form">Centrelink Claim</a></li>      
     </ol>
   </nav>
-  <form  (ngSubmit)="onSubmit()">
+  <form [formGroup]="centrelinkForm" (ngSubmit)="onSubmit()">
       <div *ngIf="stepOne">
           <div class="form-row">
 
@@ -87,7 +87,7 @@
             
               <div class="form-group col-md-6">
                 <label for="dateJob">Start Date</label>
-                <input type="date"  class="form-control" max="9999-12-31"/>
+                <input type="date"  formControlName="dateJob" class="form-control" max="9999-12-31"/>
               </div>
             </div>
 
@@ -226,9 +226,9 @@
                 </div>
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                   <div class="card-body">
-                    <p><span>First Name:  {{ firstName }} </span></p>
-                    <p><span>Last Name: {{ lastName }} </span></p>
-                    <p><span>Email Address: {{ email }} </span></p>
+                    <p><span>Job Title:  {{ jobTitle }} </span></p>
+                    <p><span>Company Name: {{ companyName }} </span></p>
+                    <p><span>Start Date: {{ dateJob }} </span></p>
                   </div>
                 </div>
               </div>
@@ -243,8 +243,8 @@
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                   <div class="card-body">
-                      <p><span>University:  {{ institute }} </span></p>
-                      <p><span>Student Number: {{ studentID }} </span></p>
+                      <p><span>Rental Amount:  $150</span></p>
+                      <p><span>Move in date: 01/01/2018 </span></p>
                 </div>
               </div>
   
@@ -258,8 +258,7 @@
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                   <div class="card-body">
-                      <p><span>Parent/Guardian 1 ID:  {{ guardian1 }} </span></p>
-                      <p><span>Parent/Guardian 2 ID: {{ guardian2 }} </span></p>
+                      <p><span>Identity Accepted</span></p>
                   </div>
                 </div>
               </div>
@@ -333,18 +332,17 @@
     <p>Please indicate with the checkboxes below for how you would like to be contacted throughout the processing phase.</p><p>Please choose atleast one option below</p>
 
       <div class="form-row">
-        <div class="col-md"></div>
-        <div class="col-md">
-          <p>Email</p>
-          <input type="checkbox"/>
+        <div class="col-md center-text">
+          <h4>Email</h4>
+          <input class="bigCheckbox" type="checkbox"/>
         </div>
-        <div class="col-md">
-          <p>Call</p>
-          <input type="checkbox"/>
+        <div class="col-md center-text">
+          <h4>Call</h4>
+          <input class="bigCheckbox" type="checkbox"/>
         </div>
-        <div class="col-md">
-          <p>SMS</p>
-          <input type="checkbox"/>
+        <div class="col-md center-text">
+          <h4>SMS</h4>
+          <input class="bigCheckbox" type="checkbox"/>
         </div>
       </div>
 

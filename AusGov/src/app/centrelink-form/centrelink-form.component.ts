@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-centrelink-form',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./centrelink-form.component.css']
 })
 export class CentrelinkFormComponent implements OnInit {
+
+  centrelinkForm: FormGroup;
+
   submitted = false;
 
   stepOne = true;
@@ -15,13 +19,23 @@ export class CentrelinkFormComponent implements OnInit {
   stepFive = false;
   stepSix = false;
   date: Date;  
+  jobTitle = '';
+  companyName = '';
+  dateJob = '';
 
-  constructor() { 
+  constructor(
+    private formBuilder: FormBuilder
+  ) { 
   }
 
   ngOnInit() {
     this.date = new Date();
     this.date.setDate( this.date.getDate() + 14 );
+    this.centrelinkForm = this.formBuilder.group({
+      jobTitle: [''],
+      companyName: [''],
+      dateJob: ['']
+    });
   }
 
   beginClaim(){
@@ -45,6 +59,9 @@ export class CentrelinkFormComponent implements OnInit {
     this.stepThree = false;
     this.stepFour = false;
     this.stepFive = false;
+    this.jobTitle = this.centrelinkForm.value.jobTitle;
+    this.companyName = this.centrelinkForm.value.companyName;
+    this.dateJob = this.centrelinkForm.value.dateJob;
   }
 
   goStepThree() {
@@ -53,15 +70,32 @@ export class CentrelinkFormComponent implements OnInit {
     this.stepThree = true;
     this.stepFour = false;
     this.stepFive = false;
+
   }
 
   goStepFour() {
+    if (this.centrelinkForm.invalid) {
+      this.submitted = true;
+      this.stepOne = false;
+      this.stepTwo = true;
+      this.stepThree = false;
+      this.stepFour = false;
+      this.stepFive = false;
+
+      return;
+
+    } else {
     this.stepOne = false;
     this.stepTwo = false;
     this.stepThree = false;
     this.stepFour = true;
     this.stepFive = false;
+
+    this.jobTitle = this.centrelinkForm.value.jobTitle;
+    this.companyName = this.centrelinkForm.value.companyName;
+    this.dateJob = this.centrelinkForm.value.dateJob;
   }
+}
 
   goStepFive() {
     this.stepFive = true;

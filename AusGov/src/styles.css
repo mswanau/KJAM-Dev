@@ -13,7 +13,7 @@
     border-color: #5f6366;
 }
 .footer-button:hover {
-    background-color: #4d9895;
+    background-color: #E37222;
 }
 
 .login-container {
@@ -24,7 +24,6 @@
 }
 
 .register-container {
-    background-color: #07889B;
     background-color: #CDCDCD;
     color: black;
 }
@@ -49,7 +48,7 @@ hr {
 
 .colour1 {
     background-color: #5f6366;
-    background-color: rgb(255, 181, 22);
+    background-color: #17252a;
     color: white;
 }
 
@@ -87,7 +86,7 @@ hr {
 }
 
 .page-container {
-    padding: 60px 5% 70px 5%;
+    padding: 55px 5% 70px 5%;
     width: 100%;
 }
 
@@ -203,6 +202,12 @@ hr {
     margin-left: 49%;
     margin-top: .5em;
     margin-bottom: .5em;
+}
+
+.bigCheckbox {
+    width: 29px;
+    height: 30px;
+    margin-bottom: 20px;
 }
 
 
