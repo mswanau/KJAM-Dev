@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../user';
 
 @Component({
   selector: 'app-header',
@@ -7,12 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  currentUser: User;
+  loggedIn = false;
+
   constructor() {
     
-   }
+  }
 
   ngOnInit() {
-    
+    if (localStorage.getItem('currentUser') != null) {
+      this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      this.loggedIn = true;
+    }
   }
 
 }

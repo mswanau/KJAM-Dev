@@ -16,4 +16,8 @@ export class StudentService {
     }
     return this.http.put('http://localhost:3000/student/update', body);
   }
+
+  getStudent(studentNo) {
+    return this.http.get('http://localhost:3000/student/' + studentNo);
+  }
 }
