@@ -8,6 +8,7 @@ import { CentrelinkDashboardComponent } from './centrelink-dashboard/centrelink-
 import { CentrelinkFormComponent } from './centrelink-form/centrelink-form.component';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 import { LivechatComponent } from './livechat/livechat.component';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'dashboard/centrelink', component: CentrelinkDashboardComponent },
   { path: 'dashboard/centrelink/centrelink-form', component: CentrelinkFormComponent},
   { path: 'reset', component: PasswordResetComponent },
-  { path: 'livechat', component: LivechatComponent}
+  { path: 'livechat', component: LivechatComponent },
+  { path: 'dashboard/user-info', component: UserInfoComponent }
 ];
 
 @NgModule({
