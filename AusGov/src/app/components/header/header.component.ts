@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChange, OnChanges } from '@angular/core';
 import { User } from '../../user';
+import { Router } from "@angular/router";
+import { componentRefresh } from '@angular/core/src/render3/instructions';
 
 @Component({
   selector: 'app-header',
@@ -11,15 +13,20 @@ export class HeaderComponent implements OnInit {
   currentUser: User;
   loggedIn = false;
 
-  constructor() {
-    
-  }
+  constructor(private router: Router) {}
 
   ngOnInit() {
+    console.log('Hello')
     if (localStorage.getItem('currentUser') != null) {
       this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
       this.loggedIn = true;
     }
+  }
+
+  logout() {
+    localStorage.removeItem('currentUser');
+    this.loggedIn = false;
+    this.router.navigate(['/login']);
   }
 
 }

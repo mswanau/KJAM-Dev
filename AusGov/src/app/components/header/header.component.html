@@ -6,25 +6,27 @@
 
   <a class="navbar-brand" routerLink='/login'><b>OurAus</b>&nbsp;<div class="home-image fa fa-home"></div></a>
 
-  <div *ngIf='loggedIn'>
-      <b>Hello, {{currentUser.first_name}}! Your ID: {{currentUser.id}}</b>
-  </div>
+  
 
   <!-- Bootstraps collapsable navbar settings. Will collapse the right side of navbar down to a single 3 line button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <!-- Set collapsable icons to top right of screen
+  <!-- Set collapsable icons to top right of screen -->
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" routerLink='/login'><b>Login</b></a>
+      <li class="nav-item" class="textt">
+        <div *ngIf='loggedIn'>
+      <b>Hello, {{currentUser.first_name}}! Your ID: {{currentUser.id}} &nbsp;&nbsp;</b>
+        </div>       
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink='/register'><b>Register</b></a>
+        <div *ngIf='loggedIn'>
+          <button type="button" class="btn" (click)=logout()>Logout</button>
+        </div>
       </li>
     </ul>
-  </div>   -->
+  </div> 
 </nav>
 
 <!-- Navbar colours created in the main styles.css script "src/styles.css" -->

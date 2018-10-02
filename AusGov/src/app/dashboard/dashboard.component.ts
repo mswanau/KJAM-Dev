@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderComponent } from '../components/header/header.component';
 
 
 @Component({
@@ -12,7 +13,6 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit() {
-
   }
 
 }
