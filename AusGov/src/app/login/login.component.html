@@ -31,7 +31,7 @@
                     <!-- Password label and input, with angulars validation -->
                     <div class="form-group">
                         <label for="pwd">&nbsp;<h5>Password</h5></label> <!-- ADD POPOVER FOR PASSWORD -->
-                        <p id="pwdmessage2">Don't show your password to anyone</p>
+                        <p id="pwdmessage2">Do not show your password to anyone</p>
                         <input type="password" class="form-control" id="pwd" name="password" [(ngModel)]="model.password" #password="ngModel"
                             [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6" />
 
@@ -74,6 +74,25 @@
         </div>
     </div>
     </div>
-</div>
 
-<!-- For colours go to the login.css script in the same folder -->
+
+<div class="row text-center" style="margin-top: 50px;">
+
+
+    <div class="col-md-2"></div>
+    <div class="col-md">
+      <p style="line-height: 1.7rem">OurAus is here to combine all your services in one, giving you a simple and easy way to manage your life. We strive to give you the best 
+            experience, with a clean and effective solution. If you are not satisfied please click below for any suggestions or changes you would like to see.</p>
+    </div>
+    <div class="col-md-2"></div>
+
+    
+  </div>
+  <hr style="width: 80%;">
+
+
+<div class="text-center">
+<button class="btn darkButton"  style="margin: 0 5%;" type="button">Suggestions</button>
+<button class="btn darkButton"  style="margin: 0 5%;" type="button">Contact us</button>
+</div>
+</div>
