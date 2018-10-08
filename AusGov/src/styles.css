@@ -2,7 +2,8 @@
 
 .navbar {
     /*background-color: #E37222;*/
-    background-color: #C06014;
+    /*background-color: #C06014;*/
+    background-color: rgb(30, 30, 156);
     color: white;
 }
 
@@ -10,7 +11,7 @@
     background-color: black;
     /*background-color: #984B43;*/
     color: white;
-    border-color: #5f6366;
+    border-color: white;
 }
 .footer-button:hover {
     background-color: #E37222;
@@ -35,26 +36,31 @@ hr {
 
  
 .darkButton {
-    background-color:#17252a;
+    /*background-color:#17252a;*/
     /*background-color: #984B43;*/
+    background-color: rgb(30, 30, 156);
+    
     color: white;
 }
 
 .lightButton {
-    background-color:#984B43;
+    /*background-color:#984B43;*/
+    background-color: rgb(64, 64, 252);
     /*background-color: #EAC67A;*/
     color: white;
 }
 
 .colour1 {
-    background-color: #5f6366;
-    background-color: #17252a;
+   /* background-color: #5f6366;
+    background-color: #17252a;*/
+    background-color: rgb(30, 30, 156);
     color: white;
 }
 
 .colour2 {
-    background-color: #4d6d9a;
-    background-color: #984B43;
+   /* background-color: #4d6d9a;
+    background-color: #984B43;*/
+    background-color: rgb(64, 64, 252);
     color: white;
 }
 
@@ -67,11 +73,31 @@ hr {
 }
 
 .modal-content {
-    background-color: #E37222;
+   /*background-color: #E37222;*/
+    background-color: rgb(30, 30, 156);
+}
+.f1-progress-line {
+    /*background: #C06014; */
+    background-color: rgb(30, 30, 156);
 }
 
+.f1-step.activated .f1-step-icon {
+    background: rgb(30, 30, 156); 
+    /*color: #C06014;*/
+    color: white;
+}
+.f1-step.active .f1-step-icon {
+    /*background: #C06014;*/ 
+    background: rgb(30, 30, 156);
+}
 
-
+.f1-step p { color: #ccc;color: rgb(30, 30, 156); }
+.f1-step.activated p { color: #C06014;color: rgb(30, 30, 156); }
+.f1-step.active p { color: #C06014;color: rgb(30, 30, 156); }
+.f1-step-icon {
+background: #ddd;
+color: #fff; 
+}
 /* ------------Content Changes----------------------------------------------------------------------*/
 
 
@@ -241,7 +267,6 @@ hr {
     top: 0; 
     left: 0; 
     height: 1px; 
-    background: #C06014; 
 }
 
 .f1-step { 
@@ -257,20 +282,8 @@ hr {
     width: 40px; 
     height: 40px; 
     margin-top: 4px; 
-    background: #ddd;
-    color: #fff; 
+
     border-radius: 50%;
     border-width: 0px;
     cursor:pointer;
 }
-.f1-step.activated .f1-step-icon {
-    background: #fff; 
-    color: #C06014;
-}
-.f1-step.active .f1-step-icon {
-    background: #C06014;
-}
-
-.f1-step p { color: #ccc; }
-.f1-step.activated p { color: #C06014; }
-.f1-step.active p { color: #C06014; }
