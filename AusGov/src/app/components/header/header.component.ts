@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    console.log('Hello')
     if (localStorage.getItem('currentUser') != null) {
       this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
       this.loggedIn = true;

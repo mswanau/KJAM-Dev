@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../user';
+import { Student } from '../student';
+import { StudentService } from '../student.service';
 
 @Component({
   selector: 'app-user-info',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserInfoComponent implements OnInit {
 
-  constructor() { }
+  currentUser: User;
+  student: Student;
+
+  constructor(
+    private StudentService: StudentService
+  ) { }
 
   ngOnInit() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.StudentService.getStudent(this.currentUser.student).subscribe(
+      StudentService => this.student = StudentService
+    )
   }
 
 }

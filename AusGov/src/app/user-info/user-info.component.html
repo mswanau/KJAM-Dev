@@ -26,11 +26,11 @@
               </div>
               <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
-                  <p><span>First Name:  {{ firstName }} </span></p>
-                  <p><span>Last Name: {{ lastName }} </span></p>
-                  <p><span>Email Address: {{ email }} </span></p>
-                  <p><span>Phone Number: {{ phone }} </span></p>
-                  <p><span>Date of Birth: {{ dob }} </span></p>
+                  <p><span>First Name:  {{ currentUser.first_name }} </span></p>
+                  <p><span>Last Name: {{ currentUser.last_name }} </span></p>
+                  <p><span>Email Address: {{ currentUser.email }} </span></p>
+                  <p><span>Phone Number: {{ currentUser.phone }} </span></p>
+                  <p><span>Date of Birth: {{ currentUser.birth_date }} </span></p>
 
                 </div>
               </div>
@@ -46,8 +46,11 @@
               </div>
               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                 <div class="card-body">
-                    <p><span>University:  {{ institute }} </span></p>
-                    <p><span>Student Number: {{ studentID }} </span></p>
+                    <p><span>Institute:  {{ student.institute }} </span></p>
+                    <p><span>Student Number: {{ student.student_id }} </span></p>
+                    <p><span>Course:  {{ student.course }} </span></p>
+                    <p><span>Start Date: {{ student.start_date }} </span></p>
+                    <p><span>End Date: {{ student.end_date }} </span></p>
               </div>
             </div>
 
@@ -62,10 +65,10 @@
               <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                 <div class="card-body">
                     <p><span></span></p>
-                    <p><span>Address: {{ address }} </span></p>
-                    <p><span>Suburb: {{ suburb }} </span></p>
-                    <p><span>City: {{ city }} </span></p>
-                    <p><span>Post Code: {{ postcode }} </span></p>
+                    <p><span>Address: {{ currentUser.address }} </span></p>
+                    <p><span>Suburb: {{ currentUser.suburb }} </span></p>
+                    <p><span>City: {{ currentUser.city }} </span></p>
+                    <p><span>Post Code: {{ currentUser.postcode }} </span></p>
                 </div>
               </div>
             </div>

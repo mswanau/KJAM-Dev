@@ -167,4 +167,19 @@ app.put('/student/update', (req, res) => {
     db.close();
 })
 
+// Return the student details of a particular user
+app.get('/student/:id', (req, res) => {
+    console.log('Get student.');
+    var db = new sqlite3.Database(db_file);
+    const id = req.params['id'];
+    console.log(id);
+    db.serialize(() => {
+        db.get('SELECT * FROM students WHERE id = (?)', [id], (err, rows) => {
+            if (err) {
+                res.sendStatus(400)
+            } else res.send(rows)
+        })
+    });
+    db.close();
+});
 
