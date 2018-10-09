@@ -18,6 +18,7 @@ import { PasswordResetComponent } from './password-reset/password-reset.componen
 import { WebcamModule } from 'ngx-webcam';
 import { LivechatComponent } from './livechat/livechat.component';
 import { UserInfoComponent } from './user-info/user-info.component';
+import { NgbPopoverModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { UserInfoComponent } from './user-info/user-info.component';
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbPopoverModule
   ],
   providers: [
     HttpClient

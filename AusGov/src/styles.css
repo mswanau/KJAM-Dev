@@ -11,10 +11,10 @@
     background-color: black;
     /*background-color: #984B43;*/
     color: white;
-    border-color: white;
+    border-color: black;
 }
 .footer-button:hover {
-    background-color: #E37222;
+    background-color: gainsboro;
 }
 
 .login-container {
@@ -110,6 +110,7 @@ color: #fff;
 
 .footer-button {
     padding: 5px 20px 5px 20px;
+    margin-left: 10px;
 }
 
 .page-container {
