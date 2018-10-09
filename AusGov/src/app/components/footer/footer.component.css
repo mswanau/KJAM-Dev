@@ -3,3 +3,40 @@
     bottom: 50px; 
     right: 10px;
 }
+
+.help_popup {
+	background:none;
+	color:inherit;
+	border:none; 
+	font: inherit;
+    cursor: pointer;
+    left: 65%;
+}
+
+[tooltip]{
+  position:relative;
+}
+
+[tooltip]::after {
+    content: attr(tooltip);
+    position: absolute;
+    left:100%;
+    top:-14px;
+    transform: translateX(-50%)   translateY(-100%);
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    min-width: 300px;
+    border-radius: 5px;
+    padding: 4px 4px;
+    opacity:0;
+}
+
+
+
+[tooltip]:hover::after {
+   opacity:1
+}
+
+

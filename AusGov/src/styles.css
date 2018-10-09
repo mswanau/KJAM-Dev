@@ -3,7 +3,7 @@
 .navbar {
     /*background-color: #E37222;*/
     /*background-color: #C06014;*/
-    background-color: rgb(30, 30, 156);
+    background-color: #0055b9;
     color: white;
 }
 
@@ -18,14 +18,15 @@
 }
 
 .login-container {
-    background-color: #CDCDCD;
-    /*background-color: #99CED4;*/
+    /*background-color: #CDCDCD;*/
+    background-color: rgb(243, 243, 243);
     color: #f5fbfb;
     color: black;
 }
 
 .register-container {
-    background-color: #CDCDCD;
+    /*background-color: #CDCDCD;*/
+    background-color: rgb(243, 243, 243);
     color: black;
 }
 
@@ -38,7 +39,7 @@ hr {
 .darkButton {
     /*background-color:#17252a;*/
     /*background-color: #984B43;*/
-    background-color: rgb(30, 30, 156);
+    background-color: #0055b9;
     
     color: white;
 }
@@ -53,14 +54,14 @@ hr {
 .colour1 {
    /* background-color: #5f6366;
     background-color: #17252a;*/
-    background-color: rgb(30, 30, 156);
+    background-color: #0055b9;
     color: white;
 }
 
 .colour2 {
    /* background-color: #4d6d9a;
     background-color: #984B43;*/
-    background-color: rgb(64, 64, 252);
+    background-color: #0055b9;
     color: white;
 }
 
@@ -74,26 +75,26 @@ hr {
 
 .modal-content {
    /*background-color: #E37222;*/
-    background-color: rgb(30, 30, 156);
+    background-color: #0055b9;
 }
 .f1-progress-line {
     /*background: #C06014; */
-    background-color: rgb(30, 30, 156);
+    background-color: #0055b9;
 }
 
 .f1-step.activated .f1-step-icon {
-    background: rgb(30, 30, 156); 
+    background: #0055b9; 
     /*color: #C06014;*/
     color: white;
 }
 .f1-step.active .f1-step-icon {
     /*background: #C06014;*/ 
-    background: rgb(30, 30, 156);
+    background: #0055b9;
 }
 
-.f1-step p { color: #ccc;color: rgb(30, 30, 156); }
-.f1-step.activated p { color: #C06014;color: rgb(30, 30, 156); }
-.f1-step.active p { color: #C06014;color: rgb(30, 30, 156); }
+.f1-step p { color: #ccc;color: #0055b9; }
+.f1-step.activated p { color: #C06014;color: #0055b9; }
+.f1-step.active p { color: #C06014;color: #0055b9; }
 .f1-step-icon {
 background: #ddd;
 color: #fff; 
