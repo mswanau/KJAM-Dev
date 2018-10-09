@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import {Router} from "@angular/router";
 import { PasswordValidation } from '../password-validation';
 import { UserService } from '../user.service';
+import { StudentService } from '../student.service';
 
 @Component({
   selector: 'app-register',
@@ -56,7 +57,8 @@ export class RegisterComponent implements OnInit {
   constructor( 
     private formBuilder: FormBuilder,
     private router: Router,
-    private users: UserService
+    private users: UserService,
+    private students: StudentService
   ) { }
 
     ngOnInit() {
@@ -267,6 +269,8 @@ goStepSix() {
         return;
     }
 
+    
+    // Register user
     this.users.registerUser(
       this.registerForm.value.firstName,
       this.registerForm.value.lastName,
@@ -281,13 +285,13 @@ goStepSix() {
       this.registerForm.value.dob,
       this.registerForm.value.guardian1,
       this.registerForm.value.guardian2,
-      this.registerForm.value.partnerId
+      this.registerForm.value.partnerId,
+      this.registerForm.value.studentID,
+      this.registerForm.value.institute
     ).subscribe(
       users => {
         this.currentUser = users;
         localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
-        this.stepSix = true;
-        this.stepFive = false;
       }
     )
   }

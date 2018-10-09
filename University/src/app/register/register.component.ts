@@ -22,9 +22,7 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     this.students.updateStudent(this.model.studentNo, this.model.course, 'QUT', 
       this.model.startDate, this.model.endDate, this.model.ourAus).subscribe()
-      this.router.navigate(['/submitted'])
-        
-      
+      this.router.navigate(['/submitted'])      
   }
 
 }

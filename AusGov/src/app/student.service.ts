@@ -8,11 +8,14 @@ export class StudentService {
 
   constructor(private http: HttpClient) { }
 
-  updateStudent(studentNo, id, institute) {
+  updateStudent(studentNo, institute, id) {
     var body = {
-      'studentNo': studentNo,
-      'id': id,
-      'institute': institute
+      studentNo: studentNo,
+      course: "Bachelor of Business",
+      institute: institute,
+      startDate: "2018-02-12",
+      endDate: "2020-11-16",
+      id: id
     }
     return this.http.put('http://localhost:3000/student/update', body);
   }

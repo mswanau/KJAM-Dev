@@ -13,7 +13,7 @@ const MAXID = 999999999;
 const MINID = 100000000;
 
 var corsOptions = {
-    origin: 'http://localhost:4200',
+    origin: ['http://localhost:4200','http://localhost:4300'],
     optionsSuccessStatus: 200
 }
 
@@ -96,8 +96,11 @@ app.post('/users/register', (req, res) => {
     var guardian1 = req.body.guardian1;
     var guardian2 = req.body.guardian2;
     var partner = req.body.partner;
+    var studentId = req.body.studentId;
+    var institute = req.body.institute;
 
     db.serialize(() => {
+        // Update user table
         var stmt = db.prepare(
             `INSERT INTO users(
                 id, first_name, last_name, email, password, phone, address, suburb, city, state, 
@@ -106,6 +109,15 @@ app.post('/users/register', (req, res) => {
         );
         stmt.run([id, first_name, last_name, email, password, phone, address, 
             suburb, city, postcode, birth_date, guardian1, guardian2, partner]);
+        stmt.finalize();
+
+        // Update student table
+        stmt = db.prepare(
+            `INSERT INTO students(
+                id, institute, student_id, course, start_date, end_date
+            ) VALUES (?,?,?,?,?,?)`
+        );
+        stmt.run([id, institute, studentId, "Bachelor of Business", "2018-02-12", "2020-11-16"]);
         stmt.finalize();
 
         // Return the newly created user
@@ -143,26 +155,25 @@ app.put('/student/update', (req, res) => {
 
     var studentNo = req.body.studentNo;
     var course = req.body.course;
-    console.log(course);
     var startDate = req.body.startDate;
     var endDate = req.body.endDate;
-    var id = req.body.id;
-    var institute = req.body.institute
+    var ourAusId = req.body.id;
+    var institute = req.body.institute;
 
     // Insert student details
-    var stmt = db.prepare(`INSERT INTO students (institute, student_id, course, start_date, end_date) VALUES (?,?,?,?,?)`);
-    stmt.run([institute, studentNo, course, startDate, endDate]);
+    var stmt = db.prepare(`INSERT INTO students (id, institute, student_id, course, start_date, end_date) VALUES (?,?,?,?,?,?)`);
+    stmt.run([ourAusId, institute, studentNo, course, startDate, endDate]);
     stmt.finalize();
 
-    // Get new reference ID
-    var stmt = db.prepare(`SELECT id FROM students WHERE (institute, student_id) = (?,?)`);
-    var referenceId = stmt.run([institute, studentNo]);
-    stmt.finalize();
+    // // Get new reference ID
+    // var stmt = db.prepare(`SELECT id FROM students WHERE (institute, student_id) = (?,?)`);
+    // var referenceId = stmt.run([institute, studentNo]);
+    // stmt.finalize();
 
-    // Update users table
-    var stmt = db.prepare(`UPDATE users SET student = ? WHERE id = ?`);
-    var referenceId = stmt.run([referenceId, id]);
-    stmt.finalize();
+    // // Update users table
+    // var stmt = db.prepare(`UPDATE users SET student = ? WHERE id = ?`);
+    // var referenceId = stmt.run([referenceId, id]);
+    // stmt.finalize();
 
     db.close();
 })
