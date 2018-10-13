@@ -24,6 +24,9 @@ export class LoginComponent implements OnInit {
     // this.users.getAllUsers().subscribe(
     //   users => this.userslist = users
     // );
+    if (localStorage.getItem("currentUser") != null) {
+      this.router.navigate(['/dashboard']);
+    }
   }
 
   onSubmit() {
