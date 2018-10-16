@@ -2,35 +2,47 @@
 
 <!-- Added bootstrap navbar components and set the position to be fixed to the bottom -->
 <div *ngIf="chatOpen" class="popup">
-  <div class="card" style="width: 18rem; height: 18rem; background-color: rgb(245, 221, 178);">
+  <div class="card">
     <div class="card-body">
       <b>John from OurAus</b><br>
+      <hr>
       <p>Hi! How may I help you?</p>
-   
+   <div class="row textEnter">
+     <div class="col-md-6">
       <input type="text">
+     </div>
+     <div class="col-md-6">
+       <button type="button">Submit</button>
+    </div>
+   </div>
+      
     </div>
   </div>
 </div>
-
+<div class="row">
 <footer class="navbar  navbar-expand-sm  navbar-dark fixed-bottom" id="footer">
-    <button class="help_popup" tooltip="Pick your preferred method of contact with OurAus. 
-            Your current page of OurAus will be sent with your contact information.">Need help?</button>
 
-  <!-- Created a button group for the contact options for OurAus with divs-->
-  <!-- Positioned to the bottom right of screen -->
-  <div class="btn-group btn-group-justified ml-auto">
 
-    <div class="btn-group">
-      <button type="button" routerLink="/UnderConstruction" class="btn footer-button">Send Email</button>
-    </div>
-    <div class="btn-group">
-      <button type="button" routerLink="/UnderConstruction" class="btn footer-button">Request Call</button>
-    </div>
-    <div class="btn-group">
-      <button type="button" (click)="openChat()" class="btn footer-button">Live Chat</button>
-    </div>
-  </div>
+      
+      
+
+      <!-- Created a button group for the contact options for OurAus with divs-->
+      <!-- Positioned to the bottom right of screen -->
+      <div class="col-md-12 offset-md-6">
+          <button class="help_popup" placement="top"
+            ngbPopover="Please use one of the options on the right to help with your OurAus experience.">
+            Need help? &nbsp;&nbsp;
+        </button>
+
+            <button type="button" routerLink="/UnderConstruction" class="btn footer-button">Request Email</button>
+
+            <button type="button" routerLink="/UnderConstruction" class="btn footer-button">Request Call</button>
+
+            <button type="button" (click)="openChat()" class="btn footer-button">Live Chat</button>
+
+      </div>
+  
 </footer>
-
+</div>
 <!-- CSS performed in the global styles.css script "src/styles.css" -->
 

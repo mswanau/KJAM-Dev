@@ -216,14 +216,13 @@
         <div class="form-row">
 
             <div class="container-content register-container">
-        <h1>Information Shortcuts </h1>
- 
+        <div class="row"><h1>Information Shortcuts </h1>
+        <button type="button" placement="bottom"
+        ngbPopover="The following connections are used to aid in the gathering of your information, allowing for a more seamless process. 
+        By connecting to any of the sources below you are agreeing to have your information shared with OurAus and used in prefilling your information. You can opt to skip this, however it will require you fill in further information manually">
+        <i class="fa fa-question"></i>
+        </button></div>
         <hr>
-        <p>The following connections are used to aid in the gathering of your information, allowing
-          for a more seamless process. By connecting to any of the sources below you are agreeing to
-          have your information shared with OurAus and used in prefilling your information. You can opt
-          to skip this, however it will require you fill in further information manually.
-        </p>
 
 
           <div *ngIf="uni"><button type="button" class="btn buttonForm darkButton linkButton" data-toggle="modal" data-target="#uniLogin">Connect to University</button></div>
@@ -552,7 +551,7 @@
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
-                  <button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  <button class="btn colour1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                     + Basic Information
                   </button>
                 </h5>
@@ -575,7 +574,7 @@
             <div class="card">
               <div class="card-header" id="headingTwo">
                 <h5 class="mb-0">
-                  <button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <button class="btn colour1" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     + Study Information
                   </button>
                 </h5>
@@ -590,7 +589,7 @@
             <div class="card">
               <div class="card-header" id="headingThree">
                 <h5 class="mb-0">
-                  <button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <button class="btn colour1" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                     + Other Information
                   </button>
                 </h5>
@@ -610,7 +609,7 @@
           </div>
 
             <div class="row">
-              <button type="submit" class="btn buttonForm center-button darkButton">Complete Claim</button> 
+              <button type="submit" class="btn buttonForm center-button darkButton">Complete Registration</button> 
           </div>
 
           <div class="form-row">

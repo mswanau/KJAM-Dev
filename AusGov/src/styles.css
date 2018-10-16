@@ -11,10 +11,10 @@
     background-color: black;
     /*background-color: #984B43;*/
     color: white;
-    border-color: white;
+    border-color: black;
 }
 .footer-button:hover {
-    background-color: #E37222;
+    background-color: gainsboro;
 }
 
 .login-container {
@@ -46,7 +46,7 @@ hr {
 
 .lightButton {
     /*background-color:#984B43;*/
-    background-color: rgb(64, 64, 252);
+    background-color: #0055b9;
     /*background-color: #EAC67A;*/
     color: white;
 }
@@ -75,7 +75,7 @@ hr {
 
 .modal-content {
    /*background-color: #E37222;*/
-    background-color: #0055b9;
+    background-color: rgb(243, 243, 243);
 }
 .f1-progress-line {
     /*background: #C06014; */
@@ -92,9 +92,9 @@ hr {
     background: #0055b9;
 }
 
-.f1-step p { color: #ccc;color: #0055b9; }
+.f1-step p { color: #ccc; }
 .f1-step.activated p { color: #C06014;color: #0055b9; }
-.f1-step.active p { color: #C06014;color: #0055b9; }
+.f1-step.active p { color: #C06014;color: #0055b9;font-weight: bold; }
 .f1-step-icon {
 background: #ddd;
 color: #fff; 
@@ -110,6 +110,7 @@ color: #fff;
 
 .footer-button {
     padding: 5px 20px 5px 20px;
+    margin-left: 1%;
 }
 
 .page-container {
