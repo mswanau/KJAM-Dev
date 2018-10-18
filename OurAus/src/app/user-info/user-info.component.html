@@ -5,91 +5,91 @@
       <li class="breadcrumb-item active" aria-current="page"><a routerLink="/dashboard/centrelink">User Information</a></li>      
     </ol>
   </nav>
+
   <div class="row">
-  <div class="col-md">
+    <div class="col-md">
       <a routerLink="/dashboard"><button class="btn darkButton center-button">Return to Dashboard</button></a>
     </div>
     <div class="col-md-10"></div>
   </div>
-    <div class="container-content register-container">
-        <h1>User Information</h1>
-        <hr>
 
-        <div class="accordion" id="accordionExample">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <button class="btn colour1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                    + Basic Information
-                  </button>
-                </h5>
-              </div>
-              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="card-body">
-                  <p><span>First Name:  {{ firstName }} </span></p>
-                  <p><span>Last Name: {{ lastName }} </span></p>
-                  <p><span>Email Address: {{ email }} </span></p>
-                  <p><span>Phone Number: {{ phone }} </span></p>
-                  <p><span>Date of Birth: {{ dob }} </span></p>
+  <div class="container-content register-container">
+    <h1>User Information</h1>
+    <hr>
 
-                </div>
-              </div>
-            </div>
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn colour1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              + Basic Information
+            </button>
+          </h5>
+        </div>
 
-            <div class="card">
-              <div class="card-header" id="headingTwo">
-                <h5 class="mb-0">
-                  <button class="btn colour1" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    + Study Information
-                  </button>
-                </h5>
-              </div>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                <div class="card-body">
-                    <p><span>University:  {{ institute }} </span></p>
-                    <p><span>Student Number: {{ studentID }} </span></p>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card-header" id="headingThree">
-                <h5 class="mb-0">
-                  <button class="btn colour1" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    + Living Information
-                  </button>
-                </h5>
-              </div>
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                <div class="card-body">
-                    <p><span></span></p>
-                    <p><span>Address: {{ address }} </span></p>
-                    <p><span>Suburb: {{ suburb }} </span></p>
-                    <p><span>City: {{ city }} </span></p>
-                    <p><span>Post Code: {{ postcode }} </span></p>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header" id="headingFour">
-                  <h5 class="mb-0">
-                    <button class="btn colour1" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                      + Work Information
-                    </button>
-                  </h5>
-                </div>
-                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-                  <div class="card-body">
-                    <p><span>Average Hours worked per week: {{ workHours }} </span></p>
-                    <p><span>Average income per week: {{ workIncome }} </span></p>
-                    <p><span>Rent per week for house: {{ rent1 }} </span></p>
-                    <p><span>Your rent per week: {{ rent2 }} </span></p>
-                  </div>
-                </div>
-              </div>
-
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            <p><span>First Name:  {{ firstName }} </span></p>
+            <p><span>Last Name: {{ lastName }} </span></p>
+            <p><span>Email Address: {{ email }} </span></p>
+            <p><span>Phone Number: {{ phone }} </span></p>
+            <p><span>Date of Birth: {{ dob }} </span></p>
           </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn colour1" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              + Study Information
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+            <p><span>University:  {{ institute }} </span></p>
+            <p><span>Student Number: {{ studentID }} </span></p>
           </div>
-      
-    </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn colour1" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                + Living Information
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              <p><span></span></p>
+              <p><span>Address: {{ address }} </span></p>
+              <p><span>Suburb: {{ suburb }} </span></p>
+              <p><span>City: {{ city }} </span></p>
+              <p><span>Post Code: {{ postcode }} </span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingFour">
+            <h5 class="mb-0">
+              <button class="btn colour1" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                + Work Information
+              </button>
+            </h5>
+          </div>
+          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+            <div class="card-body">
+              <p><span>Average Hours worked per week: {{ workHours }} </span></p>
+              <p><span>Average income per week: {{ workIncome }} </span></p>
+              <p><span>Rent per week for house: {{ rent1 }} </span></p>
+              <p><span>Your rent per week: {{ rent2 }} </span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
   </div>
+</div>

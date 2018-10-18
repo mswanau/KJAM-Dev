@@ -1,13 +1,14 @@
 <div class="page-container">
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item" aria-current="page"><a routerLink="/dashboard">Dashboard</a></li>
-    <li class="breadcrumb-item active" aria-current="page"><a routerLink="/dashboard/centrelink">Centrelink</a></li>      
-  </ol>
-</nav>
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item" aria-current="page"><a routerLink="/dashboard">Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><a routerLink="/dashboard/centrelink">Centrelink</a></li>      
+    </ol>
+  </nav>
 
 
-<div class="container-content register-container">
+  <div class="container-content register-container">
     <a routerLink="/dashboard"><button class="btn darkButton">Return to Dashboard</button></a><p></p>
 
     <h1>Centrelink Dashboard</h1>
@@ -16,29 +17,29 @@
       If you have never applied for a centrelink claim before please use the link below to check you are eligible. 
     </p>
     <div class="text-center">
-    <h3><button type="button" class="btn center-button colour2 claim_button">Do the Eligibility Test</button></h3>
-    </div><p></p>
+      <h3><button type="button" class="btn center-button colour2 claim_button">Do the Eligibility Test</button></h3>
+    </div>
+    <p></p>
     <p>If you go through the elibility check, the details from the test will be applied to a real claim making it much simplier to process through</p>
 
-  <!-- Set up two bootstrap rows, add 3 buttons to each row -->
-  <!-- row-width is a setting in styles.css to limit width -->
-  <div class="row">
+    <!-- Set up two bootstrap rows, add 3 buttons to each row -->
+    <!-- row-width is a setting in styles.css to limit width -->
+    <div class="row">
       <div *ngIf="claimMade" class="col-md">
         <a routerLink="/UnderConstruction"><button class="btn buttonDashboard colour1 paymentButton">Next Payment</button></a>
       </div>
-    <div class="col-md">
-      <a routerLink="/dashboard/centrelink/centrelink-form"><button class="btn center-button colour2 claim_button">MAKE A CLAIM</button></a>
-    </div>
-  </div>
-
-  <div *ngIf="claimMade" class="row">
-    <div class="col-md">
-      <a routerLink="/UnderConstruction"><button class="btn buttonDashboard colour1">MY OUTSTANDING CLAIMS</button></a>
-    </div>
-    <div class="col-md">
-      <a routerLink="/UnderConstruction"><button class="btn buttonDashboard colour2">PROCESSED CLAIMS</button></a>
+      <div class="col-md">
+        <a routerLink="/dashboard/centrelink/centrelink-form"><button class="btn center-button colour2 claim_button">MAKE A CLAIM</button></a>
+      </div>
     </div>
 
+    <div *ngIf="claimMade" class="row">
+      <div class="col-md">
+        <a routerLink="/UnderConstruction"><button class="btn buttonDashboard colour1">MY OUTSTANDING CLAIMS</button></a>
+      </div>
+      <div class="col-md">
+        <a routerLink="/UnderConstruction"><button class="btn buttonDashboard colour2">PROCESSED CLAIMS</button></a>
+      </div>
+    </div>
   </div>
-</div>
 </div>

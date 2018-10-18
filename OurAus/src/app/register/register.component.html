@@ -5,258 +5,254 @@
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       
     <div *ngIf="stepOne">
-        <div class="f1-steps">
-            <div class="f1-progress">
-                <div class="f1-progress-line" style="width: 0%;"></div>
-            </div>
-            <div class="f1-step active">
-                <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
-                <p>Info</p>
-            </div>
-            <div class="f1-step">
-                <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
-                <p>Links</p>
-            </div>
-            <div class="f1-step">
-                <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
-                <p>Add</p>
-            </div>
-            <div class="f1-step">
-                <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
-                <p>Identify</p>
-            </div>
-            <div class="f1-step">
-                <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
-                <p>Verify</p>
-            </div>
+      <div class="f1-steps">
+        <div class="f1-progress">
+          <div class="f1-progress-line" style="width: 0%;"></div>
         </div>
+        <div class="f1-step active">
+          <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
+          <p>Info</p>
+        </div>
+        <div class="f1-step">
+          <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
+          <p>Links</p>
+        </div>
+        <div class="f1-step">
+          <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
+          <p>Add</p>
+        </div>
+        <div class="f1-step">
+          <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
+          <p>Identify</p>
+        </div>
+        <div class="f1-step">
+          <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
+          <p>Verify</p>
+        </div>
+      </div>
 
-    <div class="form-row">
-      <div class="container-content register-container">
-        <div *ngIf="needInputs" class="form-row alert alert-primary"><p>There is still information to be filled in below:</p></div>
-        <span><h1>Basic Information<h5>All Information is Required</h5></h1></span>
-        <hr>
-        <!-- Created rows for form inputs on same line, here is first and last name -->
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label>First Name</label>
-            <input type="text" formControlName="firstName" class="form-control" placeholder="First Name" 
+      <div class="form-row">
+        <div class="container-content register-container">
+          <div *ngIf="needInputs" class="form-row alert alert-primary"><p>There is still information to be filled in below:</p></div>
+          <span><h1>Basic Information<h5>All Information is Required</h5></h1></span>
+          <hr>
+          <!-- Created rows for form inputs on same line, here is first and last name -->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>First Name</label>
+              <input type="text" formControlName="firstName" class="form-control" placeholder="First Name" 
                 [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+              <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                 <div *ngIf="f.firstName.errors.required">First Name is required</div>
+              </div>
             </div>
-          </div>
 
-          <div class="form-group col-md-6">
-            <label for="lastName">Last Name</label>
-            <input type="text" formControlName="lastName" class="form-control" id="lastName" placeholder="Last Name" 
+            <div class="form-group col-md-6">
+              <label for="lastName">Last Name</label>
+              <input type="text" formControlName="lastName" class="form-control" id="lastName" placeholder="Last Name" 
                 [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
               <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
                 <div *ngIf="f.lastName.errors.required">Last Name is required</div>
               </div>
+            </div>
           </div>
-        </div>
         
-        <!-- Email Address input -->
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" formControlName="email" class="form-control" placeholder="Email Address"
+          <!-- Email Address input -->
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" formControlName="email" class="form-control" placeholder="Email Address"
                 [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
             <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                <div *ngIf="f.email.errors.required">Email is required</div>
-                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+              <div *ngIf="f.email.errors.required">Email is required</div>
+              <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
             </div>
-        </div>
+          </div>
 
-        <!-- Contact number and date of birth on same line -->
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="phone">Contact Number</label>
-            <input type="text" formControlName="phone" class="form-control" id="phone" maxlength="10"
-                 [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
-            <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+          <!-- Contact number and date of birth on same line -->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="phone">Contact Number</label>
+              <input type="text" formControlName="phone" class="form-control" id="phone" maxlength="10"
+                  [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+              <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                 <div *ngIf="f.phone.errors.required">Contact Number is required</div>
+              </div>
             </div>
-          </div>
 
-          <div class="form-group col-md-6">
-            <label for="DOB">Date of Birth</label>
-            <input type="date" formControlName="dob" class="form-control" id="DOB" max="9999-12-31"
-                [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
-            <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+            <div class="form-group col-md-6">
+              <label for="DOB">Date of Birth</label>
+              <input type="date" formControlName="dob" class="form-control" id="DOB" max="9999-12-31"
+                  [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
+              <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
                 <div *ngIf="f.dob.errors.required">Date of Birth is Required</div>
+              </div>
             </div>
           </div>
-        </div>
         
-        <!-- Address input -->
-        <div class="form-group">
-          <label for="inputAddress">Address</label>
-          <input type="text" formControlName="address" class="form-control" id="inputAddress" placeholder="123 Name Street"
-              [ngClass]="{ 'is-invalid': submitted && f.address.errors }" />
-          <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
-            <div *ngIf="f.address.errors.required">Address is Required</div>
+          <!-- Address input -->
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" formControlName="address" class="form-control" id="inputAddress" placeholder="123 Name Street"
+                [ngClass]="{ 'is-invalid': submitted && f.address.errors }" />
+            <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+              <div *ngIf="f.address.errors.required">Address is Required</div>
+            </div>
           </div>
-        </div>
 
-        <!-- Suburb -->
-        <div class="form-group">
-          <label for="inputAddress2">Suburb</label>
-          <input type="text" formControlName="suburb" class="form-control" id="inputAddress2" placeholder="Suburb"
-              [ngClass]="{ 'is-invalid': submitted && f.suburb.errors }" />
+          <!-- Suburb -->
+          <div class="form-group">
+            <label for="inputAddress2">Suburb</label>
+            <input type="text" formControlName="suburb" class="form-control" id="inputAddress2" placeholder="Suburb"
+                [ngClass]="{ 'is-invalid': submitted && f.suburb.errors }" />
             <div *ngIf="submitted && f.suburb.errors" class="invalid-feedback">
               <div *ngIf="f.suburb.errors.required">Suburb is Required</div>
             </div>
-        </div>
+          </div>
 
-        <!-- Row for city, state and post code all on same line -->
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputCity">City</label>
-            <input type="text" formControlName="city" class="form-control" id="inputCity"
-                [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
-            <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
-              <div *ngIf="f.city.errors.required">Suburb is Required</div>
+          <!-- Row for city, state and post code all on same line -->
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">City</label>
+              <input type="text" formControlName="city" class="form-control" id="inputCity"
+                  [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
+              <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                <div *ngIf="f.city.errors.required">Suburb is Required</div>
+              </div>
+            </div>
+
+            <!-- Have selectable elements as each state of Australia -->
+            <div class="form-group col-md-4">
+              <label for="inputState">State</label>
+              <select id="inputState" class="form-control">
+                <option selected>Choose...</option>
+                <option>ACT</option>
+                <option>NSW</option>
+                <option>NT</option>
+                <option>QLD</option>
+                <option>SA</option>
+                <option>TAS</option>
+                <option>VIC</option>
+                <option>WA</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-2">
+              <label for="inputZip">Post Code</label>
+              <input type="text" formControlName="postcode" class="form-control" id="inputZip"
+                  [ngClass]="{ 'is-invalid': submitted && f.postcode.errors }" />
+              <div *ngIf="submitted && f.postcode.errors" class="invalid-feedback">
+                <div *ngIf="f.postcode.errors.required">Post Code is Required</div>
+              </div>
             </div>
           </div>
 
-          <!-- Have selectable elements as each state of Australia -->
-          <div class="form-group col-md-4">
-            <label for="inputState">State</label>
-            <select id="inputState" class="form-control">
-              <option selected>Choose...</option>
-              <option>ACT</option>
-              <option>NSW</option>
-              <option>NT</option>
-              <option>QLD</option>
-              <option>SA</option>
-              <option>TAS</option>
-              <option>VIC</option>
-              <option>WA</option>
-            </select>
-          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="password">Password</label>
+              <input type="password" formControlName="password" class="form-control" id="pwd" required minlength="6"
+                  [ngClass]="{ 'is-invalid': submitted && f.password.errors }"  />
 
-          <div class="form-group col-md-2">
-            <label for="inputZip">Post Code</label>
-            <input type="text" formControlName="postcode" class="form-control" id="inputZip"
-                [ngClass]="{ 'is-invalid': submitted && f.postcode.errors }" />
-            <div *ngIf="submitted && f.postcode.errors" class="invalid-feedback">
-              <div *ngIf="f.postcode.errors.required">Post Code is Required</div>
+              <!-- Alert message form validation requirements, minlength 6 characters -->
+              <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+                <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="password">Password</label>
-            <input type="password" formControlName="password" class="form-control" id="pwd" required minlength="6"
-                [ngClass]="{ 'is-invalid': submitted && f.password.errors }"  />
 
-            <!-- Alert message form validation requirements, minlength 6 characters -->
-            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-              <div *ngIf="f.password.errors.required">Password is required</div>
-              <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
-            </div>
-          </div>
-          <div class="form-group col-md-6">
-            <label for="password">Re-enter Password</label>
-            <input type="password" formControlName="verify" class="form-control" id="repwd" required minlength="6"
-                [ngClass]="{ 'is-invalid': submitted && f.verify.errors }"  />
+            <div class="form-group col-md-6">
+              <label for="password">Re-enter Password</label>
+              <input type="password" formControlName="verify" class="form-control" id="repwd" required minlength="6"
+                  [ngClass]="{ 'is-invalid': submitted && f.verify.errors }"  />
 
-            <!-- Alert message form validation requirements, minlength 6 characters -->
-            <div *ngIf="submitted && f.verify.errors" class="invalid-feedback">
+              <!-- Alert message form validation requirements, minlength 6 characters -->
+              <div *ngIf="submitted && f.verify.errors" class="invalid-feedback">
                 <div *ngIf="f.verify.errors?.MatchPassword">Password not match</div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-row">
+            <div class="col-auto mr-auto">
+              <a routerLink="/login"><button type="button" class="btn lightButton navButton">Cancel</button></a>
+            </div>
+            <div class="col-auto">
+              <button type="button" class="btn darkButton navButton" (click)=goStepTwo()>Next Page</button>
             </div>
           </div>
         </div>
-      
-
-<div class="form-row">
-  <div class="col-auto mr-auto">
-<a routerLink="/login"><button type="button" class="btn lightButton navButton">Cancel</button></a>
-</div>
-<div class="col-auto">
-<button type="button" class="btn darkButton navButton" (click)=goStepTwo()>Next Page</button>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-
+      </div>
+    </div>
 
     <!-- -------------------------------------------------------------------------------------------------- -->
 
     <div *ngIf="stepTwo">
-        <div class="f1-steps">
-            <div class="f1-progress">
-                <div class="f1-progress-line" style="width: 30%;"></div>
-            </div>
-            <div class="f1-step active">
-                <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
-                <p>Info</p>
-            </div>
-            <div class="f1-step active">
-                <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
-                <p>Links</p>
-            </div>
-            <div class="f1-step">
-                <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
-                <p>Add</p>
-            </div>
-            <div class="f1-step">
-                <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
-                <p>Identify</p>
-            </div>
-            <div class="f1-step">
-                <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
-                <p>Verify</p>
-            </div>
+      <div class="f1-steps">
+        <div class="f1-progress">
+          <div class="f1-progress-line" style="width: 30%;"></div>
         </div>
+        <div class="f1-step active">
+          <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
+          <p>Info</p>
+        </div>
+        <div class="f1-step active">
+          <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
+          <p>Links</p>
+        </div>
+        <div class="f1-step">
+          <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
+          <p>Add</p>
+        </div>
+        <div class="f1-step">
+          <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
+          <p>Identify</p>
+        </div>
+        <div class="f1-step">
+          <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
+          <p>Verify</p>
+        </div>
+      </div>
 
-        <div class="form-row">
-
-            <div class="container-content register-container">
-        <div class="row"><h1>Information Shortcuts </h1>
-        <button type="button" placement="bottom"
-        ngbPopover="The following connections are used to aid in the gathering of your information, allowing for a more seamless process. 
-        By connecting to any of the sources below you are agreeing to have your information shared with OurAus and used in prefilling your information. You can opt to skip this, however it will require you fill in further information manually">
-        <i class="fa fa-question"></i>
-        </button></div>
-        <hr>
-
+      <div class="form-row">
+        <div class="container-content register-container">
+          <div class="row"><h1>Information Shortcuts </h1>
+            <button type="button" placement="bottom"
+              ngbPopover="The following connections are used to aid in the gathering of your information, allowing for a more seamless process. 
+                By connecting to any of the sources below you are agreeing to have your information shared with OurAus and used in prefilling your information. You can opt to skip this, however it will require you fill in further information manually">
+              <i class="fa fa-question"></i>
+            </button>
+          </div>
+          <hr>
 
           <div *ngIf="uni"><button type="button" class="btn buttonForm darkButton linkButton" data-toggle="modal" data-target="#uniLogin">Connect to University</button></div>
 
         
-        <div id="uniLogin" class="modal fade" role="dialog">
+          <div id="uniLogin" class="modal fade" role="dialog">
             
-          <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-              <h4 class="modal-title">University Connect</h4>
-            <div class="modal-body">
-              <p>Please use your university details below</p>
-              <label>Institute</label>
-              <input type="text" formControlName="institute" class="form-control"/>
-              <label>Student ID</label>
-              <input type="text" formControlName="studentID" class="form-control"/>
-              <label>Password</label>
-              <input type="password" class="form-control"/>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn formButton lightButton" data-dismiss="modal">Cancel</button>
-              <button type="button" class="btn formButton darkButton" data-dismiss="modal" (click)=uniRemove()>Submit</button>
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <h4 class="modal-title">University Connect</h4>
+                <div class="modal-body">
+                  <p>Please use your university details below</p>
+                  <label>Institute</label>
+                  <input type="text" formControlName="institute" class="form-control"/>
+                  <label>Student ID</label>
+                  <input type="text" formControlName="studentID" class="form-control"/>
+                  <label>Password</label>
+                  <input type="password" class="form-control"/>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn formButton lightButton" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn formButton darkButton" data-dismiss="modal" (click)=uniRemove()>Submit</button>
+                </div>
+              </div>
             </div>
           </div>
+
+          <div *ngIf="uniMessage" class="form-row alert alert-primary">
+            <p>Successfully connected to your University Account, Study details will now be prefilled. Thank you.</p>
+            <button type="button" class="btn lightButton center-button" (click)=uniAdd()>Cancel</button>
           </div>
-        
-        </div>
-        <div *ngIf="uniMessage" class="form-row alert alert-primary">
-          <p>Successfully connected to your University Account, Study details will now be prefilled. Thank you.</p>
-          <button type="button" class="btn lightButton center-button" (click)=uniAdd()>Cancel</button>
-        </div>
-
-
-
 
           <span><button type="button" class="btn buttonForm darkButton linkButton">Connect to Taxation Office</button></span>
 
@@ -264,40 +260,40 @@
 
           <div *ngIf="otherAccounts"><span><button type="button" class="btn buttonForm darkButton linkButton" data-toggle="modal" data-target="#otherAccount">Connect to Parent/Gaurdian Account</button></span></div>
 
-        <div id="otherAccount" class="modal fade" role="dialog">
-          <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-              <h4 class="modal-title">Related OurAus accounts</h4>
-            <div class="modal-body">
-              <p>Please enter the OurAus ID for your legal guardians and/or your partner</p>
-              <label>Parent/Guardian 1 ID</label>
-              <input type="text" formControlName="guardian1"/>
-              <label>Parent/Guardian 2 ID</label>
-              <input type="text" formControlName="guardian2"/>
-              <label>Partner ID</label>
-              <input type="text" formControlName="partnerId"/>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn formButton lightButton" data-dismiss="modal">Cancel</button>
-              <button type="button" class="btn formButton darkButton" data-dismiss="modal" (click)=parentConnectRemove()>Submit</button>
+          <div id="otherAccount" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <h4 class="modal-title">Related OurAus accounts</h4>
+                <div class="modal-body">
+                  <p>Please enter the OurAus ID for your legal guardians and/or your partner</p>
+                  <label>Parent/Guardian 1 ID</label>
+                  <input type="text" formControlName="guardian1"/>
+                  <label>Parent/Guardian 2 ID</label>
+                  <input type="text" formControlName="guardian2"/>
+                  <label>Partner ID</label>
+                  <input type="text" formControlName="partnerId"/>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn formButton lightButton" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn formButton darkButton" data-dismiss="modal" (click)=parentConnectRemove()>Submit</button>
+                </div>
+              </div>
             </div>
           </div>
-          </div>
-        </div>
-        <div *ngIf="otherAccountsMessage" class="form-row alert alert-primary">
-          <p>Successfully connected your legal guardians and/or your partners accounts, these details will now be prefilled. Thank you.</p>
-          <button type="button" class="btn lightButton center-button" (click)=parentConnectAdd()>Cancel</button>
-        </div>
 
-        <div class="form-row">
+          <div *ngIf="otherAccountsMessage" class="form-row alert alert-primary">
+            <p>Successfully connected your legal guardians and/or your partners accounts, these details will now be prefilled. Thank you.</p>
+            <button type="button" class="btn lightButton center-button" (click)=parentConnectAdd()>Cancel</button>
+          </div>
+
+          <div class="form-row">
             <div class="col-auto mr-auto">
-          <button type="button" class="btn lightButton navButton" (click)=goStepOne()>Previous Page</button>
+              <button type="button" class="btn lightButton navButton" (click)=goStepOne()>Previous Page</button>
+            </div>
+            <div class="col-auto">
+              <button type="button" class="btn darkButton navButton" (click)=goStepThree()>Next Page</button>
+            </div>
           </div>
-          <div class="col-auto">
-          <button type="button" class="btn darkButton navButton" (click)=goStepThree()>Next Page</button>
-          </div>
-          </div>
-
         </div>
       </div>
     </div>
@@ -305,207 +301,209 @@
     <!----------------------------------------------------------------------------------------------------------->
 
     <div *ngIf="stepThree">
-        <div class="f1-steps">
-            <div class="f1-progress">
-                <div class="f1-progress-line" style="width: 50%;"></div>
-            </div>
-            <div class="f1-step active">
-                <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
-                <p>Info</p>
-            </div>
-            <div class="f1-step active">
-                <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
-                <p>Links</p>
-            </div>
-            <div class="f1-step active">
-                <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
-                <p>Add</p>
-            </div>
-            <div class="f1-step">
-                <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
-                <p>Identify</p>
-            </div>
-            <div class="f1-step">
-                <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
-                <p>Verify</p>
-            </div>
+      <div class="f1-steps">
+        <div class="f1-progress">
+          <div class="f1-progress-line" style="width: 50%;"></div>
         </div>
-        <div class="form-row">
+        <div class="f1-step active">
+          <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
+          <p>Info</p>
+        </div>
+        <div class="f1-step active">
+          <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
+          <p>Links</p>
+        </div>
+        <div class="f1-step active">
+          <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
+          <p>Add</p>
+        </div>
+        <div class="f1-step">
+          <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
+          <p>Identify</p>
+        </div>
+        <div class="f1-step">
+          <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
+          <p>Verify</p>
+        </div>
+      </div>
 
-            <div class="container-content register-container">
-                <h1>Missing Information</h1>
-                <hr>
-                <p>The following information is required:</p>
-                <hr>
+      <div class="form-row">
+        <div class="container-content register-container">
+          <h1>Missing Information</h1>
+          <hr>
+          <p>The following information is required:</p>
+          <hr>
 
+          <div *ngIf="uniDetails">
+            <h4>University Details</h4>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>University Institute</label>
+                <input type="text" class="form-control"/>
+              </div>
+  
+              <div class="form-group col-md-6">
+                <label for="courseTitle">Course Title</label>
+                <input type="text" class="form-control"/>
+              </div>
+            </div>
 
-                <div *ngIf="uniDetails">
-                  <h4>University Details</h4>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label>University Institute</label>
-                    <input type="text" class="form-control"/>
-                  </div>
-        
-                  <div class="form-group col-md-6">
-                    <label for="courseTitle">Course Title</label>
-                    <input type="text" class="form-control"/>
-                  </div>
-                </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="uniStart">Start Date</label>
+                <input type="date" class="form-control" max="9999-12-31"/>
+              </div>
+    
+              <div class="form-group col-md-6">
+                <label for="uniEnd">End Date</label>
+                <input type="date" class="form-control" max="9999-12-31"/>
+              </div>
+            </div>
 
-                <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="uniStart">Start Date</label>
-                  <input type="date" class="form-control" max="9999-12-31"/>
-                </div>
-        
-                  <div class="form-group col-md-6">
-                    <label for="uniEnd">End Date</label>
-                    <input type="date" class="form-control" max="9999-12-31"/>
-                  </div>
-                  </div>
-                  <hr>
-                  </div>
+            <hr>
+
+          </div>
                   
 
-                  <div *ngIf="parentDetails">
-                      <h4>Parent/Guardian Details</h4>
-                  Parent/Guardian 1 
-                  <!-- Email Address input -->
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="parentName">Name</label>
-                    <input type="text" class="form-control"/>
-                  </div>
+          <div *ngIf="parentDetails">
+            <h4>Parent/Guardian Details</h4>
+                Parent/Guardian 1 
+            <!-- Email Address input -->
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="parentName">Name</label>
+                <input type="text" class="form-control"/>
+              </div>
           
-                  <!-- Contact number and date of birth on same line -->
-                    <div class="form-group col-md-6">
-                      <label for="parentDob">Date of Birth</label>
-                      <input type="date" class="form-control" max="9999-12-31"/>
-                    </div>
-                    </div>
+              <!-- Contact number and date of birth on same line -->
+              <div class="form-group col-md-6">
+                <label for="parentDob">Date of Birth</label>
+                <input type="date" class="form-control" max="9999-12-31"/>
+              </div>
+            </div>
 
-                    Parent/Guardian 2
-                    <!-- Email Address input -->
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="parentName2">Name</label>
-                      <input type="text" class="form-control"/>
-                    </div>
-            
-                    <!-- Contact number and date of birth on same line -->
-                      <div class="form-group col-md-6">
-                        <label for="parentDob2">Date of Birth</label>
-                        <input type="date"  class="form-control" max="9999-12-31"/>
-                      </div>
-                      </div>
-                      <hr>
-                    </div>
+            Parent/Guardian 2
 
-                      <h4>Income Details</h4>
-                      <div class="form-row">
-                        <div class="form-group col-md-6">
-                          <label for="workHours">Average Hours worked per Week</label>
-                          <input type="text" formControlName="workHours" class="form-control"/>
-                        </div>
-              
-                        <div class="form-group col-md-6">
-                          <label for="workIncome">Average income per Week</label>
-                          <input type="text" formControlName="workIncome" class="form-control"/>
-                        </div>
-                      </div>
-                      <hr>
-
-                      <h4>Living Details</h4>
-                      <div class="form-row">
-                        <div class="form-group col-md-6">
-                          <label for="rent1">Rent for entire rental per week</label>
-                          <input type="text" formControlName="rent1" class="form-control"/>
-                        </div>
-              
-                        <div class="form-group col-md-6">
-                          <label for="rent2">Your rent per week</label>
-                          <input type="text" formControlName="rent2" class="form-control"/>
-                        </div>
-                      </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="parentName2">Name</label>
+                <input type="text" class="form-control"/>
+              </div>
       
+              <!-- Contact number and date of birth on same line -->
+              <div class="form-group col-md-6">
+                <label for="parentDob2">Date of Birth</label>
+                <input type="date"  class="form-control" max="9999-12-31"/>
+              </div>
+            </div>
 
-                <div class="form-row">
-                    <div class="col-auto mr-auto">
-                  <button type="button" class="btn lightButton navButton" (click)=goStepTwo()>Previous Page</button>
-                  </div>
-                  <div class="col-auto">
-                  <button type="button" class="btn darkButton navButton" (click)=goStepFour()>Next Page</button>
-                  </div>
-                  </div>
+            <hr>
 
+          </div>
+
+          <h4>Income Details</h4>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="workHours">Average Hours worked per Week</label>
+              <input type="text" formControlName="workHours" class="form-control"/>
+            </div>
+  
+            <div class="form-group col-md-6">
+              <label for="workIncome">Average income per Week</label>
+              <input type="text" formControlName="workIncome" class="form-control"/>
+            </div>
+          </div>
+
+          <hr>
+
+          <h4>Living Details</h4>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="rent1">Rent for entire rental per week</label>
+              <input type="text" formControlName="rent1" class="form-control"/>
+            </div>
+  
+            <div class="form-group col-md-6">
+              <label for="rent2">Your rent per week</label>
+              <input type="text" formControlName="rent2" class="form-control"/>
+            </div>
+          </div>
+      
+          <div class="form-row">
+            <div class="col-auto mr-auto">
+              <button type="button" class="btn lightButton navButton" (click)=goStepTwo()>Previous Page</button>
+            </div>
+            <div class="col-auto">
+              <button type="button" class="btn darkButton navButton" (click)=goStepFour()>Next Page</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- ------------------------------------------------------------------------------------------------------------>
     <div *ngIf="stepFour">
-        <div class="f1-steps">
-            <div class="f1-progress">
-                <div class="f1-progress-line" style="width: 80%;"></div>
-            </div>
-            <div class="f1-step active">
-                <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
-                <p>Info</p>
-            </div>
-            <div class="f1-step active">
-                <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
-                <p>Links</p>
-            </div>
-            <div class="f1-step active">
-                <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
-                <p>Add</p>
-            </div>
-            <div class="f1-step active">
-                <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
-                <p>Identify</p>
-            </div>
-            <div class="f1-step">
-                <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
-                <p>Verify</p>
-            </div>
+      <div class="f1-steps">
+        <div class="f1-progress">
+          <div class="f1-progress-line" style="width: 80%;"></div>
         </div>
+        <div class="f1-step active">
+          <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
+          <p>Info</p>
+        </div>
+        <div class="f1-step active">
+          <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
+          <p>Links</p>
+        </div>
+        <div class="f1-step active">
+          <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
+          <p>Add</p>
+        </div>
+        <div class="f1-step active">
+          <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
+          <p>Identify</p>
+        </div>
+        <div class="f1-step">
+          <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
+          <p>Verify</p>
+        </div>
+      </div>
 
-        <div class="form-row">
+      <div class="form-row">
+        <div class="container-content register-container">
+          <h1>Verify Identity</h1>
+          <hr>
+          <p>In order to verify your identity you may either take a photo now on your webcam
+              and upload your proof of identity, or go to your nearest OurAus office. Please
+              choose an option below:
+          </p>
 
-            <div class="container-content register-container">
-                    <h1>Verify Identity</h1>
-                <hr>
-                <p>In order to verify your identity you may either take a photo now on your webcam
-                  and upload your proof of identity, or go to your nearest OurAus office. Please
-                  choose an option below:
-                </p>
-                <div *ngIf="identityButtons">
-                <button type="button" class="btn formButton lightButton" (click)=showWebcam()>Take Photo Now</button>
-                <p class="orText">OR</p>
-                <button type="button" class="btn formButton darkButton" (click)=notWebcam()>Go to Centrelink Office</button>
-              </div>
-                <div *ngIf="webcam" class="container photo">
+          <div *ngIf="identityButtons">
+            <button type="button" class="btn formButton lightButton" (click)=showWebcam()>Take Photo Now</button>
+            <p class="orText">OR</p>
+            <button type="button" class="btn formButton darkButton" (click)=notWebcam()>Go to Centrelink Office</button>
+          </div>
 
-                  <webcam style="margin-left: 5%;"></webcam>
-                  <button type="button" class="btn center-button lightButton" (click)=hideWebcam()>Cancel</button>
+          <div *ngIf="webcam" class="container photo">
+            <webcam style="margin-left: 5%;"></webcam>
+            <button type="button" class="btn center-button lightButton" (click)=hideWebcam()>Cancel</button>
+          </div>
+      
+          <div *ngIf="goInOffice" class="form-row alert alert-primary">
+            <p>Please take proof of identity to your nearest OurAus office, use the following
+              number to identify your claim: 123456789
+            </p>
+            <button type="button" class="btn center-button lightButton" (click)=hideWebcam()>Cancel</button>
+          </div>
 
-                </div>
-                <div *ngIf="goInOffice" class="form-row alert alert-primary">
-                  <p>Please take proof of identity to your nearest OurAus office, use the following
-                    number to identify your claim: 123456789
-                  </p>
-                  <button type="button" class="btn center-button lightButton" (click)=hideWebcam()>Cancel</button>
-                </div>
-
-                <div class="form-row">
-                    <div class="col-auto mr-auto">
-                  <button type="button" class="btn lightButton navButton" (click)=goStepThree()>Previous Page</button>
-                  </div>
-                  <div class="col-auto">
-                  <button type="button" class="btn darkButton navButton" (click)=goStepFive()>Next Page</button>
-                  </div>
-                  </div>
+          <div class="form-row">
+            <div class="col-auto mr-auto">
+              <button type="button" class="btn lightButton navButton" (click)=goStepThree()>Previous Page</button>
+            </div>
+            <div class="col-auto">
+              <button type="button" class="btn darkButton navButton" (click)=goStepFive()>Next Page</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -515,38 +513,39 @@
     <!-- --------------------------------------------------------------------------------------------- -->
 
     <div *ngIf="stepFive">
-        <div class="f1-steps">
-            <div class="f1-progress">
-                <div class="f1-progress-line" style="width: 100%;"></div>
-            </div>
-            <div class="f1-step active">
-                <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
-                <p>Info</p>
-            </div>
-            <div class="f1-step active">
-                <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
-                <p>Links</p>
-            </div>
-            <div class="f1-step active">
-                <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
-                <p>Add</p>
-            </div>
-            <div class="f1-step active">
-                <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
-                <p>Identify</p>
-            </div>
-            <div class="f1-step active">
-                <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
-                <p>Verify</p>
-            </div>
+      <div class="f1-steps">
+        <div class="f1-progress">
+          <div class="f1-progress-line" style="width: 100%;"></div>
         </div>
+        <div class="f1-step active">
+          <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
+          <p>Info</p>
+        </div>
+        <div class="f1-step active">
+          <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
+          <p>Links</p>
+        </div>
+        <div class="f1-step active">
+          <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
+          <p>Add</p>
+        </div>
+        <div class="f1-step active">
+          <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
+          <p>Identify</p>
+        </div>
+        <div class="f1-step active">
+          <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
+          <p>Verify</p>
+        </div>
+      </div>
 
-        <div class="form-row">
+      <div class="form-row">
 
-            <div class="container-content register-container">
-                    <h1>Review Application</h1>
+        <div class="container-content register-container">
+          <h1>Review Application</h1>
 
           <hr>
+
           <div class="accordion" id="accordionExample">
             <div class="card">
               <div class="card-header" id="headingOne">
@@ -556,6 +555,7 @@
                   </button>
                 </h5>
               </div>
+
               <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
                   <p><span>First Name:  {{ firstName }} </span></p>
@@ -581,21 +581,21 @@
               </div>
               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                 <div class="card-body">
-                    <p><span>University:  {{ institute }} </span></p>
-                    <p><span>Student Number: {{ studentID }} </span></p>
+                  <p><span>University:  {{ institute }} </span></p>
+                  <p><span>Student Number: {{ studentID }} </span></p>
+                </div>
               </div>
-            </div>
 
-            <div class="card">
-              <div class="card-header" id="headingThree">
-                <h5 class="mb-0">
-                  <button class="btn colour1" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    + Other Information
-                  </button>
-                </h5>
-              </div>
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                <div class="card-body">
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn colour1" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      + Other Information
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
                     <p><span>Parent/Guardian 1 ID:  {{ guardian1 }} </span></p>
                     <p><span>Parent/Guardian 2 ID: {{ guardian2 }} </span></p>
                     <p><span>Partner ID:  {{ partnerId }} </span></p>
@@ -603,36 +603,35 @@
                     <p><span>Average income per week: {{ workIncome }} </span></p>
                     <p><span>Rent per week for house: {{ rent1 }} </span></p>
                     <p><span>Your rent per week: {{ rent2 }} </span></p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
             <div class="row">
               <button type="submit" class="btn buttonForm center-button darkButton">Complete Registration</button> 
-          </div>
+            </div>
 
-          <div class="form-row">
+            <div class="form-row">
               <div class="col-auto mr-auto">
-            <button type="button" class="btn lightButton navButton" (click)=goStepFour()>Previous Page</button>
+                <button type="button" class="btn lightButton navButton" (click)=goStepFour()>Previous Page</button>
+              </div>
             </div>
-            </div>
+          </div>
         </div>
       </div>
     </div>
-    </div>
   
-  <div *ngIf="stepSix">
-        <div class="form-row">
-
-            <div class="container-content register-container">
-                <h1>Account Created</h1>
-                <hr>
-                <p>Your account has successfully been created. Thank you for taking the time to complete the registration process.
-                </p>
-                <a routerLink="/dashboard"><button type="button" class="btn formButton lightButton">Go to your Dashboard</button></a>
-                <p class="orText">OR</p>
-                <a routerLink="/login"><button type="button" class="btn formButton darkButton">Return to front page</button></a>
+    <div *ngIf="stepSix">
+      <div class="form-row">
+        <div class="container-content register-container">
+          <h1>Account Created</h1>
+          <hr>
+          <p>Your account has successfully been created. Thank you for taking the time to complete the registration process.
+          </p>
+          <a routerLink="/dashboard"><button type="button" class="btn formButton lightButton">Go to your Dashboard</button></a>
+          <p class="orText">OR</p>
+          <a routerLink="/login"><button type="button" class="btn formButton darkButton">Return to front page</button></a>
         </div>
       </div>
     </div>
