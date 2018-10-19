@@ -99,11 +99,11 @@ hr {
     background: #0055b9;
 }
 
-.f1-step p { color: rgb(168, 167, 167); }
+.f1-step p { color: #6d6d6d; }
 .f1-step.activated p { color: #C06014;color: #0055b9; }
 .f1-step.active p { color: #C06014;color: #0055b9;font-weight: bold; }
 .f1-step-icon {
-background: rgb(168, 167, 167);
+background: #8c8c8c;;
 color: #fff; 
 }
 /* ------------Content Changes----------------------------------------------------------------------*/
@@ -221,6 +221,9 @@ hr {
     font-size: 20px;
 }
 
+label {
+    display: block;
+}
 
 .fa-question-circle {
     font-size: 25px;

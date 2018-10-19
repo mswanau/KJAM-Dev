@@ -10,23 +10,23 @@
           <div class="f1-progress-line" style="width: 0%;"></div>
         </div>
         <div class="f1-step active">
-          <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
+          <button type="button" title="Step 1 info form" aria-label="Step 2 link form" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
           <p>Info</p>
         </div>
         <div class="f1-step">
-          <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
+          <button type="button" title="Step 2 link form" aria-label="Step 2 link form" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
           <p>Links</p>
         </div>
         <div class="f1-step">
-          <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
+          <button type="button" title="Step 3 Additional Information form" aria-label="Step 3 Additional Information form" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
           <p>Add</p>
         </div>
         <div class="f1-step">
-          <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
+          <button type="button" title="Step 4 Verify Identity form" aria-label="Step 4 Verify Identity form" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
           <p>Identify</p>
         </div>
         <div class="f1-step">
-          <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
+          <button type="button" title="Step 5 Confirm Information form" aria-label="Step 5 Confirm Information form" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
           <p>Verify</p>
         </div>
       </div>
@@ -39,29 +39,33 @@
           <!-- Created rows for form inputs on same line, here is first and last name -->
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label>First Name</label>
+              <label>First Name
               <input type="text" formControlName="firstName" class="form-control" placeholder="First Name" 
                 [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+              </label>
               <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                 <div *ngIf="f.firstName.errors.required">First Name is required</div>
               </div>
+            
             </div>
 
             <div class="form-group col-md-6">
-              <label for="lastName">Last Name</label>
+              <label for="lastName">Last Name
               <input type="text" formControlName="lastName" class="form-control" id="lastName" placeholder="Last Name" 
                 [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+              </label>
               <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
                 <div *ngIf="f.lastName.errors.required">Last Name is required</div>
-              </div>
+              </div>  
             </div>
           </div>
         
           <!-- Email Address input -->
           <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" formControlName="email" class="form-control" placeholder="Email Address"
+            <label for="email">Email Address
+            <input type="email" formControlName="email" class="form-control" placeholder="Email Address" id="email"
                 [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+              </label>
             <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
               <div *ngIf="f.email.errors.required">Email is required</div>
               <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
@@ -71,39 +75,43 @@
           <!-- Contact number and date of birth on same line -->
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="phone">Contact Number</label>
+              <label for="phone">Contact Number
               <input type="text" formControlName="phone" class="form-control" id="phone" maxlength="10"
                   [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+                </label>
               <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                 <div *ngIf="f.phone.errors.required">Contact Number is required</div>
-              </div>
+              </div> 
             </div>
 
             <div class="form-group col-md-6">
-              <label for="DOB">Date of Birth</label>
+              <label for="DOB">Date of Birth
               <input type="date" formControlName="dob" class="form-control" id="DOB" max="9999-12-31"
                   [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
+                </label>
               <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
                 <div *ngIf="f.dob.errors.required">Date of Birth is Required</div>
               </div>
-            </div>
+            </div>  
           </div>
         
           <!-- Address input -->
           <div class="form-group">
-            <label for="inputAddress">Address</label>
+            <label for="inputAddress">Address
             <input type="text" formControlName="address" class="form-control" id="inputAddress" placeholder="123 Name Street"
                 [ngClass]="{ 'is-invalid': submitted && f.address.errors }" />
+              </label>
             <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
               <div *ngIf="f.address.errors.required">Address is Required</div>
-            </div>
+            </div> 
           </div>
 
           <!-- Suburb -->
           <div class="form-group">
-            <label for="inputAddress2">Suburb</label>
+            <label for="inputAddress2">Suburb
             <input type="text" formControlName="suburb" class="form-control" id="inputAddress2" placeholder="Suburb"
                 [ngClass]="{ 'is-invalid': submitted && f.suburb.errors }" />
+              </label>
             <div *ngIf="submitted && f.suburb.errors" class="invalid-feedback">
               <div *ngIf="f.suburb.errors.required">Suburb is Required</div>
             </div>
@@ -112,9 +120,10 @@
           <!-- Row for city, state and post code all on same line -->
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="inputCity">City</label>
+              <label for="inputCity">City
               <input type="text" formControlName="city" class="form-control" id="inputCity"
                   [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
+                </label>
               <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
                 <div *ngIf="f.city.errors.required">Suburb is Required</div>
               </div>
@@ -122,7 +131,7 @@
 
             <!-- Have selectable elements as each state of Australia -->
             <div class="form-group col-md-4">
-              <label for="inputState">State</label>
+              <label for="inputState">State
               <select id="inputState" class="form-control">
                 <option selected>Choose...</option>
                 <option>ACT</option>
@@ -134,12 +143,14 @@
                 <option>VIC</option>
                 <option>WA</option>
               </select>
+            </label>
             </div>
 
             <div class="form-group col-md-2">
-              <label for="inputZip">Post Code</label>
+              <label for="inputZip">Post Code
               <input type="text" formControlName="postcode" class="form-control" id="inputZip"
                   [ngClass]="{ 'is-invalid': submitted && f.postcode.errors }" />
+                </label>
               <div *ngIf="submitted && f.postcode.errors" class="invalid-feedback">
                 <div *ngIf="f.postcode.errors.required">Post Code is Required</div>
               </div>
@@ -148,9 +159,10 @@
 
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="password">Password</label>
-              <input type="password" formControlName="password" class="form-control" id="pwd" required minlength="6"
+              <label for="password">Password
+              <input type="password" formControlName="password" class="form-control" id="password" required minlength="6"
                   [ngClass]="{ 'is-invalid': submitted && f.password.errors }"  />
+              </label>
 
               <!-- Alert message form validation requirements, minlength 6 characters -->
               <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
@@ -160,10 +172,10 @@
             </div>
 
             <div class="form-group col-md-6">
-              <label for="password">Re-enter Password</label>
-              <input type="password" formControlName="verify" class="form-control" id="repwd" required minlength="6"
+              <label for="repeatpassword">Re-enter Password
+              <input type="password" formControlName="verify" class="form-control" id="repeatpassword" required minlength="6"
                   [ngClass]="{ 'is-invalid': submitted && f.verify.errors }"  />
-
+                </label>
               <!-- Alert message form validation requirements, minlength 6 characters -->
               <div *ngIf="submitted && f.verify.errors" class="invalid-feedback">
                 <div *ngIf="f.verify.errors?.MatchPassword">Password not match</div>
@@ -174,7 +186,7 @@
 
           <div class="form-row">
             <div class="col-auto mr-auto">
-              <a routerLink="/login"><button type="button" class="btn lightButton navButton">Cancel</button></a>
+              <button type="button" class="btn lightButton navButton" (click)=exitRegister()>Cancel</button>
             </div>
             <div class="col-auto">
               <button type="button" class="btn darkButton navButton" (click)=goStepTwo()>Next Page</button>
@@ -189,26 +201,26 @@
     <div *ngIf="stepTwo">
       <div class="f1-steps">
         <div class="f1-progress">
-          <div class="f1-progress-line" style="width: 30%;"></div>
+          <div class="f1-progress-line" style="width: 0%;"></div>
         </div>
         <div class="f1-step active">
-          <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
+          <button type="button" title="Step 1 info form" aria-label="Step 2 link form" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
           <p>Info</p>
         </div>
-        <div class="f1-step active">
-          <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
+        <div class="f1-step">
+          <button type="button" title="Step 2 link form" aria-label="Step 2 link form" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
           <p>Links</p>
         </div>
         <div class="f1-step">
-          <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
+          <button type="button" title="Step 3 Additional Information form" aria-label="Step 3 Additional Information form" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
           <p>Add</p>
         </div>
         <div class="f1-step">
-          <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
+          <button type="button" title="Step 4 Verify Identity form" aria-label="Step 4 Verify Identity form" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
           <p>Identify</p>
         </div>
         <div class="f1-step">
-          <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
+          <button type="button" title="Step 5 Confirm Information form" aria-label="Step 5 Confirm Information form" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
           <p>Verify</p>
         </div>
       </div>
@@ -216,7 +228,7 @@
       <div class="form-row">
         <div class="container-content register-container">
           <div class="row"><h1>Information Shortcuts &nbsp;</h1>
-            <button type="button" placement="bottom" class="hide"
+            <button type="button" placement="bottom" class="hide" aria-label="Help button"
               ngbPopover="The following connections are used to aid in the gathering of your information, allowing for a more seamless process. 
                 By connecting to any of the sources below you are agreeing to have your information shared with OurAus and used in prefilling your information. You can opt to skip this, however it will require you fill in further information manually">
               <i class="fa fa-question"></i>
@@ -234,12 +246,15 @@
                 <h4 class="modal-title">University Connect</h4>
                 <div class="modal-body">
                   <p>Please use your university details below</p>
-                  <label>Institute</label>
-                  <input type="text" formControlName="institute" class="form-control"/>
-                  <label>Student ID</label>
-                  <input type="text" formControlName="studentID" class="form-control"/>
-                  <label>Password</label>
-                  <input type="password" class="form-control"/>
+                  <label>Institute
+                    <input type="text" formControlName="institute" class="form-control"/>
+                  </label>
+                  <label>Student ID
+                    <input type="text" formControlName="studentID" class="form-control"/>
+                  </label>
+                  <label>Password
+                    <input type="password" class="form-control"/>
+                  </label>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn formButton lightButton" data-dismiss="modal">Cancel</button>
@@ -266,12 +281,15 @@
                 <h4 class="modal-title">Related OurAus accounts</h4>
                 <div class="modal-body">
                   <p>Please enter the OurAus ID for your legal guardians and/or your partner</p>
-                  <label>Parent/Guardian 1 ID</label>
-                  <input type="text" formControlName="guardian1" class="form-control"/>
-                  <label>Parent/Guardian 2 ID</label>
-                  <input type="text" formControlName="guardian2" class="form-control"/>
-                  <label>Partner ID</label>
-                  <input type="text" formControlName="partnerId" class="form-control"/>
+                  <label>Parent/Guardian 1 ID
+                    <input type="text" formControlName="guardian1" class="form-control"/>
+                  </label>
+                  <label>Parent/Guardian 2 ID
+                    <input type="text" formControlName="guardian2" class="form-control"/>
+                  </label>
+                  <label>Partner ID
+                    <input type="text" formControlName="partnerId" class="form-control"/>
+                  </label>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn formButton lightButton" data-dismiss="modal">Cancel</button>
@@ -303,26 +321,26 @@
     <div *ngIf="stepThree">
       <div class="f1-steps">
         <div class="f1-progress">
-          <div class="f1-progress-line" style="width: 50%;"></div>
+          <div class="f1-progress-line" style="width: 0%;"></div>
         </div>
         <div class="f1-step active">
-          <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
+          <button type="button" title="Step 1 info form" aria-label="Step 2 link form" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
           <p>Info</p>
         </div>
-        <div class="f1-step active">
-          <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
+        <div class="f1-step">
+          <button type="button" title="Step 2 link form" aria-label="Step 2 link form" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
           <p>Links</p>
         </div>
-        <div class="f1-step active">
-          <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
+        <div class="f1-step">
+          <button type="button" title="Step 3 Additional Information form" aria-label="Step 3 Additional Information form" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
           <p>Add</p>
         </div>
         <div class="f1-step">
-          <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
+          <button type="button" title="Step 4 Verify Identity form" aria-label="Step 4 Verify Identity form" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
           <p>Identify</p>
         </div>
         <div class="f1-step">
-          <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
+          <button type="button" title="Step 5 Confirm Information form" aria-label="Step 5 Confirm Information form" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
           <p>Verify</p>
         </div>
       </div>
@@ -445,26 +463,26 @@
     <div *ngIf="stepFour">
       <div class="f1-steps">
         <div class="f1-progress">
-          <div class="f1-progress-line" style="width: 80%;"></div>
+          <div class="f1-progress-line" style="width: 0%;"></div>
         </div>
         <div class="f1-step active">
-          <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
+          <button type="button" title="Step 1 info form" aria-label="Step 2 link form" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
           <p>Info</p>
         </div>
-        <div class="f1-step active">
-          <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
+        <div class="f1-step">
+          <button type="button" title="Step 2 link form" aria-label="Step 2 link form" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
           <p>Links</p>
         </div>
-        <div class="f1-step active">
-          <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
+        <div class="f1-step">
+          <button type="button" title="Step 3 Additional Information form" aria-label="Step 3 Additional Information form" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
           <p>Add</p>
         </div>
-        <div class="f1-step active">
-          <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
+        <div class="f1-step">
+          <button type="button" title="Step 4 Verify Identity form" aria-label="Step 4 Verify Identity form" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
           <p>Identify</p>
         </div>
         <div class="f1-step">
-          <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
+          <button type="button" title="Step 5 Confirm Information form" aria-label="Step 5 Confirm Information form" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
           <p>Verify</p>
         </div>
       </div>
@@ -515,26 +533,26 @@
     <div *ngIf="stepFive">
       <div class="f1-steps">
         <div class="f1-progress">
-          <div class="f1-progress-line" style="width: 100%;"></div>
+          <div class="f1-progress-line" style="width: 0%;"></div>
         </div>
         <div class="f1-step active">
-          <button type="button" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
+          <button type="button" title="Step 1 info form" aria-label="Step 2 link form" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
           <p>Info</p>
         </div>
-        <div class="f1-step active">
-          <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
+        <div class="f1-step">
+          <button type="button" title="Step 2 link form" aria-label="Step 2 link form" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
           <p>Links</p>
         </div>
-        <div class="f1-step active">
-          <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
+        <div class="f1-step">
+          <button type="button" title="Step 3 Additional Information form" aria-label="Step 3 Additional Information form" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
           <p>Add</p>
         </div>
-        <div class="f1-step active">
-          <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
+        <div class="f1-step">
+          <button type="button" title="Step 4 Verify Identity form" aria-label="Step 4 Verify Identity form" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
           <p>Identify</p>
         </div>
-        <div class="f1-step active">
-          <button type="button" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
+        <div class="f1-step">
+          <button type="button" title="Step 5 Confirm Information form" aria-label="Step 5 Confirm Information form" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
           <p>Verify</p>
         </div>
       </div>
