@@ -215,8 +215,8 @@
 
       <div class="form-row">
         <div class="container-content register-container">
-          <div class="row"><h1>Information Shortcuts </h1>
-            <button type="button" placement="bottom"
+          <div class="row"><h1>Information Shortcuts &nbsp;</h1>
+            <button type="button" placement="bottom" class="hide"
               ngbPopover="The following connections are used to aid in the gathering of your information, allowing for a more seamless process. 
                 By connecting to any of the sources below you are agreeing to have your information shared with OurAus and used in prefilling your information. You can opt to skip this, however it will require you fill in further information manually">
               <i class="fa fa-question"></i>
@@ -229,7 +229,7 @@
         
           <div id="uniLogin" class="modal fade" role="dialog">
             
-            <div class="modal-dialog modal-sm">
+            <div class="modal-dialog modal-md">
               <div class="modal-content">
                 <h4 class="modal-title">University Connect</h4>
                 <div class="modal-body">
@@ -261,17 +261,17 @@
           <div *ngIf="otherAccounts"><span><button type="button" class="btn buttonForm darkButton linkButton" data-toggle="modal" data-target="#otherAccount">Connect to Parent/Gaurdian Account</button></span></div>
 
           <div id="otherAccount" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-sm">
+            <div class="modal-dialog modal-md">
               <div class="modal-content">
                 <h4 class="modal-title">Related OurAus accounts</h4>
                 <div class="modal-body">
                   <p>Please enter the OurAus ID for your legal guardians and/or your partner</p>
                   <label>Parent/Guardian 1 ID</label>
-                  <input type="text" formControlName="guardian1"/>
+                  <input type="text" formControlName="guardian1" class="form-control"/>
                   <label>Parent/Guardian 2 ID</label>
-                  <input type="text" formControlName="guardian2"/>
+                  <input type="text" formControlName="guardian2" class="form-control"/>
                   <label>Partner ID</label>
-                  <input type="text" formControlName="partnerId"/>
+                  <input type="text" formControlName="partnerId" class="form-control"/>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn formButton lightButton" data-dismiss="modal">Cancel</button>
@@ -558,15 +558,15 @@
 
               <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
-                  <p><span>First Name:  {{ firstName }} </span></p>
-                  <p><span>Last Name: {{ lastName }} </span></p>
-                  <p><span>Email Address: {{ email }} </span></p>
-                  <p><span>Phone Number: {{ phone }} </span></p>
-                  <p><span>Date of Birth: {{ dob }} </span></p>
-                  <p><span>Address: {{ address }} </span></p>
-                  <p><span>Suburb: {{ suburb }} </span></p>
-                  <p><span>City: {{ city }} </span></p>
-                  <p><span>Post Code: {{ postcode }} </span></p>
+                  <p><span><b>First Name:</b>  {{ firstName }} </span></p>
+                  <p><span><b>Last Name: </b>{{ lastName }} </span></p>
+                  <p><span><b>Email Address:</b> {{ email }} </span></p>
+                  <p><span><b>Phone Number: </b>{{ phone }} </span></p>
+                  <p><span><b>Date of Birth: </b>{{ dob }} </span></p>
+                  <p><span><b>Address: </b>{{ address }} </span></p>
+                  <p><span><b>Suburb: </b>{{ suburb }} </span></p>
+                  <p><span><b>City:</b> {{ city }} </span></p>
+                  <p><span><b>Post Code: </b>{{ postcode }} </span></p>
                 </div>
               </div>
             </div>
@@ -581,8 +581,8 @@
               </div>
               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                 <div class="card-body">
-                  <p><span>University:  {{ institute }} </span></p>
-                  <p><span>Student Number: {{ studentID }} </span></p>
+                  <p><span><b>University:</b>  {{ institute }} </span></p>
+                  <p><span><b>Student Number:</b> {{ studentID }} </span></p>
                 </div>
               </div>
 
@@ -596,25 +596,26 @@
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                   <div class="card-body">
-                    <p><span>Parent/Guardian 1 ID:  {{ guardian1 }} </span></p>
-                    <p><span>Parent/Guardian 2 ID: {{ guardian2 }} </span></p>
-                    <p><span>Partner ID:  {{ partnerId }} </span></p>
-                    <p><span>Average Hours worked per week: {{ workHours }} </span></p>
-                    <p><span>Average income per week: {{ workIncome }} </span></p>
-                    <p><span>Rent per week for house: {{ rent1 }} </span></p>
-                    <p><span>Your rent per week: {{ rent2 }} </span></p>
+                    <p><span><b>Parent/Guardian 1 ID:</b>  {{ guardian1 }} </span></p>
+                    <p><span><b>Parent/Guardian 2 ID:</b> {{ guardian2 }} </span></p>
+                    <p><span><b>Partner ID:</b>  {{ partnerId }} </span></p>
+                    <p><span><b>Average Hours worked per week:</b> {{ workHours }} </span></p>
+                    <p><span><b>Average income per week:</b> {{ workIncome }} </span></p>
+                    <p><span><b>Rent per week for house:</b> {{ rent1 }} </span></p>
+                    <p><span><b>Your rent per week:</b> {{ rent2 }} </span></p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="row">
-              <button type="submit" class="btn buttonForm center-button darkButton">Complete Registration</button> 
-            </div>
+     
 
             <div class="form-row">
               <div class="col-auto mr-auto">
                 <button type="button" class="btn lightButton navButton" (click)=goStepFour()>Previous Page</button>
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="btn navButton darkButton">Complete Registration</button> 
               </div>
             </div>
           </div>

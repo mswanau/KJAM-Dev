@@ -17,21 +17,17 @@
       If you have never applied for a centrelink claim before please use the link below to check you are eligible. 
     </p>
     <div class="text-center">
-      <h3><button type="button" class="btn center-button colour2 claim_button">Do the Eligibility Test</button></h3>
+      <h3><button type="button" class="btn center-button colour2 claim_button">Take the Eligibility Test</button></h3>
     </div>
     <p></p>
     <p>If you go through the elibility check, the details from the test will be applied to a real claim making it much simplier to process through</p>
 
-    <!-- Set up two bootstrap rows, add 3 buttons to each row -->
-    <!-- row-width is a setting in styles.css to limit width -->
-    <div class="row">
-      <div *ngIf="claimMade" class="col-md">
-        <a routerLink="/UnderConstruction"><button class="btn buttonDashboard colour1 paymentButton">Next Payment</button></a>
-      </div>
+
+
       <div class="col-md">
-        <a routerLink="/dashboard/centrelink/centrelink-form"><button class="btn center-button colour2 claim_button">MAKE A CLAIM</button></a>
+        <a routerLink="/dashboard/centrelink/centrelink-form"><button class="btn center-button colour2 claim_button">Start Claim</button></a>
       </div>
-    </div>
+   
 
     <div *ngIf="claimMade" class="row">
       <div class="col-md">
@@ -40,6 +36,10 @@
       <div class="col-md">
         <a routerLink="/UnderConstruction"><button class="btn buttonDashboard colour2">PROCESSED CLAIMS</button></a>
       </div>
+      <div class="row">
+        <a routerLink="/UnderConstruction"><button class="btn buttonDashboard colour1 paymentButton">Next Payment</button></a>
+      </div>
     </div>
   </div>
+ 
 </div>

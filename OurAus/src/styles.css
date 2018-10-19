@@ -99,11 +99,11 @@ hr {
     background: #0055b9;
 }
 
-.f1-step p { color: #ccc; }
+.f1-step p { color: rgb(168, 167, 167); }
 .f1-step.activated p { color: #C06014;color: #0055b9; }
 .f1-step.active p { color: #C06014;color: #0055b9;font-weight: bold; }
 .f1-step-icon {
-background: #ddd;
+background: rgb(168, 167, 167);
 color: #fff; 
 }
 /* ------------Content Changes----------------------------------------------------------------------*/
@@ -209,7 +209,7 @@ hr {
 
 .modal-content {
     padding: 10%;
-    margin-top: 30%;
+    margin-top: 25%;
 }
 
 .linkButton {
@@ -218,6 +218,7 @@ hr {
     margin-right: 10%;
     padding: 20px 0px 20px 0px;
     margin-bottom: 10px;
+    font-size: 20px;
 }
 
 

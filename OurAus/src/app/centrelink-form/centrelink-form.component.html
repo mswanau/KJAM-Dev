@@ -20,20 +20,24 @@
           to assist in a fast process speed gather all the documents required.</p>
         
         <div class="row">
-          <h3>Documents:</h3>
+          <div class="title-container">
+          <h5>Documents</h5>
+          </div>
         </div>
         <ul>
-          <li><h4>Rental Agreement</h4></li>
-          <li><h4>Proof of Identity</h4></li>
+          <li><h6>Rental Agreement</h6></li>
+          <li><h6>Proof of Identity</h6></li>
         </ul>
         <div class="row">
-          <h3>Details:</h3>
+            <div class="title-container">
+          <h5>Details</h5>
+          </div>
         </div>
         <ul>
-          <li><h4>Work Details</h4></li>
+          <li><h6>Work Details</h6></li>
         </ul>
         <div class="row">
-          <h4>Eligibility Test Recieved</h4>
+          <h5>Eligibility Test Recieved</h5>
         </div>
         <div class="row">
           <p>Details from the eligilibilty checklist you performed have been prefilled.</p>
@@ -135,10 +139,10 @@
           <h1>Documentation</h1>
           <hr>
           <div class="form-row">
-            <div class="col-md-4">
+            <div class="col-md-3">
               <p>Rental Agreement</p>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-9">
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
@@ -151,10 +155,10 @@
           </div>
         </div>
         <div class="form-row">
-          <div class="col-md-4">
+          <div class="col-md-3">
             Proof of Identity
           </div>
-          <div class="col-md-8">
+          <div class="col-md-9">
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
@@ -168,7 +172,7 @@
         </div>
 
         <div class="form-row">
-          <p>The required Documentation can simply be uploaded via scan or mobile. 
+          <p>The required Documentation can simply be uploaded via <b>scan</b> or <b>mobile</b>. 
             You may also come into the office however it is not required
           </p>
         </div>
@@ -319,16 +323,10 @@
   <div class="container-content register-container">
     <h1>Claim Submitted Successfully</h1>
     <hr>
-    <div class="form-row">
-    <p> Congratulations your claim has been processed through our system.</p>
-  </div>
-
-
-  <p>The estimated processing time is 2 weeks, the below date is the estimated date of first assistance allowance.</p>
-  <div class="center-text"><h1>{{ date | date }}</h1></div>
-
-    <p>Please indicate with the checkboxes below for how you would like to be contacted throughout the processing phase.</p><p>Please choose atleast one option below</p>
-
+    <p>Congratulations your claim has been processed through our system.</p>
+    <p></p>
+    <p>You have the option of recieving detailed updates on your claim as it processes through our system. Via Call, SMS or Email.</p>
+    <p>Select <b>one or more</b> of the options below.</p>
       <div class="form-row">
         <div class="col-md center-text">
           <h4>Email</h4>
@@ -343,6 +341,9 @@
           <input class="bigCheckbox" type="checkbox"/>
         </div>
       </div>
+
+      <div class="center-text"> <p>Estimated processing time <b>14 days</b>: </p><h5>{{ date | date }}</h5></div>
+      <p></p>
 
     <a routerLink="/dashboard/centrelink"><button type="button" class="btn buttonForm center-button darkButton">Accept and Return to Dashboard</button></a>
 
