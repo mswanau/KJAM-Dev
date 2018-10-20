@@ -294,5 +294,9 @@ goStepSix() {
         localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
       }
     )
+    this.stepSix = true;
+    this.stepFive = false;
+
+
   }
 }
