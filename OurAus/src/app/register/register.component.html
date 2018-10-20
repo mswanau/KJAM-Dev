@@ -10,11 +10,11 @@
           <div class="f1-progress-line" style="width: 0%;"></div>
         </div>
         <div class="f1-step active">
-          <button type="button" title="Step 1 info form" aria-label="Step 2 link form" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
+          <button type="button" title="Step 1 Info form" aria-label="Step 1 Info form" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
           <p>Info</p>
         </div>
         <div class="f1-step">
-          <button type="button" title="Step 2 link form" aria-label="Step 2 link form" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
+          <button type="button" title="Step 2 Link form" aria-label="Step 2 Link form" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
           <p>Links</p>
         </div>
         <div class="f1-step">
@@ -201,14 +201,14 @@
     <div *ngIf="stepTwo">
       <div class="f1-steps">
         <div class="f1-progress">
-          <div class="f1-progress-line" style="width: 0%;"></div>
+          <div class="f1-progress-line" style="width: 30%;"></div>
         </div>
         <div class="f1-step active">
-          <button type="button" title="Step 1 info form" aria-label="Step 2 link form" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
+          <button type="button" title="Step 1 Info form" aria-label="Step 1 Info form" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
           <p>Info</p>
         </div>
-        <div class="f1-step">
-          <button type="button" title="Step 2 link form" aria-label="Step 2 link form" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
+        <div class="f1-step active">
+          <button type="button" title="Step 2 Link form" aria-label="Step 2 Link form" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
           <p>Links</p>
         </div>
         <div class="f1-step">
@@ -321,17 +321,17 @@
     <div *ngIf="stepThree">
       <div class="f1-steps">
         <div class="f1-progress">
-          <div class="f1-progress-line" style="width: 0%;"></div>
+          <div class="f1-progress-line" style="width: 50%;"></div>
         </div>
         <div class="f1-step active">
-          <button type="button" title="Step 1 info form" aria-label="Step 2 link form" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
+          <button type="button" title="Step 1 Info form" aria-label="Step 1 Info form" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
           <p>Info</p>
         </div>
-        <div class="f1-step">
-          <button type="button" title="Step 2 link form" aria-label="Step 2 link form" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
+        <div class="f1-step active">
+          <button type="button" title="Step 2 Link form" aria-label="Step 2 Link form" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
           <p>Links</p>
         </div>
-        <div class="f1-step">
+        <div class="f1-step active">
           <button type="button" title="Step 3 Additional Information form" aria-label="Step 3 Additional Information form" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
           <p>Add</p>
         </div>
@@ -356,25 +356,29 @@
             <h4>University Details</h4>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label>University Institute</label>
-                <input type="text" class="form-control"/>
+                <label>University Institute
+                  <input type="text" class="form-control"/>
+                </label>
               </div>
   
               <div class="form-group col-md-6">
-                <label for="courseTitle">Course Title</label>
-                <input type="text" class="form-control"/>
+                <label for="courseTitle">Course Title
+                  <input type="text" class="form-control" id="courseTitle"/>
+                </label>
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="uniStart">Start Date</label>
-                <input type="date" class="form-control" max="9999-12-31"/>
+                <label for="uniStart">Start Date
+                  <input type="date" class="form-control" max="9999-12-31" id="uniStart"/>
+                </label>
               </div>
     
               <div class="form-group col-md-6">
-                <label for="uniEnd">End Date</label>
-                <input type="date" class="form-control" max="9999-12-31"/>
+                <label for="uniEnd">End Date
+                  <input type="date" class="form-control" max="9999-12-31" id="uniEnd"/>
+                </label>
               </div>
             </div>
 
@@ -389,14 +393,16 @@
             <!-- Email Address input -->
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="parentName">Name</label>
-                <input type="text" class="form-control"/>
+                <label for="parentName">Name
+                  <input type="text" class="form-control" id="parentName"/>
+                </label>
               </div>
           
               <!-- Contact number and date of birth on same line -->
               <div class="form-group col-md-6">
-                <label for="parentDob">Date of Birth</label>
-                <input type="date" class="form-control" max="9999-12-31"/>
+                <label for="parentDob">Date of Birth
+                  <input type="date" class="form-control" max="9999-12-31" id="parentDob"/>
+                </label>
               </div>
             </div>
 
@@ -404,14 +410,16 @@
 
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="parentName2">Name</label>
-                <input type="text" class="form-control"/>
+                <label for="parentName2">Name
+                  <input type="text" class="form-control" id="parentName2"/>
+                </label>
               </div>
       
               <!-- Contact number and date of birth on same line -->
               <div class="form-group col-md-6">
-                <label for="parentDob2">Date of Birth</label>
-                <input type="date"  class="form-control" max="9999-12-31"/>
+                <label for="parentDob2">Date of Birth
+                  <input type="date"  class="form-control" max="9999-12-31" id="parentDob2"/>
+                </label>
               </div>
             </div>
 
@@ -422,13 +430,15 @@
           <h4>Income Details</h4>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="workHours">Average Hours worked per Week</label>
-              <input type="text" formControlName="workHours" class="form-control"/>
+              <label for="workHours">Average Hours worked per Week
+                <input type="text" formControlName="workHours" class="form-control" id="workHours"/>
+              </label>
             </div>
   
             <div class="form-group col-md-6">
-              <label for="workIncome">Average income per Week</label>
-              <input type="text" formControlName="workIncome" class="form-control"/>
+              <label for="workIncome">Average income per Week
+                <input type="text" formControlName="workIncome" class="form-control" id="workIncome"/>
+              </label>
             </div>
           </div>
 
@@ -437,13 +447,15 @@
           <h4>Living Details</h4>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="rent1">Rent for entire rental per week</label>
-              <input type="text" formControlName="rent1" class="form-control"/>
+              <label for="rent1">Rent for entire rental per week
+                <input type="text" formControlName="rent1" class="form-control" id="rent1"/>
+              </label>
             </div>
   
             <div class="form-group col-md-6">
-              <label for="rent2">Your rent per week</label>
-              <input type="text" formControlName="rent2" class="form-control"/>
+              <label for="rent2">Your rent per week
+                <input type="text" formControlName="rent2" class="form-control" id="rent2"/>
+              </label>
             </div>
           </div>
       
@@ -463,21 +475,21 @@
     <div *ngIf="stepFour">
       <div class="f1-steps">
         <div class="f1-progress">
-          <div class="f1-progress-line" style="width: 0%;"></div>
+          <div class="f1-progress-line" style="width: 80%;"></div>
         </div>
         <div class="f1-step active">
-          <button type="button" title="Step 1 info form" aria-label="Step 2 link form" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
+          <button type="button" title="Step 1 Info form" aria-label="Step 1 Info form" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
           <p>Info</p>
         </div>
-        <div class="f1-step">
-          <button type="button" title="Step 2 link form" aria-label="Step 2 link form" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
+        <div class="f1-step active">
+          <button type="button" title="Step 2 Link form" aria-label="Step 2 Link form" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
           <p>Links</p>
         </div>
-        <div class="f1-step">
+        <div class="f1-step active">
           <button type="button" title="Step 3 Additional Information form" aria-label="Step 3 Additional Information form" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
           <p>Add</p>
         </div>
-        <div class="f1-step">
+        <div class="f1-step active">
           <button type="button" title="Step 4 Verify Identity form" aria-label="Step 4 Verify Identity form" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
           <p>Identify</p>
         </div>
@@ -533,25 +545,25 @@
     <div *ngIf="stepFive">
       <div class="f1-steps">
         <div class="f1-progress">
-          <div class="f1-progress-line" style="width: 0%;"></div>
+          <div class="f1-progress-line" style="width: 100%;"></div>
         </div>
         <div class="f1-step active">
-          <button type="button" title="Step 1 info form" aria-label="Step 2 link form" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
+          <button type="button" title="Step 1 Info form" aria-label="Step 1 Info form" class="f1-step-icon" (click)=goStepOne()><i class="fa fa-user"></i></button>
           <p>Info</p>
         </div>
-        <div class="f1-step">
-          <button type="button" title="Step 2 link form" aria-label="Step 2 link form" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
+        <div class="f1-step active">
+          <button type="button" title="Step 2 Link form" aria-label="Step 2 Link form" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-plug"></i></button>
           <p>Links</p>
         </div>
-        <div class="f1-step">
+        <div class="f1-step active">
           <button type="button" title="Step 3 Additional Information form" aria-label="Step 3 Additional Information form" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-pencil-square-o"></i></button>
           <p>Add</p>
         </div>
-        <div class="f1-step">
+        <div class="f1-step active">
           <button type="button" title="Step 4 Verify Identity form" aria-label="Step 4 Verify Identity form" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-camera"></i></button>
           <p>Identify</p>
         </div>
-        <div class="f1-step">
+        <div class="f1-step active">
           <button type="button" title="Step 5 Confirm Information form" aria-label="Step 5 Confirm Information form" class="f1-step-icon " (click)=goStepFive()><i class="fa fa-list"></i></button>
           <p>Verify</p>
         </div>

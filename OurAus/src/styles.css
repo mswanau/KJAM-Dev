@@ -106,6 +106,14 @@ hr {
 background: #8c8c8c;;
 color: #fff; 
 }
+
+.breadcrumb {
+    background-color: #444444;
+    margin-top: -8px;
+}
+.breadcrumb a {
+    color: white;
+}
 /* ------------Content Changes----------------------------------------------------------------------*/
 
 

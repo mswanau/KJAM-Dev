@@ -56,19 +56,19 @@
           <div class="f1-progress-line" style="width: 0%;"></div>
         </div>
         <div class="f1-step active centrelink-nav">
-          <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-user"></i></button>
+          <button type="button" title="Step 1 Info form" aria-label="Step 1 Info form" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-user"></i></button>
           <p>Info</p>
         </div>
         <div class="f1-step centrelink-nav">
-          <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-file-text"></i></button>
+          <button type="button" title="Step 2 Documents form" aria-label="Step 2 Documents form" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-file-text"></i></button>
           <p>Documents</p>
         </div>
         <div class="f1-step centrelink-nav">
-          <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-list"></i></button>
+          <button type="button" title="Step 3 Confirm Information form" aria-label="Step 3 Confirm Information form" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-list"></i></button>
           <p>Confirm</p>
         </div>
         <div class="f1-step centrelink-nav">
-          <button type="button" class="f1-step-icon" (click)=goStepFive()><i class="fa fa-check"></i></button>
+          <button type="button" title="Step 4 Complete form" aria-label="Step 4 Complete form" class="f1-step-icon" (click)=goStepFive()><i class="fa fa-check"></i></button>
           <p>Complete</p>
         </div>
       </div>
@@ -80,19 +80,22 @@
           <h4>Work Details</h4>
           <div class="form-row">
             <div class="form-group col-md">
-              <label for="jobTitle">Job Title</label>
-              <input type="text" formControlName="jobTitle" class="form-control"/>
+              <label for="jobTitle">Job Title
+                <input type="text" formControlName="jobTitle" class="form-control" id="jobTitle"/>
+              </label>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="companyName">Company Name</label>
-              <input type="text" formControlName="companyName" class="form-control"/>
+              <label for="companyName">Company Name
+                <input type="text" formControlName="companyName" class="form-control" id="companyName"/>
+              </label>
             </div>
             
             <div class="form-group col-md-6">
-              <label for="dateJob">Start Date</label>
-              <input type="date"  formControlName="dateJob" class="form-control" max="9999-12-31"/>
+              <label for="dateJob">Start Date
+                <input type="date"  formControlName="dateJob" class="form-control" max="9999-12-31" id="dateJob"/>
+              </label>
             </div>
           </div>
 
@@ -115,19 +118,19 @@
           <div class="f1-progress-line" style="width: 35%;"></div>
         </div>
         <div class="f1-step active centrelink-nav">
-          <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-user"></i></button>
+          <button type="button" title="Step 1 Info form" aria-label="Step 1 Info form" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-user"></i></button>
           <p>Info</p>
         </div>
         <div class="f1-step active centrelink-nav">
-          <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-file-text"></i></button>
+          <button type="button" title="Step 2 Documents form" aria-label="Step 2 Documents form" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-file-text"></i></button>
           <p>Documents</p>
         </div>
         <div class="f1-step centrelink-nav">
-          <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-list"></i></button>
+          <button type="button" title="Step 3 Confirm Information form" aria-label="Step 3 Confirm Information form" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-list"></i></button>
           <p>Confirm</p>
         </div>
         <div class="f1-step centrelink-nav">
-          <button type="button" class="f1-step-icon" (click)=goStepFive()><i class="fa fa-check"></i></button>
+          <button type="button" title="Step 4 Complete form" aria-label="Step 4 Complete form" class="f1-step-icon" (click)=goStepFive()><i class="fa fa-check"></i></button>
           <p>Complete</p>
         </div>
       </div>
@@ -195,19 +198,19 @@
         <div class="f1-progress-line" style="width: 70%;"></div>
       </div>
       <div class="f1-step active centrelink-nav">
-        <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-user"></i></button>
+        <button type="button" title="Step 1 Info form" aria-label="Step 1 Info form" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-user"></i></button>
         <p>Info</p>
       </div>
       <div class="f1-step active centrelink-nav">
-        <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-file-text"></i></button>
+        <button type="button" title="Step 2 Documents form" aria-label="Step 2 Documents form" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-file-text"></i></button>
         <p>Documents</p>
       </div>
       <div class="f1-step active centrelink-nav">
-        <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-list"></i></button>
+        <button type="button" title="Step 3 Confirm Information form" aria-label="Step 3 Confirm Information form" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-list"></i></button>
         <p>Confirm</p>
       </div>
       <div class="f1-step centrelink-nav">
-        <button type="button" class="f1-step-icon" (click)=goStepFive()><i class="fa fa-check"></i></button>
+        <button type="button" title="Step 4 Complete form" aria-label="Step 4 Complete form" class="f1-step-icon" (click)=goStepFive()><i class="fa fa-check"></i></button>
         <p>Complete</p>
       </div>
     </div>
@@ -286,19 +289,19 @@
         <div class="f1-progress-line" style="width: 100%;"></div>
       </div>
       <div class="f1-step active centrelink-nav">
-        <button type="button" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-user"></i></button>
+        <button type="button" title="Step 1 Info form" aria-label="Step 1 Info form" class="f1-step-icon" (click)=goStepTwo()><i class="fa fa-user"></i></button>
         <p>Info</p>
       </div>
       <div class="f1-step active centrelink-nav">
-        <button type="button" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-file-text"></i></button>
+        <button type="button" title="Step 2 Documents form" aria-label="Step 2 Documents form" class="f1-step-icon" (click)=goStepThree()><i class="fa fa-file-text"></i></button>
         <p>Documents</p>
       </div>
       <div class="f1-step active centrelink-nav">
-        <button type="button" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-list"></i></button>
+        <button type="button" title="Step 3 Confirm Information form" aria-label="Step 3 Confirm Information form" class="f1-step-icon" (click)=goStepFour()><i class="fa fa-list"></i></button>
         <p>Confirm</p>
       </div>
       <div class="f1-step active centrelink-nav">
-        <button type="button" class="f1-step-icon" (click)=goStepFive()><i class="fa fa-check"></i></button>
+        <button type="button" title="Step 4 Complete form" aria-label="Step 4 Complete form" class="f1-step-icon" (click)=goStepFive()><i class="fa fa-check"></i></button>
         <p>Complete</p>
       </div>
     </div>
@@ -329,16 +332,19 @@
     <p>Select <b>one or more</b> of the options below.</p>
       <div class="form-row">
         <div class="col-md center-text">
-          <h4>Email</h4>
-          <input class="bigCheckbox" type="checkbox"/>
+          <label for="emailCheck"><h4>Email</h4>
+            <input class="bigCheckbox" type="checkbox" id="emailCheck" />
+          </label>
         </div>
         <div class="col-md center-text">
-          <h4>Call</h4>
-          <input class="bigCheckbox" type="checkbox"/>
+          <label for="callCheck"><h4>Call</h4>
+            <input class="bigCheckbox" type="checkbox" id="callCheck" />
+          </label>
         </div>
         <div class="col-md center-text">
-          <h4>SMS</h4>
-          <input class="bigCheckbox" type="checkbox"/>
+          <label for="smsCheck"><h4>SMS</h4>
+            <input class="bigCheckbox" type="checkbox" id="smsCheck" />
+          </label>
         </div>
       </div>
 
