@@ -107,13 +107,22 @@ background: #8c8c8c;;
 color: #fff; 
 }
 
-.breadcrumb {
+.breadcrumb-color {
     background-color: #444444;
     margin-top: -8px;
+    margin-left: -6%;
+    margin-right: -5.5%;
+
 }
+.breadcrumb {
+    background-color: inherit;
+    margin-left: 20%;
+}
+
 .breadcrumb a {
     color: white;
 }
+
 /* ------------Content Changes----------------------------------------------------------------------*/
 
 
@@ -197,6 +206,7 @@ hr {
     height: 100px;
     margin-top: 10px;
     margin-bottom: 10px;
+    font-size: 120%;
 }
 
 .paymentButton {
