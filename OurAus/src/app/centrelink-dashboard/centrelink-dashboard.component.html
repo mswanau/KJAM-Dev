@@ -1,5 +1,5 @@
 <div class="page-container">
-
+  <!-- Breadcrumb below the header -->
   <div class="breadcrumb-color">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -9,7 +9,7 @@
   </nav>
 </div>
 
-
+  <!-- Grey container for dashboard -->
   <div class="container-content register-container">
     <a routerLink="/dashboard"><button class="btn darkButton">Return to Dashboard</button></a><p></p>
 
@@ -26,11 +26,12 @@
 
 
 
-      <div class="col-md">
-        <a routerLink="/dashboard/centrelink/centrelink-form"><button class="btn center-button colour2 claim_button">Start Claim</button></a>
-      </div>
+    <div class="col-md">
+      <a routerLink="/dashboard/centrelink/centrelink-form"><button class="btn center-button colour2 claim_button">Start Claim</button></a>
+    </div>
    
 
+    <!-- Hidden element for when claim has been made :: Not Working :: -->
     <div *ngIf="claimMade" class="row">
       <div class="col-md">
         <a routerLink="/UnderConstruction"><button class="btn buttonDashboard colour1">MY OUTSTANDING CLAIMS</button></a>

@@ -3,8 +3,10 @@
 
   <!-- Form for the first page of registration, will perform function from the registration.ts file -->
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-      
+
+    <!-- Step One, use ngIf to hide and show different form pages -->  
     <div *ngIf="stepOne">
+      <!-- Navigation for the forms -->
       <div class="f1-steps">
         <div class="f1-progress">
           <div class="f1-progress-line" style="width: 0%;"></div>
@@ -32,6 +34,7 @@
       </div>
 
       <div class="form-row">
+        <!-- Container for page one -->
         <div class="container-content register-container">
           <div *ngIf="needInputs" class="form-row alert alert-primary"><p>There is still information to be filled in below:</p></div>
           <span><h1>Basic Information<h5>All Information is Required</h5></h1></span>
@@ -196,9 +199,10 @@
       </div>
     </div>
 
-    <!-- -------------------------------------------------------------------------------------------------- -->
+    <!-- STEP TWO -------------------------------------------------------------------------------------------------- -->
 
     <div *ngIf="stepTwo">
+      <!-- Navigation -->
       <div class="f1-steps">
         <div class="f1-progress">
           <div class="f1-progress-line" style="width: 30%;"></div>
@@ -226,6 +230,7 @@
       </div>
 
       <div class="form-row">
+        <!-- Container for Information Shortcuts -->
         <div class="container-content register-container">
           <div class="row"><h1>Information Shortcuts &nbsp;</h1>
             <button type="button" placement="bottom" class="hide" aria-label="Help button"
@@ -316,9 +321,10 @@
       </div>
     </div>
 
-    <!----------------------------------------------------------------------------------------------------------->
+    <!--- STEP THREE -------------------------------------------------------------------------------------------------------->
 
     <div *ngIf="stepThree">
+      <!-- Navigation -->
       <div class="f1-steps">
         <div class="f1-progress">
           <div class="f1-progress-line" style="width: 50%;"></div>
@@ -346,6 +352,7 @@
       </div>
 
       <div class="form-row">
+        <!-- Container for the Missing Information page -->
         <div class="container-content register-container">
           <h1>Missing Information</h1>
           <hr>
@@ -471,8 +478,9 @@
       </div>
     </div>
 
-    <!-- ------------------------------------------------------------------------------------------------------------>
+    <!-- STEP FOUR ------------------------------------------------------------------------------------------------------------>
     <div *ngIf="stepFour">
+      <!-- Navigation -->
       <div class="f1-steps">
         <div class="f1-progress">
           <div class="f1-progress-line" style="width: 80%;"></div>
@@ -500,6 +508,7 @@
       </div>
 
       <div class="form-row">
+        <!-- Container for the Verify Identity page -->
         <div class="container-content register-container">
           <h1>Verify Identity</h1>
           <hr>
@@ -538,12 +547,12 @@
         </div>
       </div>
     </div>
-    <!-- --------------------------------------------------------------------------------------------------- -->
 
 
-    <!-- --------------------------------------------------------------------------------------------- -->
+    <!-- STEP FIVE--------------------------------------------------------------------------------------------- -->
 
     <div *ngIf="stepFive">
+      <!-- Navigation -->
       <div class="f1-steps">
         <div class="f1-progress">
           <div class="f1-progress-line" style="width: 100%;"></div>
@@ -571,12 +580,13 @@
       </div>
 
       <div class="form-row">
-
+        <!-- Container for the Reviewing of application page -->
         <div class="container-content register-container">
           <h1>Review Application</h1>
 
           <hr>
 
+          <!-- Using Bootstraps accordion to display information in sections -->
           <div class="accordion" id="accordionExample">
             <div class="card">
               <div class="card-header" id="headingOne">
@@ -654,6 +664,7 @@
       </div>
     </div>
   
+    <!---- STEP SIX --------------------------------------------------------------------------------------------------------->
     <div *ngIf="stepSix">
       <div class="form-row">
         <div class="container-content register-container">

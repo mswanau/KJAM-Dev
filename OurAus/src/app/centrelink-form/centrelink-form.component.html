@@ -1,4 +1,6 @@
 <div class="page-container">
+
+  <!-- Breadcrumb below the header -->
   <div class="breadcrumb-color">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -9,10 +11,13 @@
   </nav>
   </div>
 
+<!-- Form element. Each form page has a ngIf (It is hidden until a click function call is made, look in the .ts file for the methods-->
+<!-- Each time a page is submitted, hide it and show the next page -->
 <form [formGroup]="centrelinkForm" (ngSubmit)="onSubmit()">
   <div *ngIf="stepOne">
     <div class="form-row">
 
+      <!-- Container for the first page of form -->
       <div class="container-content register-container">
         <h1>What You Need</h1>
         <hr>
@@ -50,7 +55,10 @@
     </div>
 
 
+    <!----- STEP TWO ----------------------------------------------------------------------------------------------------------------------------------------------------->
     <div *ngIf="stepTwo">
+
+      <!-- f1 steps is the navigation on the top of the form -->
       <div class="f1-steps">
         <div class="f1-progress centrelink-line">
           <div class="f1-progress-line" style="width: 0%;"></div>
@@ -74,6 +82,7 @@
       </div>
       <div class="form-row">
 
+        <!-- Container for the Provide Information page -->
         <div class="container-content register-container">
           <h1>Provide Information</h1>
           <hr>
@@ -112,7 +121,9 @@
       </div>
     </div>
 
+    <!----- STEP THREE ----------------------------------------------------------------------------------------------------------------------------------------------------->
     <div *ngIf="stepThree">
+      <!-- Form Navigation -->
       <div class="f1-steps">
         <div class="f1-progress centrelink-line">
           <div class="f1-progress-line" style="width: 35%;"></div>
@@ -137,8 +148,8 @@
 
       <div class="form-row">
 
+        <!-- Container for the Documentation page-->
         <div class="container-content register-container">
-
           <h1>Documentation</h1>
           <hr>
           <div class="form-row">
@@ -187,7 +198,9 @@
     </div>
   </div>
 
+  <!----- STEP FOUR ----------------------------------------------------------------------------------------------------------------------------------------------------->
   <div *ngIf="stepFour">
+    <!-- Form Navigation -->
     <div class="f1-steps">
       <div class="f1-progress centrelink-line">
         <div class="f1-progress-line" style="width: 70%;"></div>
@@ -211,8 +224,9 @@
     </div>
 
     <div class="form-row">
-      <div class="container-content register-container">
 
+      <!-- Container for the Confirm Information page-->
+      <div class="container-content register-container">
         <h1>Confirm Information</h1>
         <hr>
         <div class="accordion" id="accordionExample">
@@ -278,7 +292,9 @@
     </div>
   </div>
 
+  <!----- STEP FIVE ----------------------------------------------------------------------------------------------------------------------------------------------------->
   <div *ngIf="stepFive">
+    <!-- Form Navigation -->
     <div class="f1-steps">
       <div class="f1-progress centrelink-line">
         <div class="f1-progress-line" style="width: 100%;"></div>
@@ -300,6 +316,8 @@
         <p>Complete</p>
       </div>
     </div>
+
+    <!-- Container for the Claim Complete page -->
     <div class="container-content register-container">
       <h1>Claim Complete</h1>
       <hr>
@@ -317,7 +335,9 @@
   </div>
 </form>
 
+<!----- STEP SIX ----------------------------------------------------------------------------------------------------------------------------------------------------->
 <div *ngIf="stepSix">
+  <!-- Final page for choosing update option-->
   <div class="container-content register-container">
     <h1>Claim Submitted Successfully</h1>
     <hr>
