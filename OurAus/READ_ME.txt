@@ -9,9 +9,7 @@ STEP 2: open  up “Powershell” and type in:
 npm install -g @angular/cli
 
 
-STEP 4: Now open up powershell, and type the folder location for the project
-
-example
+STEP 4: Now open up powershell, and type the folder location for the project, see example below if project location is in Downloads
 
 cd Downloads/OurAus
 
