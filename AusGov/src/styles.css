@@ -1,5 +1,11 @@
 .navbar {
+<<<<<<< HEAD
     background-color: #E37222;
+=======
+    background-color: #005757;
+    background-image: none;
+    background-repeat: no-repeat;
+>>>>>>> parent of b9888799... change colours to orange
     color: white;
 }
 
@@ -16,9 +22,20 @@
     color: #f5fbfb;
 }
 
+<<<<<<< HEAD
 .register-container {
     background-color: #07889B; 
     color: #f5fbfb;
+=======
+.container {
+    margin-block-start: 20px;
+    background-color: #0176D5; /* Login container colour */
+    background-image: none;
+    background-repeat: no-repeat;
+    color: #f5fbfb; /* Login text colour */
+    padding-bottom: 20px;
+    min-height: 462px;
+>>>>>>> parent of b9888799... change colours to orange
 }
 
 hr {
