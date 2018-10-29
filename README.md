@@ -4,7 +4,7 @@ Requires Angular and Node.js
 
 https://angular.io/guide/quickstart
 
-To run, navigate to the 'OurAus' folder and run:
+To run, navigate to the 'OurAus' folder in powershell and run:
 
 ```
 ng s -o
@@ -14,7 +14,7 @@ The same command can be executed within the 'University' folder to run the fake-
 
 This will open the website in your default browser, via localhost:4200
 
-In order to create a new user/log in, the server must be running. To do this, navigate to 'OurAus/backend', and run:
+In order to create a new user/log in, the server must be running. To do this, navigate to 'OurAus/backend' in a new powershell, and run:
 
 ```
 node server.js
